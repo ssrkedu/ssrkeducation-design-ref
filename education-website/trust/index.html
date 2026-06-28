@@ -123,9 +123,9 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .slide-bg{position:absolute;inset:0;background-size:cover;background-position:center}
 .slide-bg::after{content:'';position:absolute;inset:0}
 
-/* Slide 1 – deep blue */
-.hero-slide:nth-child(1) .slide-bg{background-color:#1E3A8A}
-.hero-slide:nth-child(1) .slide-bg::after{background:linear-gradient(125deg,rgba(23,37,84,.96) 0%,rgba(30,58,138,.88) 55%,rgba(59,89,152,.72) 100%)}
+/* Slide 1 – campus photo + deep blue overlay */
+.hero-slide:nth-child(1) .slide-bg{background-color:#1E3A8A;background-image:url('../../clg-image-1.avif')}
+.hero-slide:nth-child(1) .slide-bg::after{background:linear-gradient(125deg,rgba(23,37,84,.82) 0%,rgba(30,58,138,.72) 50%,rgba(59,89,152,.48) 100%)}
 /* Slide 2 – saffron warmth */
 .hero-slide:nth-child(2) .slide-bg{background-color:#5D2707}
 .hero-slide:nth-child(2) .slide-bg::after{background:linear-gradient(125deg,rgba(23,37,84,.96) 0%,rgba(180,80,10,.82) 100%)}
