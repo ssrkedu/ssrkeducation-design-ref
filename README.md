@@ -33,15 +33,33 @@ education-website/institution/index.html    (institution home — hub for all in
 education-website/trust/index.html
 ```
 
-The **admin portal** is a separate app with its own styles (`admin-portal.css`) and is not linked from the public sites.
+The **admin portal** is a separate app at repo root; the trust header links to it for demo only.
+
+## Netlify deployment
+
+Publish the **repository root** (not `education-website/` alone) so trust, institution, admin portal, and shared assets all deploy.
+
+| Setting | Value |
+|---------|--------|
+| **Build command** | *(empty)* |
+| **Publish directory** | `.` (repo root) |
+
+Or use the included [`netlify.toml`](netlify.toml) — Netlify picks this up automatically.
+
+- Site entry: [`index.html`](index.html) → redirects to `education-website/trust/index.html`
+- Trust site: `/education-website/trust/index.html`
+- Institution: `/education-website/institution/...`
+- Admin portal: `/admin-portal/index.html`
 
 ## Folder structure
 
 ```
 ssrkeducation-design-ref/
 ├── README.md
+├── index.html                  # Root redirect → education-website/trust/
+├── netlify.toml                # Publish repo root on Netlify
 ├── admin-portal/
-│   ├── index.html              # Login, dashboard, enquiries, CMS, users
+│   ├── index.html
 │   └── admin-portal.css
 ├── design-system/
 │   ├── SSRK Design System.md   # Colors, typography, components
@@ -50,6 +68,7 @@ ssrkeducation-design-ref/
 │   ├── _shared/                # Ticker + top contact bar (all public pages)
 │   │   ├── site-chrome.css
 │   │   └── site-chrome.js
+│   ├── index.html              # Redirect → trust/ (when opened under /education-website/)
 │   ├── trust/
 │   │   └── index.html          # Parent website (was SSRK Educational Trust - Home.html)
 │   └── institution/

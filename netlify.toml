@@ -1,0 +1,4 @@
+# Static design reference — publish entire repo (trust, institution, admin portal)
+[build]
+  command = ""
+  publish = "."
