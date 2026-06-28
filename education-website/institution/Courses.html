@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Courses — SSRK Degree College</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="../_shared/site-chrome.css">
+<link rel="stylesheet" href="_components/institution-header.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Serif:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue-deep:#172554;--blue-primary:#1E3A8A;--blue-mid:#3B5998;--blue-light:#DBEAFE;--saffron:#D4780A;--saffron-lt:#F0A030;--white:#fff;--bg:#F5F7FA;--text-h:#0D2340;--text-b:#2C3E50;--text-m:#6B7A8D;--border:#D4E0EF;--r-sm:6px;--r-md:10px;--r-lg:16px;--sh-sm:0 1px 2px rgba(13,35,64,.04),0 3px 10px rgba(13,35,64,.07);--sh-md:0 8px 20px rgba(13,35,64,.10),0 2px 6px rgba(13,35,64,.05);--tr:.28s ease;--ff:'Noto Sans',sans-serif;--fs:'Noto Serif',serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--ff);color:var(--text-b);background:var(--white);font-size:15px;overflow-x:hidden;line-height:1.6}
+a{text-decoration:none;color:inherit}ul{list-style:none}button{cursor:pointer;border:none;background:none;font-family:inherit}
+.container{width:100%;max-width:1240px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.container{padding:0 24px}}@media(min-width:1024px){.container{padding:0 32px}}
+.page-hero{background:var(--bg);border-bottom:1px solid var(--border);padding:18px 0}
+.page-hero-inner{display:flex;align-items:center;gap:12px 32px;flex-wrap:wrap}
+.page-title{font-family:var(--fs);font-size:clamp(17px,2.2vw,22px);font-weight:700;color:var(--text-h);border-left:3px solid var(--saffron);padding-left:12px;line-height:1.2}
+.page-subtitle{font-size:13px;color:var(--text-m);line-height:1.5}
+/* FILTER TABS */
+.filter-bar{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:72px;z-index:100;padding:0}
+@media(min-width:768px){.filter-bar{top:66px}}
+.filter-inner{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:12px 0}
+.filter-inner::-webkit-scrollbar{display:none}
+.filter-btn{padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;color:var(--text-m);background:var(--bg);border:1.5px solid transparent;white-space:nowrap;transition:var(--tr);cursor:pointer}
+.filter-btn:hover{color:var(--blue-primary);background:var(--blue-light);transform:translateY(-1px)}
+.filter-btn.active{background:var(--blue-primary);color:#fff;border-color:var(--blue-primary);box-shadow:0 3px 10px rgba(30,58,138,.28)}
+/* COURSE GRID */
+.courses-section{padding:48px 0 80px}
+.course-grid{display:grid;gap:20px}
+@media(min-width:540px){.course-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){.course-grid{grid-template-columns:repeat(3,1fr)}}
+.course-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--r-md);padding:24px;box-shadow:var(--sh-sm);transition:var(--tr);display:flex;flex-direction:column;gap:10px}
+.course-card:hover{box-shadow:var(--sh-md);transform:translateY(-3px);border-color:var(--blue-primary)}
+.course-card[data-cat="science"]{border-top:3px solid #1E3A8A}
+.course-card[data-cat="commerce"]{border-top:3px solid #D4780A}
+.course-card[data-cat="arts"]{border-top:3px solid #7C3AED}
+.course-card[data-cat="pharmacy"]{border-top:3px solid #059669}
+.course-card.hidden{display:none}
+.ctag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:3px 10px;border-radius:12px}
+.ctag.science{background:var(--blue-light);color:var(--blue-primary)}
+.ctag.commerce{background:#FEF3C7;color:#92400E}
+.ctag.arts{background:#EDE9FE;color:#5B21B6}
+.ctag.pharmacy{background:#D1FAE5;color:#065F46}
+.cname{font-family:var(--fs);font-size:18px;font-weight:700;color:var(--text-h);line-height:1.3}
+.ccode{font-size:11px;font-weight:700;color:var(--text-m);letter-spacing:.5px;text-transform:uppercase;margin-top:-4px}
+.cdesc{font-size:13.5px;color:var(--text-m);line-height:1.6;flex:1}
+.cmeta{display:flex;gap:14px;flex-wrap:wrap}
+.cmeta-item{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text-m);font-weight:500}
+.cmeta-item svg{width:13px;height:13px}
+.cfoot{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border);margin-top:auto}
+.cfoot a{font-size:13px;font-weight:700;color:var(--blue-primary);display:flex;align-items:center;gap:4px;transition:var(--tr)}
+.cfoot a:hover{color:var(--saffron)}
+.cfoot a svg{width:14px;height:14px;transition:transform .2s}
+.cfoot a:hover svg{transform:translateX(3px)}
+.cfoot-enq{font-size:12px;font-weight:600;color:var(--text-m);background:var(--bg);padding:6px 12px;border-radius:var(--r-sm);transition:var(--tr);cursor:pointer}
+.cfoot-enq:hover{background:var(--blue-light);color:var(--blue-primary)}
+/* FOOTER */
+.site-footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:48px 0 0}
+.footer-grid{display:grid;gap:32px;padding-bottom:40px}
+@media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr}}
+.footer-brand .fn{font-family:var(--fs);font-size:17px;font-weight:700;color:#fff;display:block;margin-bottom:6px}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.65;max-width:260px;margin-bottom:16px}
+.footer-trust{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:var(--r-sm);transition:var(--tr)}
+.footer-trust:hover{color:#fff}
+.footer-col h4{font-size:11px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,.65);transition:color .2s}
+.footer-col ul li a:hover{color:#fff}
+.fci{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,.65);margin-bottom:10px;line-height:1.5}
+.fci svg{width:14px;height:14px;flex-shrink:0;margin-top:3px;opacity:.6}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:16px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px;color:rgba(255,255,255,.4)}
+.footer-bottom a{color:rgba(255,255,255,.55)}
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
+.fade-up.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+/* STICKY MOBILE CTA */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:990;background:#fff;border-top:1px solid var(--border);padding:10px 16px;box-shadow:0 -4px 20px rgba(0,0,0,.12);display:flex;gap:10px}
+@media(min-width:1024px){.sticky-cta{display:none}}
+.sticky-cta a{flex:1;text-align:center;padding:12px;border-radius:var(--r-sm);font-size:14px;font-weight:700}
+.sticky-call{background:var(--bg);color:var(--text-h);border:1.5px solid var(--border)}
+.sticky-enquire{background:var(--blue-primary);color:#fff}
+/* SEARCH */
+.search-wrap{position:relative;margin-left:auto}
+.search-wrap svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--text-m);pointer-events:none}
+.search-input{padding:8px 12px 8px 32px;border:1.5px solid var(--border);border-radius:20px;font-size:13px;font-family:var(--ff);color:var(--text-b);background:#fff;width:200px;transition:border-color .2s,width .2s}
+.search-input:focus{outline:none;border-color:var(--blue-primary);width:240px}
+/* SCHOLARSHIP BADGE */
+.schol-badge{display:inline-flex;align-items:center;gap:5px;background:#ECFDF5;border:1px solid #6EE7B7;color:#065F46;font-size:11px;font-weight:700;padding:4px 10px;border-radius:10px;margin-top:4px}
+.schol-badge svg{width:11px;height:11px;flex-shrink:0;fill:#6EE7B7;stroke:#065F46;stroke-width:1.5}
+.no-results{display:none;text-align:center;padding:48px 24px;color:var(--text-m);font-size:15px;grid-column:1/-1}
+.no-results.show{display:block}
+
+@media(max-width:1023px){body{padding-bottom:72px}}
+</style>
+</head>
+<body>
+
+<div id="site-chrome-mount"></div>
+<script src="../_shared/site-chrome.js"></script>
+
+<div id="inst-header-mount" data-active="courses" data-enquire-href="Contact.html"></div>
+<script src="_components/institution-header.js"></script>
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <h1 class="page-title">Programmes Offered</h1>
+    <p class="page-subtitle">12+ undergraduate programmes · Science, Arts, Commerce, Pharmacy · Utkal University affiliated</p>
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" class="search-input" id="courseSearch" placeholder="Search programmes..." oninput="searchCourses(this.value)">
+    </div>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <div class="container"><div class="filter-inner">
+    <button class="filter-btn active" onclick="filterCourses('all',this)">All Programmes</button>
+    <button class="filter-btn" onclick="filterCourses('science',this)">Science</button>
+    <button class="filter-btn" onclick="filterCourses('commerce',this)">Commerce</button>
+    <button class="filter-btn" onclick="filterCourses('arts',this)">Arts</button>
+    <button class="filter-btn" onclick="filterCourses('pharmacy',this)">Pharmacy</button>
+  </div></div>
+</div>
+
+<section class="courses-section">
+  <div class="container">
+    <div class="course-grid" id="courseGrid">
+      <div class="no-results" id="noResults">No programmes match your search.</div>
+
+      <div class="course-card fade-up" data-cat="pharmacy" data-search="d.pharm diploma pharmacy">
+        <div><span class="ctag pharmacy">Pharmacy</span></div>
+        <div><div class="cname">D.Pharm</div><div class="ccode">Diploma in Pharmacy</div></div>
+        <p class="cdesc">Two-year diploma preparing students for careers in pharmaceutical companies, hospitals, and community pharmacies across India.</p>
+        <div class="schol-badge"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Scholarship up to 50% available</div>
+        <div class="cmeta">
+          <div class="cmeta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>2 Years</div>
+          <div class="cmeta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5"/><circle cx="9" cy="7" r="4"/></svg>60 Seats</div>
+          <div class="cmeta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>PCI Approved</div>
+        </div>
+        <div class="cfoot">
+          <a href="Course-Detail.html#d-pharm">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <button class="cfoot-enq" onclick="location.href='Contact.html?course=d-pharm'">Enquire</button>
+        </div>
+      </div>
+
+      <div class="course-card fade-up" data-cat="science" data-search="b.sc bachelor science physics chemistry maths biology" style="transition-delay:.05s">
+        <div><span class="ctag science">Science</span></div>
+        <div><div class="cname">B.Sc</div><div class="ccode">Bachelor of Science</div></div>
+        <p class="cdesc">Streams in Physics, Chemistry, Mathematics and Biology. Strong foundation for postgraduate studies and competitive examinations.</p>
+        <div class="schol-badge"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Scholarship up to 100% (SC/ST)</div>
+        <div class="cmeta">
+          <div class="cmeta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>3 Years</div>
+          <div class="cmeta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5"/><circle cx="9" cy="7" r="4"/></svg>80 Seats</div>
+        </div>
+        <div class="cfoot">
+          <a href="Course-Detail.html#b-sc">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <button class="cfoot-enq" onclick="location.href='Contact.html?course=b-sc'">Enquire</button>
+        </div>
+      </div>
+
+      <div class="course-card fade-up" data-cat="commerce" data-search="b.com bachelor commerce accounting finance banking taxation" style="transition-delay:.1s">
+        <div><span class="ctag commerce">Commerce</span></div>
+        <div><div class="cname">B.Com</div><div class="ccode">Bachelor of Commerce</div></div>
+        <p class="cdesc">Accounting, finance, business law and taxation — preparing students for careers in banking, finance and entrepreneurship.</p>
+        <div class="schol-badge"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Scholarship up to 60% available</div>
+        <div class="cmeta">
+          <div class="cmeta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>3 Years</div>
+          <div class="cmeta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5"/><circle cx="9" cy="7" r="4"/></svg>120 Seats</div>
+        </div>
+        <div class="cfoot">
+          <a href="Course-Detail.html#b-com">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <button class="cfoot-enq" onclick="location.href='Contact.html?course=b-com'">Enquire</button>
+        </div>
+      </div>
+
+      <div class="course-card fade-up" data-cat="arts" data-search="b.a bachelor arts odia history political science sociology economics" style="transition-delay:.15s">
+        <div><span class="ctag arts">Arts</span></div>
+        <div><div class="cname">B.A</div><div class="ccode">Bachelor of Arts</div></div>
+        <p class="cdesc">Odia, History, Political Science, Economics, and Sociology — humanities foundation for teaching, civil services and more.</p>
+        <div class="schol-badge"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Scholarship up to 100% (SC/ST)</div>
+        <div class="cmeta">
+          <div class="cmeta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>3 Years</div>
+          <div class="cmeta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5"/><circle cx="9" cy="7" r="4"/></svg>160 Seats</div>
+        </div>
+        <div class="cfoot">
+          <a href="Course-Detail.html#b-a">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <button class="cfoot-enq" onclick="location.href='Contact.html?course=b-a'">Enquire</button>
+        </div>
+      </div>
+
+      <div class="course-card fade-up" data-cat="commerce" style="transition-delay:.2s">
+        <div><span class="ctag commerce">Commerce</span></div>
+        <div><div class="cname">BBA</div><div class="ccode">Bachelor of Business Administration</div></div>
+        <p class="cdesc">Management, marketing, HR and entrepreneurship. Prepares students for business careers and MBA entrance.</p>
+        <div class="schol-badge"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Scholarship up to 50% available</div>
+        <div class="cmeta">
+          <div class="cmeta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>3 Years</div>
+          <div class="cmeta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5"/><circle cx="9" cy="7" r="4"/></svg>60 Seats</div>
+        </div>
+        <div class="cfoot">
+          <a href="Course-Detail.html#bba">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <button class="cfoot-enq" onclick="location.href='Contact.html?course=bba'">Enquire</button>
+        </div>
+      </div>
+
+      <div class="course-card fade-up" data-cat="science" style="transition-delay:.25s">
+        <div><span class="ctag science">Science</span></div>
+        <div><div class="cname">BCA</div><div class="ccode">Bachelor of Computer Applications</div></div>
+        <p class="cdesc">Programming, databases, networking and web development. Excellent placement record in IT companies.</p>
+        <div class="schol-badge"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Scholarship up to 75% available</div>
+        <div class="cmeta">
+          <div class="cmeta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>3 Years</div>
+          <div class="cmeta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5"/><circle cx="9" cy="7" r="4"/></svg>60 Seats</div>
+        </div>
+        <div class="cfoot">
+          <a href="Course-Detail.html#bca">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <button class="cfoot-enq" onclick="location.href='Contact.html?course=bca'">Enquire</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><span class="fn">SSRK Degree College</span><p>Quality higher education in Odisha since 1990.</p><a href="../trust/index.html" class="footer-trust">Part of SSRK Edu Trust</a></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="About.html">About</a></li><li><a href="Courses.html">Programmes</a></li><li><a href="Scholarships.html">Scholarships</a></li><li><a href="Faculty.html">Faculty</a></li><li><a href="Gallery.html">Gallery</a></li><li><a href="Contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Contact Us</h4><div class="fci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Badambadi, Cuttack — 753012</div><div class="fci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2"/></svg>+91 674 255 0000</div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 SSRK Degree College</span><a href="../trust/index.html">ssrkedu.com</a></div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="tel:+916742550000" class="sticky-call">📞 Call</a>
+  <a href="Contact.html" class="sticky-enquire">Enquire Now</a>
+</div>
+
+<script>
+var currentCat='all';
+function filterCourses(cat,btn){
+  currentCat=cat;
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});
+  btn.classList.add('active');
+  applyFilters();
+}
+function searchCourses(q){
+  applyFilters();
+}
+function applyFilters(){
+  var q=(document.getElementById('courseSearch').value||'').toLowerCase().trim();
+  var anyVisible=false;
+  document.querySelectorAll('.course-card').forEach(function(c){
+    var catMatch=currentCat==='all'||c.getAttribute('data-cat')===currentCat;
+    var name=(c.querySelector('.cname')||{textContent:''}).textContent.toLowerCase();
+    var extra=(c.getAttribute('data-search')||'').toLowerCase();
+    var searchMatch=!q||name.includes(q)||extra.includes(q);
+    var show=catMatch&&searchMatch;
+    c.classList.toggle('hidden',!show);
+    if(show)anyVisible=true;
+  });
+  var nr=document.getElementById('noResults');if(nr)nr.classList.toggle('show',!anyVisible);
+}
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}})},{threshold:0,rootMargin:"0px 0px 50px 0px"});
+document.querySelectorAll('.fade-up').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight){el.classList.add('visible')}});
+document.querySelectorAll('.fade-up').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>

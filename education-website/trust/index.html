@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>SSRK Educational Trust | Empowering Odisha Through Quality Education</title>
+<meta name="description" content="SSRK Educational Trust - Premier group of institutions in Odisha offering quality education in arts, science, engineering, pharmacy, education and management.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../_shared/site-chrome.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue-deep:    #172554;
+  --blue-primary: #1E3A8A;
+  --blue-mid:     #3B5998;
+  --blue-light:   #DBEAFE;
+  --saffron:      #D4780A;
+  --saffron-lt:   #F0A030;
+  --white:        #FFFFFF;
+  --bg:           #F5F7FA;
+  --text-h:       #0D2340;
+  --text-b:       #2C3E50;
+  --text-m:       #6B7A8D;
+  --border:       #D4E0EF;
+  --r-sm: 6px; --r-md: 10px; --r-lg: 16px;
+  --sh-sm: 0 1px 2px rgba(13,35,64,.04),0 3px 10px rgba(13,35,64,.07);
+  --sh-md: 0 8px 20px rgba(13,35,64,.10),0 2px 6px rgba(13,35,64,.05);
+  --sh-lg: 0 18px 44px rgba(13,35,64,.15),0 4px 12px rgba(13,35,64,.07);
+  --tr: .28s ease;
+  --ff: 'Noto Sans', sans-serif;
+  --fs: 'Noto Serif', serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff);color:var(--text-b);background:var(--white);line-height:1.6;font-size:15px;overflow-x:clip}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+
+/* ── CONTAINER ── */
+.container{width:100%;max-width:1240px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.container{padding:0 24px}}
+@media(min-width:1024px){.container{padding:0 32px}}
+
+/* ── BUTTONS ── */
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--saffron);color:#fff;padding:12px 26px;border-radius:var(--r-sm);font-weight:700;font-size:14px;transition:var(--tr)}
+.btn-primary:hover{background:#b5660a;transform:translateY(-2px);box-shadow:0 9px 20px rgba(212,120,10,.38)}
+.btn-primary:active{transform:translateY(0);box-shadow:0 2px 6px rgba(212,120,10,.3)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;border:2px solid rgba(255,255,255,.65);padding:10px 22px;border-radius:var(--r-sm);font-weight:600;font-size:14px;transition:var(--tr)}
+.btn-outline:hover{background:rgba(255,255,255,.18);border-color:#fff;transform:translateY(-2px)}
+.btn-blue{display:inline-flex;align-items:center;gap:6px;background:var(--blue-primary);color:#fff;padding:10px 22px;border-radius:var(--r-sm);font-weight:600;font-size:13px;transition:var(--tr)}
+.btn-blue:hover{background:var(--blue-deep);transform:translateY(-2px);box-shadow:0 8px 16px rgba(30,58,138,.3)}
+
+/* ── SECTION TYPOGRAPHY ── */
+.section-label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue-primary);margin-bottom:6px;display:block}
+.section-title{font-family:var(--fs);font-size:clamp(22px,4vw,32px);color:var(--text-h);font-weight:700;line-height:1.2}
+.section-title span{color:var(--saffron)}
+.section-header{text-align:center;margin-bottom:40px}
+.section-header p{color:var(--text-m);max-width:500px;margin:10px auto 0;font-size:14.5px}
+
+/* ── HEADER ── */
+.site-header{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.09);position:sticky;top:0;z-index:1000}
+.header-inner{display:flex;align-items:center;justify-content:flex-start;gap:8px;height:70px}
+.header-actions{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0}
+.site-header .lang-toggle{display:flex;align-items:center;background:var(--bg);border:1.5px solid var(--border);border-radius:20px;overflow:hidden}
+.site-header .lang-opt{padding:5px 12px;font-size:11.5px;font-weight:700;color:var(--text-m);cursor:pointer;transition:all .18s;border:none;background:none;font-family:var(--ff)}
+.site-header .lang-opt.active{background:var(--blue-primary);color:#fff}
+.site-header .lang-opt:hover:not(.active){color:var(--blue-primary)}
+.mobile-lang{display:flex;gap:8px;margin:0 0 16px}
+.mobile-lang button{flex:1;padding:9px;border-radius:var(--r-sm);font-size:13px;font-weight:700;border:1.5px solid var(--border);color:var(--text-m);background:#fff;transition:all .18s;cursor:pointer;font-family:var(--ff)}
+.mobile-lang button.active{background:var(--blue-primary);color:#fff;border-color:var(--blue-primary)}
+.logo{display:flex;align-items:center;gap:11px;flex-shrink:0}
+.logo-mark{width:50px;height:50px;background:var(--blue-primary);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--fs);font-weight:700;font-size:18px;color:#fff;flex-shrink:0;position:relative;overflow:hidden}
+.logo-mark::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--saffron)}
+.logo-name{font-family:var(--fs);font-weight:700;font-size:18px;color:var(--blue-primary);line-height:1}
+.logo-sub{font-size:10px;color:var(--text-m);font-weight:500;letter-spacing:.5px;text-transform:uppercase;margin-top:2px}
+
+/* Desktop Nav */
+.main-nav{display:none;flex:1 1 auto;min-width:0;justify-content:flex-end}
+@media(min-width:1024px){.main-nav{display:flex;align-items:center;gap:2px}}
+.nav-item{position:relative}
+.nav-link{display:flex;align-items:center;gap:4px;padding:8px 13px;font-size:13.5px;font-weight:600;color:var(--text-h);border-radius:var(--r-sm);transition:var(--tr);white-space:nowrap}
+.nav-link:hover,.nav-link.active{color:var(--blue-primary);background:var(--blue-light)}
+.nav-arr{font-size:9px;transition:transform .25s}
+.nav-item:hover .nav-arr{transform:rotate(180deg)}
+.dropdown{position:absolute;top:calc(100% + 4px);left:0;background:#fff;box-shadow:var(--sh-lg);border-radius:var(--r-md);min-width:230px;padding:8px;border-top:3px solid var(--blue-primary);opacity:0;visibility:hidden;transform:translateY(6px);transition:all .22s ease;z-index:200}
+.nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown li a{display:block;padding:9px 13px;font-size:13px;color:var(--text-b);border-radius:6px;font-weight:500;transition:var(--tr)}
+.dropdown li a:hover{background:var(--blue-light);color:var(--blue-primary)}
+.nav-cta{background:var(--blue-primary) !important;color:#fff !important;padding:9px 20px !important;border-radius:var(--r-sm) !important;font-weight:700 !important;margin-left:6px}
+.nav-cta:hover{background:var(--blue-deep) !important}
+
+/* Hamburger */
+.hamburger{display:flex;flex-direction:column;gap:5px;padding:8px;cursor:pointer}
+.hamburger span{display:block;width:24px;height:2px;background:var(--text-h);border-radius:2px;transition:var(--tr)}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(min-width:1024px){.hamburger{display:none}}
+
+/* Mobile Menu */
+.mobile-menu{position:fixed;inset:0;background:#fff;z-index:999;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);overflow-y:auto;padding-top:80px;pointer-events:none}
+.mobile-menu.open{transform:translateX(0);pointer-events:all}
+.mobile-close{position:absolute;top:14px;right:14px;font-size:26px;color:var(--text-h);cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--bg);border-radius:50%}
+.mobile-nav{padding:0 20px 40px}
+.mobile-nav-item{border-bottom:1px solid var(--border)}
+.mobile-nav-item>a,.mobile-nav-item>span{display:flex;align-items:center;justify-content:space-between;padding:16px 0;font-size:16px;font-weight:600;color:var(--text-h);cursor:pointer}
+.mobile-sub{padding-left:16px;display:none}
+.mobile-sub.open{display:block}
+.mobile-sub a{display:block;padding:10px 0;font-size:14px;color:var(--text-b);border-bottom:1px solid var(--bg)}
+.mobile-apply{display:block;text-align:center;background:var(--blue-primary);color:#fff;padding:14px;border-radius:var(--r-sm);font-size:15px;font-weight:700;margin:24px 0}
+.mobile-contact{padding:0 20px;background:var(--bg);margin:0 -20px;padding:20px}
+.mobile-contact p{font-size:13px;color:var(--text-m);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+
+/* ── HERO ── */
+.hero{position:relative;height:58vh;min-height:360px;max-height:640px;overflow:hidden}
+@media(min-width:768px){.hero{height:72vh;min-height:480px}}
+@media(min-width:1024px){.hero{height:86vh;min-height:540px;max-height:800px}}
+.hero-slides{display:flex;height:100%;will-change:transform;transition:transform .65s cubic-bezier(.4,0,.2,1)}
+.hero-slide{min-width:100%;height:100%;position:relative;display:flex;align-items:center}
+.slide-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.slide-bg::after{content:'';position:absolute;inset:0}
+
+/* Slide 1 – deep blue */
+.hero-slide:nth-child(1) .slide-bg{background-color:#1E3A8A}
+.hero-slide:nth-child(1) .slide-bg::after{background:linear-gradient(125deg,rgba(23,37,84,.96) 0%,rgba(30,58,138,.88) 55%,rgba(59,89,152,.72) 100%)}
+/* Slide 2 – saffron warmth */
+.hero-slide:nth-child(2) .slide-bg{background-color:#5D2707}
+.hero-slide:nth-child(2) .slide-bg::after{background:linear-gradient(125deg,rgba(23,37,84,.96) 0%,rgba(180,80,10,.82) 100%)}
+/* Slide 3 – green growth */
+.hero-slide:nth-child(3) .slide-bg{background-color:#0D3B1E}
+.hero-slide:nth-child(3) .slide-bg::after{background:linear-gradient(125deg,rgba(23,37,84,.96) 0%,rgba(20,100,60,.82) 100%)}
+
+/* decorative circles */
+.hero-slide::before{content:'';position:absolute;bottom:-80px;right:-80px;width:340px;height:340px;border:72px solid rgba(255,255,255,.04);border-radius:50%;pointer-events:none;z-index:1}
+.hero-slide::after{content:'';position:absolute;top:-50px;right:60px;width:180px;height:180px;border:44px solid rgba(255,255,255,.04);border-radius:50%;pointer-events:none;z-index:1}
+
+.hero-content{position:relative;z-index:2;color:#fff;max-width:700px}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:rgba(255,255,255,.92);font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:18px}
+.hero-title{font-family:var(--fs);font-size:clamp(24px,5.5vw,54px);font-weight:700;line-height:1.13;margin-bottom:14px;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+.hero-title em{color:var(--saffron-lt);font-style:normal}
+.hero-sub{font-size:clamp(13px,2.5vw,17px);color:rgba(255,255,255,.84);margin-bottom:28px;max-width:520px;line-height:1.65}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+
+/* controls */
+.hero-dots{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
+.hero-dot{width:8px;height:8px;border-radius:4px;background:rgba(255,255,255,.38);cursor:pointer;transition:var(--tr);border:none}
+.hero-dot.active{background:var(--saffron-lt);width:24px}
+.hero-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:40px;height:40px;background:rgba(255,255,255,.14);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.22);border-radius:50%;color:#fff;font-size:18px;display:none;align-items:center;justify-content:center;cursor:pointer;transition:var(--tr)}
+.hero-arrow:hover{background:var(--saffron);border-color:var(--saffron)}
+.hero-arrow.prev{left:16px}
+.hero-arrow.next{right:16px}
+@media(min-width:768px){.hero-arrow{display:flex}}
+
+/* ── STATS ── */
+.stats-bar{background:var(--blue-primary)}
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr)}
+@media(min-width:768px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
+.stat-item{padding:22px 16px;text-align:center;border-right:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
+@media(min-width:768px){.stat-item{padding:28px 20px;border-bottom:none}}
+.stat-item:last-child,.stat-item:nth-child(2){border-right:none}
+@media(min-width:768px){.stat-item:nth-child(2){border-right:1px solid rgba(255,255,255,.14)}}
+@media(min-width:768px){.stat-item:last-child{border-right:none}}
+.stat-num{font-family:var(--fs);font-size:clamp(28px,4.5vw,44px);font-weight:700;color:#fff;line-height:1;margin-bottom:4px}
+.stat-num span{color:var(--saffron-lt)}
+.stat-lbl{font-size:10.5px;color:rgba(255,255,255,.7);font-weight:600;letter-spacing:.5px;text-transform:uppercase}
+
+/* ── ABOUT ── */
+.about-section{padding:64px 0;background:#fff}
+@media(min-width:768px){.about-section{padding:88px 0}}
+.about-grid{display:grid;gap:44px}
+@media(min-width:1024px){.about-grid{grid-template-columns:1fr 400px;gap:64px;align-items:center}}
+.about-text h2{margin-bottom:16px}
+.about-text p{color:var(--text-b);font-size:15px;line-height:1.8;margin-bottom:16px}
+.about-highlights{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 28px}
+.hl-item{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-b);font-weight:500}
+.hl-dot{width:18px;height:18px;background:var(--blue-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.hl-dot svg{width:10px;height:10px}
+
+/* Chairman card */
+.chairman-card{background:linear-gradient(150deg,var(--blue-deep) 0%,var(--blue-primary) 100%);color:#fff;padding:32px 28px;border-radius:var(--r-lg);position:relative;overflow:hidden}
+.chairman-card::before{content:'"';position:absolute;top:-24px;left:14px;font-size:130px;font-family:var(--fs);color:rgba(255,255,255,.07);line-height:1;pointer-events:none}
+.ch-avatar{width:72px;height:72px;border-radius:50%;border:4px solid rgba(255,255,255,.25);background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-family:var(--fs);font-weight:700;font-size:24px;color:#fff;margin-bottom:16px}
+.ch-quote{font-size:14.5px;line-height:1.75;color:rgba(255,255,255,.88);font-style:italic;margin-bottom:20px}
+.ch-name{font-size:15px;font-weight:700;color:#fff}
+.ch-role{font-size:11px;color:rgba(255,255,255,.6);margin-top:2px}
+.accred-row{margin-top:18px;padding:14px 16px;background:rgba(255,255,255,.1);border-radius:var(--r-md);border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;gap:12px}
+.accred-badge{background:var(--saffron);color:#fff;font-size:10px;font-weight:800;letter-spacing:.8px;padding:6px 10px;border-radius:6px;line-height:1.3;text-align:center;flex-shrink:0}
+.accred-info{font-size:12px;color:rgba(255,255,255,.78);line-height:1.45}
+.accred-info strong{color:#fff;font-weight:600}
+
+/* ── INSTITUTIONS ── */
+.inst-section{padding:64px 0;background:var(--bg)}
+@media(min-width:768px){.inst-section{padding:88px 0}}
+.inst-grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:540px){.inst-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.inst-grid{grid-template-columns:repeat(3,1fr)}}
+.inst-card{background:#fff;border-radius:var(--r-md);padding:24px;box-shadow:var(--sh-sm);border:1.5px solid var(--border);transition:var(--tr);display:flex;flex-direction:column;gap:10px;cursor:pointer}
+.inst-card:hover{box-shadow:var(--sh-md);transform:translateY(-4px);border-color:var(--blue-primary)}
+.inst-icon{width:52px;height:52px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.inst-icon svg{width:26px;height:26px}
+.inst-name{font-family:var(--fs);font-size:16px;font-weight:700;color:var(--text-h);line-height:1.3}
+.inst-courses{font-size:12px;color:var(--text-m);line-height:1.55}
+.inst-link{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--blue-primary);margin-top:auto}
+.inst-link:hover{color:var(--saffron)}
+.inst-link svg{width:14px;height:14px;transition:transform .2s}
+.inst-link:hover svg{transform:translateX(3px)}
+
+/* ── WHY US ── */
+.why-section{padding:64px 0;background:#fff}
+@media(min-width:768px){.why-section{padding:88px 0}}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(min-width:768px){.why-grid{grid-template-columns:repeat(3,1fr);gap:20px}}
+.why-card{text-align:center;padding:28px 18px;border-radius:var(--r-md);background:var(--bg);transition:var(--tr);border:1.5px solid transparent}
+.why-card:hover{background:var(--blue-light);border-color:var(--blue-primary)}
+.why-icon{width:56px;height:56px;background:var(--blue-primary);border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center}
+.why-icon svg{width:26px;height:26px;fill:#fff}
+.why-title{font-weight:700;font-size:14px;color:var(--text-h);margin-bottom:6px}
+.why-desc{font-size:12.5px;color:var(--text-m);line-height:1.55}
+
+/* ── NEWS ── */
+.news-section{padding:64px 0;background:var(--bg)}
+@media(min-width:768px){.news-section{padding:88px 0}}
+.news-grid{display:grid;gap:32px}
+@media(min-width:1024px){.news-grid{grid-template-columns:1fr 380px}}
+.news-item{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--border);cursor:pointer}
+.news-item:first-child{padding-top:0}
+.news-item:hover .news-title{color:var(--blue-primary)}
+.news-date{background:var(--blue-primary);color:#fff;border-radius:var(--r-sm);text-align:center;min-width:46px;padding:8px 6px;flex-shrink:0}
+.nd{font-size:19px;font-weight:700;line-height:1}
+.nm{font-size:9px;text-transform:uppercase;letter-spacing:.5px}
+.news-title{font-size:14px;font-weight:600;color:var(--text-h);line-height:1.45;margin-bottom:5px;transition:color .2s}
+.tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;letter-spacing:.5px;text-transform:uppercase}
+.tag-ad{background:#E3F2FD;color:var(--blue-primary)}
+.tag-ev{background:#FFF3E0;color:#C86400}
+.tag-ex{background:#E8F5E9;color:#2E7D32}
+.tag-re{background:#F3E5F5;color:#6A1B9A}
+.view-more{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:13px;font-weight:700;color:var(--blue-primary)}
+.view-more:hover{color:var(--saffron)}
+
+/* Gallery */
+.gallery-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.gallery-top h3{font-family:var(--fs);font-size:20px;font-weight:700;color:var(--text-h)}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.gal-item{aspect-ratio:1;border-radius:var(--r-sm);overflow:hidden;position:relative;cursor:pointer}
+.gal-bg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:28px}
+.gal-item:hover .gal-overlay{opacity:1}
+.gal-overlay{position:absolute;inset:0;background:rgba(26,82,118,.72);display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;opacity:0;transition:opacity .28s}
+
+/* ── ADMISSION CTA ── */
+.admission-section{background:linear-gradient(140deg,var(--blue-deep) 0%,var(--blue-primary) 100%);padding:64px 0;position:relative;overflow:hidden}
+.admission-section::before{content:'';position:absolute;top:-100px;right:-100px;width:360px;height:360px;border:80px solid rgba(255,255,255,.05);border-radius:50%;pointer-events:none}
+.admission-section::after{content:'';position:absolute;bottom:-70px;left:15%;width:240px;height:240px;border:60px solid rgba(255,255,255,.04);border-radius:50%;pointer-events:none}
+.adm-grid{display:grid;gap:40px;position:relative;z-index:2}
+@media(min-width:1024px){.adm-grid{grid-template-columns:1fr 420px;align-items:center}}
+.adm-info h2{font-family:var(--fs);font-size:clamp(22px,4vw,34px);font-weight:700;color:#fff;margin-bottom:12px}
+.adm-info p{color:rgba(255,255,255,.8);font-size:15px;line-height:1.7;margin-bottom:22px}
+.adm-points{display:flex;flex-direction:column;gap:10px}
+.adm-point{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.88);font-size:14px}
+.adm-point::before{content:'';width:6px;height:6px;background:var(--saffron-lt);border-radius:50%;flex-shrink:0}
+
+/* Form */
+.enquiry-form{background:#fff;border-radius:var(--r-lg);padding:28px 24px;box-shadow:var(--sh-lg)}
+.enquiry-form h3{font-family:var(--fs);font-size:19px;font-weight:700;color:var(--text-h);margin-bottom:20px}
+.form-group{margin-bottom:13px}
+.form-group label{display:block;font-size:11px;font-weight:700;color:var(--text-m);margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px}
+.form-group input,.form-group select{width:100%;padding:11px 13px;border:1.5px solid var(--border);border-radius:var(--r-sm);font-size:14px;font-family:var(--ff);color:var(--text-b);transition:border-color .2s;background:var(--bg);-webkit-appearance:none}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--blue-primary);background:#fff}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+/* Multi-Select Dropdown */
+.multi-select-wrapper{position:relative;margin-bottom:4px}
+.multi-select-btn{width:100%;padding:11px 13px;border:1.5px solid var(--border);border-radius:var(--r-sm);font-size:14px;background:var(--bg);color:var(--text-m);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:8px;transition:var(--tr);text-align:left;font-family:var(--ff)}
+.multi-select-btn:hover{border-color:var(--blue-primary);background:#fff}
+.multi-select-btn.open{border-color:var(--blue-primary);border-radius:var(--r-sm) var(--r-sm) 0 0;background:#fff}
+.multi-select-btn svg{flex-shrink:0;color:var(--text-m);transition:transform .22s}
+.multi-select-btn.open svg{transform:rotate(180deg);color:var(--blue-primary)}
+.multi-select-menu{position:absolute;top:100%;left:0;right:0;background:#fff;border:1.5px solid var(--blue-primary);border-top:none;border-radius:0 0 var(--r-sm) var(--r-sm);max-height:0;overflow:hidden;transition:max-height .28s ease;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,.13)}
+.multi-select-menu.open{max-height:320px;overflow-y:auto}
+.multi-select-item{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;transition:background .15s;border-bottom:1px solid #EEF2F7;user-select:none}
+.multi-select-item:last-child{border-bottom:none}
+.multi-select-item:hover{background:var(--blue-light)}
+.multi-select-item input[type=checkbox]{appearance:none;-webkit-appearance:none;width:17px;height:17px;border:2px solid var(--border);border-radius:4px;background:#fff;cursor:pointer;flex-shrink:0;display:grid;place-items:center;transition:all .15s}
+.multi-select-item input[type=checkbox]:checked{background:var(--blue-primary);border-color:var(--blue-primary)}
+.multi-select-item input[type=checkbox]:checked::after{content:'';display:block;width:5px;height:9px;border:2px solid #fff;border-top:none;border-left:none;transform:rotate(45deg) translate(-1px,-1px)}
+.multi-select-item span{font-size:13.5px;color:var(--text-b);flex:1;font-family:var(--ff)}
+.multi-select-item.checked span{color:var(--blue-primary);font-weight:600}
+
+/* Selected Pills */
+.selected-pills{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 4px}
+.pill{display:inline-flex;align-items:center;gap:5px;background:var(--blue-light);color:var(--blue-primary);border:1.5px solid #BFDBFE;padding:4px 10px 4px 12px;border-radius:20px;font-size:12.5px;font-weight:600;animation:popIn .2s ease}
+.pill button{background:none;border:none;cursor:pointer;color:var(--blue-mid);font-size:14px;line-height:1;padding:0;display:flex;align-items:center;transition:color .15s}
+.pill button:hover{color:#B91C1C}
+@keyframes popIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+
+.submit-btn{width:100%;padding:13px;background:var(--blue-primary);color:#fff;border-radius:var(--r-sm);font-size:15px;font-weight:700;transition:var(--tr);margin-top:4px;font-family:var(--ff);border:none;cursor:pointer}
+.submit-btn:hover{background:var(--blue-deep);transform:translateY(-2px);box-shadow:0 8px 18px rgba(30,58,138,.32)}
+.form-note{font-size:11px;color:var(--text-m);text-align:center;margin-top:10px}
+
+/* ── FOOTER ── */
+.site-footer{background:var(--blue-deep);color:rgba(255,255,255,.72);padding:56px 0 0}
+.footer-grid{display:grid;gap:32px;margin-bottom:44px}
+@media(min-width:640px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1.6fr}}
+.footer-logo{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.footer-mark{width:44px;height:44px;background:var(--blue-primary);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--fs);font-weight:700;color:#fff;font-size:16px;flex-shrink:0}
+.footer-lname{font-family:var(--fs);font-size:16px;font-weight:700;color:#fff;line-height:1}
+.footer-lsub{font-size:10px;color:rgba(255,255,255,.45);margin-top:2px}
+.footer-desc{font-size:13px;line-height:1.7;margin-bottom:18px}
+.footer-social{display:flex;gap:8px}
+.footer-social a{width:34px;height:34px;background:rgba(255,255,255,.08);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:rgba(255,255,255,.7);transition:var(--tr)}
+.footer-social a:hover{background:var(--saffron);color:#fff}
+.footer-col h4{font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--saffron);display:inline-block}
+.footer-links{display:flex;flex-direction:column;gap:8px}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.62);display:flex;align-items:center;gap:6px;transition:color .2s}
+.footer-links a::before{content:'›';color:var(--saffron);font-size:15px}
+.footer-links a:hover{color:#fff}
+.footer-contact-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:13px}
+.fc-icon{width:30px;height:30px;background:rgba(255,255,255,.08);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fc-icon svg{width:14px;height:14px;fill:var(--saffron-lt)}
+.fc-text{font-size:13px;color:rgba(255,255,255,.68);line-height:1.55}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:18px 0}
+.fb-inner{display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center;font-size:12px;color:rgba(255,255,255,.4)}
+@media(min-width:768px){.fb-inner{flex-direction:row;justify-content:space-between;text-align:left}}
+.fb-inner a{color:var(--saffron-lt)}
+
+/* ── SCROLL TOP ── */
+.scroll-top{position:fixed;bottom:22px;right:16px;width:44px;height:44px;background:var(--blue-primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-md);cursor:pointer;opacity:0;transform:translateY(16px);transition:var(--tr);z-index:900;border:none}
+.scroll-top.show{opacity:1;transform:translateY(0)}
+.scroll-top:hover{background:var(--saffron)}
+@media(min-width:768px){.scroll-top{right:24px}}
+
+/* ── ANIMATIONS ── */
+.fade-up{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.fade-up.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+</style>
+<link id="gfont-Oswald" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;display=swap">
+</head>
+<body>
+
+<div id="site-chrome-mount"></div>
+<script src="../_shared/site-chrome.js"></script>
+
+<!-- ══ HEADER ══ -->
+<header class="site-header" role="banner">
+  <div class="container">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="#" class="logo" aria-label="SSRK Educational Trust Home">
+        <div class="logo-mark">S</div>
+        <div>
+          <div class="logo-name">SSRK Educational Trust</div>
+          <div class="logo-sub">Odisha, India · Est. 1988</div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="main-nav" aria-label="Main navigation">
+        <div class="nav-item">
+          <a href="#" class="nav-link active">Home</a>
+        </div>
+        <div class="nav-item">
+          <a href="#about" class="nav-link">About Us</a>
+        </div>
+        <div class="nav-item">
+          <a href="#institutions" class="nav-link">Institutions <span class="nav-arr">▾</span></a>
+          <ul class="dropdown">
+            <li><a href="../institution/index.html">SSRK Degree College</a></li>
+            <li><a href="../institution/index.html">SSRK Engineering College</a></li>
+            <li><a href="../institution/index.html">SSRK College of Pharmacy</a></li>
+            <li><a href="../institution/index.html">SSRK College of Education</a></li>
+            <li><a href="../institution/index.html">SSRK Junior College (+2)</a></li>
+            <li><a href="../institution/index.html">SSRK Institute of Management</a></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <a href="#news" class="nav-link">News &amp; Events</a>
+        </div>
+        <div class="nav-item">
+          <a href="../../admin-portal/index.html" class="nav-link">Admin Portal</a>
+        </div>
+        <div class="nav-item">
+          <a href="#enquiry" class="nav-link nav-cta">Enquire Now</a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-toggle" role="group" aria-label="Language selector">
+          <button class="lang-opt active" id="langEn" onclick="switchLang('en')" aria-pressed="true">EN</button>
+          <button class="lang-opt" id="langOd" onclick="switchLang('od')" aria-pressed="false" style="font-family:'Noto Sans Oriya','Noto Sans',sans-serif">ଓଡ଼ିଆ</button>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══ MOBILE MENU ══ -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true" role="dialog" aria-label="Mobile navigation">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
+  <nav class="mobile-nav">
+    <div class="mobile-lang">
+      <button class="active" id="mLangEn" onclick="switchLang('en')">English</button>
+      <button id="mLangOd" onclick="switchLang('od')" style="font-family:'Noto Sans Oriya','Noto Sans',sans-serif">ଓଡ଼ିଆ</button>
+    </div>
+    <div class="mobile-nav-item"><a href="#">Home</a></div>
+    <div class="mobile-nav-item"><a href="#about">About Us</a></div>
+    <div class="mobile-nav-item">
+      <span onclick="toggleMobileSub(this)">Institutions <span>▾</span></span>
+      <div class="mobile-sub">
+        <a href="../institution/index.html">SSRK Degree College</a>
+        <a href="../institution/index.html">SSRK Engineering College</a>
+        <a href="../institution/index.html">SSRK College of Pharmacy</a>
+        <a href="../institution/index.html">SSRK College of Education</a>
+        <a href="../institution/index.html">SSRK Junior College (+2)</a>
+        <a href="../institution/index.html">SSRK Institute of Management</a>
+      </div>
+    </div>
+    <div class="mobile-nav-item"><a href="#news">News &amp; Events</a></div>
+    <div class="mobile-nav-item"><a href="../../admin-portal/index.html">Admin Portal</a></div>
+    <a href="#enquiry" class="mobile-apply">Enquire / Apply Now</a>
+    <div class="mobile-contact">
+      <p><svg width="14" height="14" viewBox="0 0 24 24" fill="#1A5276"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg> +91 674 255 0000</p>
+      <p><svg width="14" height="14" viewBox="0 0 24 24" fill="#1A5276"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> info@ssrkedu.in</p>
+    </div>
+  </nav>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero" aria-label="Hero banner">
+  <div class="hero-slides" id="heroSlides">
+
+    <!-- Slide 1 -->
+    <div class="hero-slide" data-screen-label="hero-slide-1">
+      <div class="slide-bg"></div>
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-badge">Est. 1988 · Odisha, India</span>
+          <h1 class="hero-title">Shaping <em>Future Leaders</em><br>of Odisha</h1>
+          <p class="hero-sub">Six premier institutions, one shared vision — empowering students through quality education, values, and career-ready skills.</p>
+          <div class="hero-actions">
+            <a href="#enquiry" class="btn-primary">Apply for 2025–26</a>
+            <a href="#institutions" class="btn-outline">Explore Colleges</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="hero-slide" data-screen-label="hero-slide-2">
+      <div class="slide-bg"></div>
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-badge">Scholarship Available · Apply Now</span>
+          <h1 class="hero-title"><em>Quality Education</em><br>Within Your Reach</h1>
+          <p class="hero-sub">Merit-based scholarships, affordable fees, and government-approved programmes across arts, science, engineering, pharmacy and management.</p>
+          <div class="hero-actions">
+            <a href="#enquiry" class="btn-primary">Check Scholarship</a>
+            <a href="#about" class="btn-outline">About SSRK Trust</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="hero-slide" data-screen-label="hero-slide-3">
+      <div class="slide-bg"></div>
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-badge">NAAC Accredited · UGC Approved</span>
+          <h1 class="hero-title">35+ Years of<br><em>Academic Excellence</em></h1>
+          <p class="hero-sub">Trusted by 15,000+ students and their families across Odisha. A legacy built on discipline, innovation, and student success.</p>
+          <div class="hero-actions">
+            <a href="#about" class="btn-primary">Our Legacy</a>
+            <a href="#news" class="btn-outline">Latest News</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Arrows -->
+  <button class="hero-arrow prev" id="heroPrev" aria-label="Previous slide">&#8249;</button>
+  <button class="hero-arrow next" id="heroNext" aria-label="Next slide">&#8250;</button>
+
+  <!-- Dots -->
+  <div class="hero-dots" role="tablist" aria-label="Slide navigation">
+    <button class="hero-dot active" data-slide="0" aria-label="Slide 1" aria-selected="true" role="tab"></button>
+    <button class="hero-dot" data-slide="1" aria-label="Slide 2" aria-selected="false" role="tab"></button>
+    <button class="hero-dot" data-slide="2" aria-label="Slide 3" aria-selected="false" role="tab"></button>
+  </div>
+</section>
+
+<!-- ══ STATS ══ -->
+<div class="stats-bar" aria-label="Key statistics">
+  <div class="stats-grid">
+    <div class="stat-item fade-up">
+      <div class="stat-num">35<span>+</span></div>
+      <div class="stat-lbl">Years of Legacy</div>
+    </div>
+    <div class="stat-item fade-up">
+      <div class="stat-num">6</div>
+      <div class="stat-lbl">Institutions</div>
+    </div>
+    <div class="stat-item fade-up">
+      <div class="stat-num">15<span>K+</span></div>
+      <div class="stat-lbl">Students Enrolled</div>
+    </div>
+    <div class="stat-item fade-up">
+      <div class="stat-num">400<span>+</span></div>
+      <div class="stat-lbl">Faculty Members</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ABOUT ══ -->
+<section class="about-section" id="about" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text fade-up">
+        <span class="section-label">About SSRK Educational Trust</span>
+        <h2 class="section-title" id="about-heading">Building Odisha's Future,<br><span>One Student at a Time</span></h2>
+        <p>Founded in 1988 by a group of visionary educators committed to uplifting Odisha through quality higher education, SSRK Educational Trust has grown from a single degree college into a comprehensive group of six institutions spanning arts, science, engineering, pharmacy, education, and management.</p>
+        <p>Rooted in Odia values and guided by the belief that education is the most powerful tool for social transformation, SSRK Trust serves students from rural and urban backgrounds alike — offering world-class facilities at accessible costs.</p>
+        <div class="about-highlights">
+          <div class="hl-item">
+            <div class="hl-dot">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1A5276" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            NAAC 'B++' Accredited
+          </div>
+          <div class="hl-item">
+            <div class="hl-dot">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1A5276" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            UGC &amp; AICTE Approved
+          </div>
+          <div class="hl-item">
+            <div class="hl-dot">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1A5276" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Affiliated to Utkal University
+          </div>
+          <div class="hl-item">
+            <div class="hl-dot">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1A5276" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Girls Hostel Available
+          </div>
+          <div class="hl-item">
+            <div class="hl-dot">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1A5276" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Scholarship Scheme
+          </div>
+        </div>
+        <a href="#" class="btn-blue">Read Full Story</a>
+      </div>
+
+      <!-- Chairman card -->
+      <div class="about-visual fade-up">
+        <div class="chairman-card">
+          <div class="ch-avatar">S</div>
+          <p class="ch-quote">"Education is not merely a means to earn a living — it is the foundation upon which a just and prosperous Odisha will be built. Every student who walks through our doors carries the hope of their family and the potential to change our state."</p>
+          <div class="ch-name">Sri Suresh Kumar Rout</div>
+          <div class="ch-role">Founder Chairman, SSRK Educational Trust</div>
+          <div class="accred-row">
+            <div class="accred-badge">NAAC<br>B++</div>
+            <div class="accred-info"><strong>Accredited by NAAC</strong><br>National Assessment &amp; Accreditation Council, Govt. of India</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INSTITUTIONS ══ -->
+<section class="inst-section" id="institutions" aria-labelledby="inst-heading">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Our Institutions</span>
+      <h2 class="section-title" id="inst-heading">Pursue Your Passion at <span>SSRK</span></h2>
+      <p>Six specialised colleges under one trusted umbrella, each with dedicated faculty, modern labs, and career-focused programmes.</p>
+    </div>
+    <div class="inst-grid">
+
+      <!-- Card 1 -->
+      <div class="inst-card fade-up">
+        <div class="inst-icon" style="background:#EAF4FB">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1A5276" stroke-width="1.7" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="inst-name">SSRK Degree College</div>
+        <div class="inst-courses">BA · B.Sc · B.Com · MA · M.Sc · M.Com<br>Arts, Science &amp; Commerce streams</div>
+        <a href="../institution/index.html" class="inst-link">
+          Visit College
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="inst-card fade-up">
+        <div class="inst-icon" style="background:#FFF3E0">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C86400" stroke-width="1.7" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="inst-name">SSRK College of Engineering &amp; Technology</div>
+        <div class="inst-courses">B.Tech · M.Tech · CSE · ECE · Mechanical · Civil<br>AI &amp; ML · Data Science (New)</div>
+        <a href="../institution/index.html" class="inst-link">
+          Visit College
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="inst-card fade-up">
+        <div class="inst-icon" style="background:#E8F5E9">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2E7D32" stroke-width="1.7" stroke-linecap="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+        </div>
+        <div class="inst-name">SSRK College of Pharmacy</div>
+        <div class="inst-courses">B.Pharm · M.Pharm · Pharm.D<br>PCI Approved · Modern Pharma Labs</div>
+        <a href="../institution/index.html" class="inst-link">
+          Visit College
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="inst-card fade-up">
+        <div class="inst-icon" style="background:#F3E5F5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6A1B9A" stroke-width="1.7" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="inst-name">SSRK College of Education</div>
+        <div class="inst-courses">B.Ed · M.Ed · D.El.Ed<br>NCTE Approved · Teacher Training</div>
+        <a href="../institution/index.html" class="inst-link">
+          Visit College
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="inst-card fade-up">
+        <div class="inst-icon" style="background:#FFF8E1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F57F17" stroke-width="1.7" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="inst-name">SSRK Junior College (+2)</div>
+        <div class="inst-courses">+2 Science · Arts · Commerce<br>CHSE Odisha Affiliated · Day &amp; Evening</div>
+        <a href="../institution/index.html" class="inst-link">
+          Visit College
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="inst-card fade-up">
+        <div class="inst-icon" style="background:#E1F5FE">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0277BD" stroke-width="1.7" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="inst-name">SSRK Institute of Management</div>
+        <div class="inst-courses">BBA · MBA · PGDM<br>Industry Mentors · Live Projects</div>
+        <a href="../institution/index.html" class="inst-link">
+          Visit College
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY CHOOSE US ══ -->
+<section class="why-section" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Why Choose SSRK</span>
+      <h2 class="section-title" id="why-heading">What Makes <span>SSRK</span> Different</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fade-up">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="why-title">NAAC Accredited</div>
+        <div class="why-desc">Recognised for academic quality by the National Assessment &amp; Accreditation Council</div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="why-title">Experienced Faculty</div>
+        <div class="why-desc">400+ qualified teachers, many with PhDs and decades of teaching and industry experience</div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="why-title">Modern Infrastructure</div>
+        <div class="why-desc">State-of-the-art labs, digital classrooms, libraries and sports facilities across all campuses</div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </div>
+        <div class="why-title">Hostel &amp; Transport</div>
+        <div class="why-desc">Safe hostel facilities for boys and girls, plus a wide transport network covering districts across Odisha</div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+        </div>
+        <div class="why-title">Affordable Fees</div>
+        <div class="why-desc">Government-regulated fee structure, merit scholarships and installment options available</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NEWS & EVENTS ══ -->
+<section class="news-section" id="news" aria-labelledby="news-heading">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-label">Stay Updated</span>
+      <h2 class="section-title" id="news-heading">Latest News <span>&amp; Events</span></h2>
+    </div>
+    <div class="news-grid">
+
+      <!-- News List -->
+      <div>
+        <div class="news-item fade-up">
+          <div class="news-date"><div class="nd">15</div><div class="nm">Aug</div></div>
+          <div>
+            <div class="news-title">Independence Day Celebrated with Cultural Parade &amp; NCC March at SSRK Campus</div>
+            <span class="tag tag-ev">Event</span>
+          </div>
+        </div>
+        <div class="news-item fade-up">
+          <div class="news-date"><div class="nd">01</div><div class="nm">Aug</div></div>
+          <div>
+            <div class="news-title">Admissions Open for 2025–26 Session — Last Date 30 August for Engineering &amp; Pharmacy</div>
+            <span class="tag tag-ad">Admission</span>
+          </div>
+        </div>
+        <div class="news-item fade-up">
+          <div class="news-date"><div class="nd">20</div><div class="nm">Jul</div></div>
+          <div>
+            <div class="news-title">+2 CHSE Results 2025 — SSRK Junior College Students Achieve 94% Pass Rate</div>
+            <span class="tag tag-re">Result</span>
+          </div>
+        </div>
+        <div class="news-item fade-up">
+          <div class="news-date"><div class="nd">05</div><div class="nm">Jul</div></div>
+          <div>
+            <div class="news-title">SSRK Scholarship Scheme 2025 — Upto ₹50,000 for Merit Students from Odisha</div>
+            <span class="tag tag-ad">Scholarship</span>
+          </div>
+        </div>
+        <div class="news-item fade-up">
+          <div class="news-date"><div class="nd">28</div><div class="nm">Jun</div></div>
+          <div>
+            <div class="news-title">New B.Tech Specialisations Launched — AI &amp; Machine Learning, Data Science</div>
+            <span class="tag tag-ev">Announcement</span>
+          </div>
+        </div>
+        <a href="#" class="view-more">
+          View All News &amp; Events
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Gallery -->
+      <div class="fade-up">
+        <div class="gallery-top">
+          <h3>Photo Gallery</h3>
+          <a href="#" class="view-more" style="margin-top:0">See All</a>
+        </div>
+        <div class="gal-grid">
+          <div class="gal-item">
+            <div class="gal-bg" style="background:linear-gradient(135deg,#1A5276,#2471A3)">🎓</div>
+            <div class="gal-overlay">+</div>
+          </div>
+          <div class="gal-item">
+            <div class="gal-bg" style="background:linear-gradient(135deg,#D4780A,#F0A030)">🏛️</div>
+            <div class="gal-overlay">+</div>
+          </div>
+          <div class="gal-item">
+            <div class="gal-bg" style="background:linear-gradient(135deg,#1B5E20,#388E3C)">🔬</div>
+            <div class="gal-overlay">+</div>
+          </div>
+          <div class="gal-item">
+            <div class="gal-bg" style="background:linear-gradient(135deg,#4A148C,#7B1FA2)">🏆</div>
+            <div class="gal-overlay">+</div>
+          </div>
+          <div class="gal-item">
+            <div class="gal-bg" style="background:linear-gradient(135deg,#B71C1C,#E53935)">⚽</div>
+            <div class="gal-overlay">+</div>
+          </div>
+          <div class="gal-item">
+            <div class="gal-bg" style="background:linear-gradient(135deg,#0D47A1,#1976D2)">🎭</div>
+            <div class="gal-overlay">+</div>
+          </div>
+          <div class="gal-item">
+            <div class="gal-bg" style="background:linear-gradient(135deg,#E65100,#F57C00)">📚</div>
+            <div class="gal-overlay">+</div>
+          </div>
+          <div class="gal-item">
+            <div class="gal-bg" style="background:linear-gradient(135deg,#006064,#00838F)">🧪</div>
+            <div class="gal-overlay">+</div>
+          </div>
+          <div class="gal-item">
+            <div class="gal-bg" style="background:linear-gradient(135deg,#37474F,#546E7A)">🎤</div>
+            <div class="gal-overlay">+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ADMISSION ENQUIRY ══ -->
+<section class="admission-section" id="enquiry" aria-labelledby="adm-heading">
+  <div class="container">
+    <div class="adm-grid">
+      <div class="adm-info fade-up">
+        <span class="section-label" style="color:rgba(255,255,255,.65)">Admissions 2025–26</span>
+        <h2 id="adm-heading">Begin Your Journey at SSRK</h2>
+        <p>Seats are filling fast for the 2025–26 academic year. Fill in the enquiry form and our admissions team will call you within 24 hours with all the information you need.</p>
+        <div class="adm-points">
+          <div class="adm-point">UG &amp; PG programmes across 6 colleges</div>
+          <div class="adm-point">Merit-based scholarships up to ₹50,000</div>
+          <div class="adm-point">Hostel facility available for outstation students</div>
+          <div class="adm-point">100% UGC / AICTE / NCTE approved programmes</div>
+          <div class="adm-point">Easy instalment fee payment options</div>
+        </div>
+      </div>
+
+      <!-- Enquiry Form -->
+      <div class="fade-up">
+        <div class="enquiry-form">
+          <h3>Quick Enquiry</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" placeholder="Ramesh" autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" placeholder="Patra" autocomplete="family-name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phone">Mobile Number</label>
+            <input type="tel" id="phone" placeholder="+91 98765 43210" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="ramesh@email.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="college">Interested College</label>
+            <select id="college">
+              <option value="">Select a College</option>
+              <option>SSRK Degree College</option>
+              <option>SSRK College of Engineering &amp; Technology</option>
+              <option>SSRK College of Pharmacy</option>
+              <option>SSRK College of Education</option>
+              <option>SSRK Junior College (+2)</option>
+              <option>SSRK Institute of Management</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="interests">What would you like to know about?</label>
+            <div class="multi-select-wrapper">
+              <button type="button" class="multi-select-btn" id="multiSelectBtn" onclick="toggleMultiSelect(event)">
+                <span id="selectPlaceholder">Select topics...</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div class="multi-select-menu" id="multiSelectMenu">
+                <label class="multi-select-item">
+                  <input type="checkbox" value="course_details" onchange="handleInterestChange()">
+                  <span>Course Details</span>
+                </label>
+                <label class="multi-select-item">
+                  <input type="checkbox" value="admission" onchange="handleInterestChange()">
+                  <span>Admission Process</span>
+                </label>
+                <label class="multi-select-item">
+                  <input type="checkbox" value="eligibility" onchange="handleInterestChange()">
+                  <span>Eligibility Criteria</span>
+                </label>
+                <label class="multi-select-item">
+                  <input type="checkbox" value="fees" onchange="handleInterestChange()">
+                  <span>Fee Structure</span>
+                </label>
+                <label class="multi-select-item">
+                  <input type="checkbox" value="scholarships" onchange="handleInterestChange()">
+                  <span>Scholarships</span>
+                </label>
+                <label class="multi-select-item">
+                  <input type="checkbox" value="seats" onchange="handleInterestChange()">
+                  <span>Seat Availability</span>
+                </label>
+                <label class="multi-select-item">
+                  <input type="checkbox" value="hostel" onchange="handleInterestChange()">
+                  <span>Hostel Facilities</span>
+                </label>
+                <label class="multi-select-item">
+                  <input type="checkbox" value="transport" onchange="handleInterestChange()">
+                  <span>Transportation</span>
+                </label>
+                <label class="multi-select-item">
+                  <input type="checkbox" value="campus" onchange="handleInterestChange()">
+                  <span>Campus Facilities</span>
+                </label>
+                <label class="multi-select-item">
+                  <input type="checkbox" value="visit" onchange="handleInterestChange()">
+                  <span>Campus Visit</span>
+                </label>
+                <label class="multi-select-item">
+                  <input type="checkbox" value="callback" onchange="handleInterestChange()">
+                  <span>Call Back Request</span>
+                </label>
+                <label class="multi-select-item">
+                  <input type="checkbox" value="other" onchange="handleInterestChange()">
+                  <span>Other</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Info Cards for Selected Topics -->
+          <div id="infoCardsContainer" class="info-cards-container"></div>
+
+          <button type="submit" class="submit-btn" onclick="handleSubmit(event)">Submit Enquiry →</button>
+          <p class="form-note">We respect your privacy. No spam calls.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div>
+        <div class="footer-logo">
+          <div class="footer-mark">S</div>
+          <div>
+            <div class="footer-lname">SSRK Educational Trust</div>
+            <div class="footer-lsub">Odisha, India · Est. 1988</div>
+          </div>
+        </div>
+        <p class="footer-desc">A legacy of 35+ years in shaping the education landscape of Odisha. Six institutions, one shared commitment to quality, values and student success.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="Instagram">in</a>
+          <a href="#" aria-label="Twitter">X</a>
+        </div>
+      </div>
+
+      <!-- Institutions -->
+      <div class="footer-col">
+        <h4>Institutions</h4>
+        <div class="footer-links">
+          <a href="../institution/index.html">SSRK Degree College</a>
+          <a href="../institution/index.html">Engineering College</a>
+          <a href="../institution/index.html">College of Pharmacy</a>
+          <a href="../institution/index.html">College of Education</a>
+          <a href="../institution/index.html">Junior College (+2)</a>
+          <a href="../institution/index.html">Institute of Management</a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="#about">About Us</a>
+          <a href="#enquiry">Admissions</a>
+          <a href="#">Scholarships</a>
+          <a href="#">Photo Gallery</a>
+          <a href="#">Results</a>
+          <a href="#">Download Forms</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <div class="fc-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div class="fc-text">SSRK Trust Campus, Patia,<br>Bhubaneswar – 751 024,<br>Odisha, India</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="fc-icon">
+            <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          </div>
+          <div class="fc-text">+91 674 255 0000<br>+91 674 255 0001</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="fc-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div class="fc-text">info@ssrkedu.in<br>admissions@ssrkedu.in</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="fb-inner">
+        <span>© 2025 SSRK Educational Trust. All Rights Reserved.</span>
+        <span>Affiliated to <a href="#">Utkal University</a> · <a href="#">BPUT</a> · Approved by UGC, AICTE, NCTE, PCI</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to Top -->
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script>
+// ── Hero Slider ──
+var currentSlide = 0;
+var totalSlides = 3;
+var slideInterval;
+
+function goToSlide(n) {
+  currentSlide = (n + totalSlides) % totalSlides;
+  document.getElementById('heroSlides').style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+  document.querySelectorAll('.hero-dot').forEach(function(d, i) {
+    d.classList.toggle('active', i === currentSlide);
+    d.setAttribute('aria-selected', i === currentSlide ? 'true' : 'false');
+  });
+}
+
+function nextSlide() { goToSlide(currentSlide + 1); }
+function prevSlide() { goToSlide(currentSlide - 1); }
+
+function startAuto() { slideInterval = setInterval(nextSlide, 5000); }
+function stopAuto()  { clearInterval(slideInterval); }
+
+document.getElementById('heroNext').addEventListener('click', function() { stopAuto(); nextSlide(); startAuto(); });
+document.getElementById('heroPrev').addEventListener('click', function() { stopAuto(); prevSlide(); startAuto(); });
+document.querySelectorAll('.hero-dot').forEach(function(d) {
+  d.addEventListener('click', function() { stopAuto(); goToSlide(parseInt(d.dataset.slide)); startAuto(); });
+});
+startAuto();
+
+// ── Mobile Menu ──
+var hamburger = document.getElementById('hamburger');
+var mobileMenu = document.getElementById('mobileMenu');
+var mobileClose = document.getElementById('mobileClose');
+
+function openMenu() {
+  hamburger.classList.add('open');
+  mobileMenu.classList.add('open');
+  mobileMenu.setAttribute('aria-hidden', 'false');
+  hamburger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+function closeMenu() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+  hamburger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', function() {
+  mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+});
+mobileClose.addEventListener('click', closeMenu);
+
+// Close on nav link click
+mobileMenu.querySelectorAll('a').forEach(function(a) {
+  a.addEventListener('click', closeMenu);
+});
+
+function toggleMobileSub(el) {
+  var sub = el.nextElementSibling;
+  sub.classList.toggle('open');
+}
+
+// ── Scroll-to-Top ──
+var scrollBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', function() {
+  scrollBtn.classList.toggle('show', window.scrollY > 400);
+});
+scrollBtn.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ── Fade-up on Scroll ──
+var fadeEls = document.querySelectorAll('.fade-up');
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+fadeEls.forEach(function(el) { observer.observe(el); });
+
+// ── Multi-Select Dropdown ──
+var topicLabels = {
+  course_details: 'Course Details',
+  admission: 'Admission Process',
+  eligibility: 'Eligibility Criteria',
+  fees: 'Fee Structure',
+  scholarships: 'Scholarships',
+  seats: 'Seat Availability',
+  hostel: 'Hostel Facilities',
+  transport: 'Transportation',
+  campus: 'Campus Facilities',
+  visit: 'Campus Visit',
+  callback: 'Call Back Request',
+  other: 'Other'
+};
+
+function toggleMultiSelect(e) {
+  e.stopPropagation();
+  var btn = document.getElementById('multiSelectBtn');
+  var menu = document.getElementById('multiSelectMenu');
+  var isOpen = menu.classList.contains('open');
+  btn.classList.toggle('open', !isOpen);
+  menu.classList.toggle('open', !isOpen);
+}
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.multi-select-wrapper')) {
+    document.getElementById('multiSelectBtn').classList.remove('open');
+    document.getElementById('multiSelectMenu').classList.remove('open');
+  }
+});
+
+function removePill(value) {
+  var cb = document.querySelector('.multi-select-item input[value="' + value + '"]');
+  if (cb) {
+    cb.checked = false;
+    cb.closest('.multi-select-item').classList.remove('checked');
+  }
+  renderPills();
+}
+
+function handleInterestChange() {
+  var cb = event.target;
+  var item = cb.closest('.multi-select-item');
+  if (item) item.classList.toggle('checked', cb.checked);
+  renderPills();
+}
+
+function renderPills() {
+  var checkboxes = document.querySelectorAll('.multi-select-item input:checked');
+  var selected = Array.from(checkboxes).map(function(cb) { return cb.value; });
+  var placeholder = document.getElementById('selectPlaceholder');
+  var container = document.getElementById('infoCardsContainer');
+
+  // Update button label
+  if (selected.length === 0) {
+    placeholder.textContent = 'Select topics...';
+  } else if (selected.length === 1) {
+    placeholder.textContent = '1 topic selected';
+  } else {
+    placeholder.textContent = selected.length + ' topics selected';
+  }
+
+  // Render pills
+  container.innerHTML = '';
+  if (selected.length === 0) return;
+  var pillsDiv = document.createElement('div');
+  pillsDiv.className = 'selected-pills';
+  selected.forEach(function(val) {
+    var pill = document.createElement('div');
+    pill.className = 'pill';
+    var label = topicLabels[val] || val;
+    var btn = document.createElement('button');
+    btn.setAttribute('aria-label', 'Remove ' + label);
+    btn.innerHTML = '&#x2715;';
+    btn.onclick = function() { removePill(val); };
+    var lbl = document.createElement('span');
+    lbl.textContent = label;
+    pill.appendChild(lbl);
+    pill.appendChild(btn);
+    pillsDiv.appendChild(pill);
+  });
+  container.appendChild(pillsDiv);
+}
+
+// ── Language Toggle ──
+var translations = {
+  en: {
+    applyNow: 'Apply Now',
+    enquireApply: 'Enquire / Apply Now',
+    heroTitle: '<em>Quality Education</em><br>Within Your Reach',
+    heroSub: 'Merit-based scholarships, affordable fees, and government-approved programmes across arts, science, engineering, pharmacy and management.',
+    heroBadge: 'Scholarship Available · Apply Now',
+    heroCta1: 'Apply for Admission',
+    heroCta2: 'Explore Colleges',
+    submitBtn: 'Submit Enquiry →'
+  },
+  od: {
+    applyNow: 'ଆବେଦନ କରନ୍ତୁ',
+    enquireApply: 'ଜିଜ୍ଞାସା / ଆବେଦନ',
+    heroTitle: '<em>ଗୁଣବତ୍ତା ଶିକ୍ଷା</em><br>ଆପଣଙ୍କ ନାଗାଲ ମଧ୍ୟରେ',
+    heroSub: 'ମେଧା ଆଧାରିତ ବୃତ୍ତି, ସୁଲଭ ଫି, ଏବଂ ସରକାରୀ ଅନୁମୋଦିତ ପାଠ୍ୟକ୍ରମ — କଳା, ବିଜ୍ଞାନ, ଇଞ୍ଜିନିୟରିଂ, ଫାର୍ମାସି ଓ ମ୍ୟାନେଜମେଣ୍ଟ।',
+    heroBadge: 'ବୃତ୍ତି ଉପଲବ୍ଧ · ଆବେଦନ କରନ୍ତୁ',
+    heroCta1: 'ଭର୍ତ୍ତି ଆବେଦନ',
+    heroCta2: 'କଲେଜ ଦେଖନ୍ତୁ',
+    submitBtn: 'ଅନୁସନ୍ଧାନ ପଠାନ୍ତୁ →'
+  }
+};
+
+function switchLang(lang) {
+  var t = translations[lang];
+  document.getElementById('langEn').classList.toggle('active', lang === 'en');
+  document.getElementById('langOd').classList.toggle('active', lang === 'od');
+  document.getElementById('langEn').setAttribute('aria-pressed', lang === 'en');
+  document.getElementById('langOd').setAttribute('aria-pressed', lang === 'od');
+  var mEn = document.getElementById('mLangEn');
+  var mOd = document.getElementById('mLangOd');
+  if (mEn) mEn.classList.toggle('active', lang === 'en');
+  if (mOd) mOd.classList.toggle('active', lang === 'od');
+  // Mobile apply
+  var mobileApply = document.querySelector('.mobile-apply');
+  if (mobileApply) mobileApply.textContent = t.enquireApply;
+  // Hero title
+  var heroTitle = document.querySelector('.hero-title');
+  if (heroTitle) heroTitle.innerHTML = t.heroTitle;
+  // Hero subtitle
+  var heroSub = document.querySelector('.hero-sub');
+  if (heroSub) heroSub.textContent = t.heroSub;
+  // Hero badge
+  var heroBadge = document.querySelector('.hero-badge');
+  if (heroBadge) heroBadge.textContent = t.heroBadge;
+  // Hero CTA buttons
+  var ctaBtns = document.querySelectorAll('.hero-cta .btn-primary, .hero-cta .btn-outline');
+  if (ctaBtns[0]) ctaBtns[0].textContent = t.heroCta1;
+  if (ctaBtns[1]) ctaBtns[1].textContent = t.heroCta2;
+  // Submit button
+  var submitBtn = document.querySelector('.submit-btn');
+  if (submitBtn) submitBtn.textContent = t.submitBtn;
+}
+
+// ── Form Submit ──
+function handleSubmit(e) {
+  e.preventDefault();
+  var btn = document.querySelector('.submit-btn');
+  btn.textContent = '✓ Enquiry Submitted!';
+  btn.style.background = '#1B8A4E';
+  setTimeout(function() {
+    btn.textContent = 'Submit Enquiry →';
+    btn.style.background = '';
+  }, 3000);
+}
+</script>
+</body>
+</html>

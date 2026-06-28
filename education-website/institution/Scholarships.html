@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Scholarships — SSRK Degree College</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="../_shared/site-chrome.css">
+<link rel="stylesheet" href="_components/institution-header.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Serif:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue-deep:#172554;--blue-primary:#1E3A8A;--blue-light:#DBEAFE;--saffron:#D4780A;--saffron-lt:#F0A030;--white:#fff;--bg:#F5F7FA;--text-h:#0D2340;--text-b:#2C3E50;--text-m:#6B7A8D;--border:#D4E0EF;--r-sm:6px;--r-md:10px;--r-lg:16px;--sh-sm:0 1px 2px rgba(13,35,64,.04),0 3px 10px rgba(13,35,64,.07);--sh-md:0 8px 20px rgba(13,35,64,.10),0 2px 6px rgba(13,35,64,.05);--tr:.28s ease;--ff:'Noto Sans',sans-serif;--fs:'Noto Serif',serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--ff);color:var(--text-b);background:var(--white);font-size:15px;overflow-x:hidden;line-height:1.6}
+a{text-decoration:none;color:inherit}ul{list-style:none}button{cursor:pointer;border:none;background:none;font-family:inherit}
+.container{width:100%;max-width:1240px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.container{padding:0 24px}}@media(min-width:1024px){.container{padding:0 32px}}
+.page-hero{background:var(--bg);border-bottom:1px solid var(--border);padding:18px 0}
+.page-hero-inner{display:flex;align-items:center;gap:12px 32px;flex-wrap:wrap}
+.page-title{font-family:var(--fs);font-size:clamp(17px,2.2vw,22px);font-weight:700;color:var(--text-h);border-left:3px solid var(--saffron);padding-left:12px;line-height:1.2}
+.page-subtitle{font-size:13px;color:var(--text-m);line-height:1.5}
+.section{padding:64px 0}@media(min-width:768px){.section{padding:80px 0}}
+.section-label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue-primary);margin-bottom:6px;display:block}
+.section-title{font-family:var(--fs);font-size:clamp(22px,4vw,32px);color:var(--text-h);font-weight:700;line-height:1.2}
+.section-title span{color:var(--saffron)}
+/* SCHOL CARDS */
+.schol-grid{display:grid;gap:20px}
+@media(min-width:768px){.schol-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){.schol-grid{grid-template-columns:repeat(2,1fr)}}
+.schol-card{border-radius:var(--r-lg);padding:28px 24px;border:1.5px solid var(--border);background:#fff;box-shadow:var(--sh-sm);transition:var(--tr);display:flex;flex-direction:column;gap:14px}
+.schol-card:hover{box-shadow:var(--sh-md);transform:translateY(-4px);border-color:var(--blue-primary)}
+.schol-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.schol-name{font-family:var(--fs);font-size:18px;font-weight:700;color:var(--text-h)}
+.schol-desc{font-size:14px;color:var(--text-m);line-height:1.7}
+.schol-pills{display:flex;flex-wrap:wrap;gap:7px}
+.schol-pill{font-size:11.5px;font-weight:600;padding:4px 11px;border-radius:12px}
+.pill-green{background:#D1FAE5;color:#065F46}
+.pill-blue{background:var(--blue-light);color:var(--blue-primary)}
+.pill-orange{background:#FEF3C7;color:#92400E}
+.pill-purple{background:#EDE9FE;color:#5B21B6}
+/* HOW TO APPLY STEPS */
+.steps{display:flex;flex-direction:column;gap:0;max-width:700px;margin:0 auto}
+.step{display:grid;grid-template-columns:48px 1fr;gap:16px;position:relative;padding-bottom:32px}
+.step:last-child{padding-bottom:0}
+.step:not(:last-child)::after{content:'';position:absolute;left:24px;top:48px;bottom:0;width:2px;background:var(--blue-light);transform:translateX(-50%)}
+.step-num{width:48px;height:48px;background:var(--blue-primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fs);font-weight:700;font-size:18px;flex-shrink:0;position:relative;z-index:1}
+.step-body{padding-top:10px}
+.step-title{font-size:15px;font-weight:700;color:var(--text-h);margin-bottom:6px}
+.step-desc{font-size:13.5px;color:var(--text-m);line-height:1.65}
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 0;cursor:pointer;font-size:15px;font-weight:600;color:var(--text-h);gap:12px}
+.faq-q svg{width:18px;height:18px;flex-shrink:0;transition:transform .25s;color:var(--text-m)}
+.faq-item.open .faq-q svg{transform:rotate(180deg);color:var(--blue-primary)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a p{font-size:14px;color:var(--text-b);line-height:1.7;padding-bottom:16px}
+/* CTA BANNER */
+.cta-banner{background:linear-gradient(135deg,var(--blue-deep),var(--blue-primary));border-radius:var(--r-lg);padding:44px 32px;text-align:center;position:relative;overflow:hidden}
+.cta-banner::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border:55px solid rgba(255,255,255,.05);border-radius:50%}
+.cta-banner h2{font-family:var(--fs);font-size:clamp(20px,3.5vw,28px);font-weight:700;color:#fff;margin-bottom:10px;position:relative;z-index:1}
+.cta-banner p{font-size:14px;color:rgba(255,255,255,.78);margin-bottom:24px;max-width:420px;margin-left:auto;margin-right:auto;position:relative;z-index:1}
+.cta-banner a{display:inline-flex;align-items:center;gap:8px;background:var(--saffron);color:#fff;padding:13px 28px;border-radius:var(--r-sm);font-weight:700;font-size:14px;transition:var(--tr);position:relative;z-index:1}
+.cta-banner a:hover{background:#b5660a;transform:translateY(-1px)}
+.site-footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:48px 0 0}
+.footer-grid{display:grid;gap:32px;padding-bottom:40px}@media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr}}
+.footer-brand .fn{font-family:var(--fs);font-size:17px;font-weight:700;color:#fff;display:block;margin-bottom:6px}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.65;max-width:260px;margin-bottom:16px}
+.footer-trust{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:var(--r-sm)}
+.footer-col h4{font-size:11px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
+.footer-col ul li{margin-bottom:10px}.footer-col ul li a{font-size:13px;color:rgba(255,255,255,.65)}.footer-col ul li a:hover{color:#fff}
+.fci{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,.65);margin-bottom:10px;line-height:1.5}
+.fci svg{width:14px;height:14px;flex-shrink:0;margin-top:3px;opacity:.6}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:16px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px;color:rgba(255,255,255,.4)}
+.footer-bottom a{color:rgba(255,255,255,.55)}
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}.fade-up.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:990;background:#fff;border-top:1px solid var(--border);padding:10px 16px;box-shadow:0 -4px 20px rgba(0,0,0,.12);display:flex;gap:10px}
+@media(min-width:1024px){.sticky-cta{display:none}}
+.sticky-cta a{flex:1;text-align:center;padding:12px;border-radius:var(--r-sm);font-size:14px;font-weight:700}
+.sticky-call{background:var(--bg);color:var(--text-h);border:1.5px solid var(--border)}.sticky-enquire{background:var(--blue-primary);color:#fff}
+
+@media(max-width:1023px){body{padding-bottom:72px}}
+</style>
+</head>
+<body>
+<div id="site-chrome-mount"></div>
+<script src="../_shared/site-chrome.js"></script>
+
+<div id="inst-header-mount" data-active="scholarships" data-enquire-href="Contact.html"></div>
+<script src="_components/institution-header.js"></script>
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <h1 class="page-title">Scholarships &amp; Financial Aid</h1>
+    <p class="page-subtitle">Multiple schemes available — financial constraints should never stop a deserving student.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:40px" class="fade-up">
+      <span class="section-label">Available Schemes</span>
+      <h2 class="section-title">Scholarship <span>Types</span></h2>
+      <p style="color:var(--text-m);max-width:500px;margin:10px auto 0;font-size:14.5px">Both government-funded and institution-funded financial support is available for eligible students.</p>
+    </div>
+    <div class="schol-grid fade-up">
+      <div class="schol-card">
+        <div class="schol-icon" style="background:#D1FAE5">🏆</div>
+        <div>
+          <div class="schol-name">Merit Scholarship</div>
+          <p class="schol-desc">Awarded to students who scored 75% or above in their Class 12 examination. Covers a significant portion of the annual tuition fee.</p>
+        </div>
+        <div class="schol-pills">
+          <span class="schol-pill pill-green">75%+ in +2</span>
+          <span class="schol-pill pill-green">All Streams</span>
+          <span class="schol-pill pill-green">Renewable</span>
+        </div>
+      </div>
+      <div class="schol-card">
+        <div class="schol-icon" style="background:#EDE9FE">📋</div>
+        <div>
+          <div class="schol-name">ST/SC Scholarship</div>
+          <p class="schol-desc">Government of Odisha Post-Matric Scholarship for Scheduled Tribe and Scheduled Caste students. Covers tuition fees, maintenance allowance and hostel charges.</p>
+        </div>
+        <div class="schol-pills">
+          <span class="schol-pill pill-purple">ST/SC Category</span>
+          <span class="schol-pill pill-purple">Govt. Funded</span>
+          <span class="schol-pill pill-purple">Full Support</span>
+        </div>
+      </div>
+      <div class="schol-card">
+        <div class="schol-icon" style="background:#FEF3C7">🎓</div>
+        <div>
+          <div class="schol-name">OBC Scholarship</div>
+          <p class="schol-desc">Post-Matric Scholarship for Other Backward Class students from Odisha with annual family income below ₹2.5 lakh. Application through NSP portal.</p>
+        </div>
+        <div class="schol-pills">
+          <span class="schol-pill pill-orange">OBC Category</span>
+          <span class="schol-pill pill-orange">Income Based</span>
+          <span class="schol-pill pill-orange">NSP Portal</span>
+        </div>
+      </div>
+      <div class="schol-card">
+        <div class="schol-icon" style="background:#FCE7F3">👩‍🎓</div>
+        <div>
+          <div class="schol-name">Girl Child Scheme</div>
+          <p class="schol-desc">Special fee concession for girl students from rural and semi-urban backgrounds under the Odisha State Government's higher education inclusion initiative.</p>
+        </div>
+        <div class="schol-pills">
+          <span class="schol-pill pill-blue">Girl Students</span>
+          <span class="schol-pill pill-blue">Rural Priority</span>
+          <span class="schol-pill pill-blue">Fee Waiver</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg);padding-top:64px;padding-bottom:64px">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:44px" class="fade-up">
+      <span class="section-label">Process</span>
+      <h2 class="section-title">How to <span>Apply</span></h2>
+    </div>
+    <div class="steps fade-up">
+      <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-title">Take Admission</div><div class="step-desc">Complete your admission at SSRK Degree College and receive your student ID and admission receipt.</div></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-title">Visit Scholarship Cell</div><div class="step-desc">Visit the Scholarship Cell (Room 104, Admin Block) within 30 days of admission with original documents.</div></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-title">Submit Documents</div><div class="step-desc">Submit caste certificate, income certificate, +2 marksheet, bank passbook copy, Aadhaar, and two passport photos.</div></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-title">Apply on NSP Portal</div><div class="step-desc">For government scholarships, apply on scholarships.gov.in (NSP) with college code ODKA02345. Our staff will assist you.</div></div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-body"><div class="step-title">Verification &amp; Disbursement</div><div class="step-desc">After document verification, scholarship amount is credited directly to your bank account within 60–90 days.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:760px">
+    <div style="text-align:center;margin-bottom:36px" class="fade-up">
+      <span class="section-label">FAQs</span>
+      <h2 class="section-title">Common <span>Questions</span></h2>
+    </div>
+    <div class="fade-up" id="faqList">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I apply for multiple scholarships?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="faq-a"><p>Yes. You can apply for both a government scholarship (ST/SC, OBC) and the institution's merit scholarship. However, only the higher-value scheme will be applied to your fee account.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">When is the scholarship deadline?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="faq-a"><p>Government scholarship applications (NSP portal) typically close in November–December each year. Institution merit scholarships must be applied within 30 days of admission.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is the merit scholarship renewable?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="faq-a"><p>Yes. The merit scholarship is renewed each year if the student maintains 60% or above in their annual university examination.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What documents do I need?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="faq-a"><p>You need: Aadhaar card, caste/category certificate, income certificate, Class 10 &amp; 12 marksheets, bank passbook (student name), admission fee receipt, and two passport-size photographs.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">I need help filling the NSP form. Who do I contact?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="faq-a"><p>Our Scholarship Cell staff assist students free of charge every working day (Mon–Sat, 10 AM–4 PM) in Room 104, Admin Block. You can also call +91 674 255 0001.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0 0 80px">
+  <div class="container">
+    <div class="cta-banner fade-up">
+      <h2>Ready to Claim Your Scholarship?</h2>
+      <p>Speak with our admissions team to find the right financial support for your programme.</p>
+      <a href="Contact.html">Enquire About Scholarships</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><span class="fn">SSRK Degree College</span><p>Quality higher education in Odisha since 1990.</p><a href="../trust/index.html" class="footer-trust">Part of SSRK Edu Trust</a></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="About.html">About</a></li><li><a href="Courses.html">Programmes</a></li><li><a href="Scholarships.html">Scholarships</a></li><li><a href="Faculty.html">Faculty</a></li><li><a href="Gallery.html">Gallery</a></li><li><a href="Contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Contact Us</h4><div class="fci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Badambadi, Cuttack — 753012</div><div class="fci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3"/></svg>+91 674 255 0000</div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 SSRK Degree College</span><a href="../trust/index.html">ssrkedu.com</a></div>
+  </div>
+</footer>
+<div class="sticky-cta"><a href="tel:+916742550000" class="sticky-call">📞 Call</a><a href="Contact.html" class="sticky-enquire">Enquire Now</a></div>
+<script>
+function toggleFaq(el){var item=el.closest('.faq-item');var wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(f){f.classList.remove('open')});if(!wasOpen)item.classList.add('open')}
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}})},{threshold:0,rootMargin:"0px 0px 50px 0px"});
+document.querySelectorAll('.fade-up').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight){el.classList.add('visible')}});
+document.querySelectorAll('.fade-up').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>

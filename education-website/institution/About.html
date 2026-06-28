@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>About — SSRK Degree College</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="../_shared/site-chrome.css">
+<link rel="stylesheet" href="_components/institution-header.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Serif:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue-deep:#172554;--blue-primary:#1E3A8A;--blue-mid:#3B5998;--blue-light:#DBEAFE;--saffron:#D4780A;--saffron-lt:#F0A030;--white:#fff;--bg:#F5F7FA;--text-h:#0D2340;--text-b:#2C3E50;--text-m:#6B7A8D;--border:#D4E0EF;--r-sm:6px;--r-md:10px;--r-lg:16px;--sh-sm:0 1px 2px rgba(13,35,64,.04),0 3px 10px rgba(13,35,64,.07);--sh-md:0 8px 20px rgba(13,35,64,.10),0 2px 6px rgba(13,35,64,.05);--tr:.28s ease;--ff:'Noto Sans',sans-serif;--fs:'Noto Serif',serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}body{font-family:var(--ff);color:var(--text-b);background:var(--white);font-size:15px;overflow-x:hidden;line-height:1.6}
+a{text-decoration:none;color:inherit}ul{list-style:none}button{cursor:pointer;border:none;background:none;font-family:inherit}img{max-width:100%;display:block}
+.container{width:100%;max-width:1240px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.container{padding:0 24px}}@media(min-width:1024px){.container{padding:0 32px}}
+/* PAGE HERO */
+.page-hero{background:linear-gradient(135deg,var(--blue-deep) 0%,var(--blue-primary) 100%);padding:56px 0;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;bottom:-60px;right:-60px;width:280px;height:280px;border:65px solid rgba(255,255,255,.05);border-radius:50%}
+.page-hero-inner{position:relative;z-index:1}
+.page-breadcrumb{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.55);margin-bottom:12px;flex-wrap:wrap}
+.page-breadcrumb a{color:rgba(255,255,255,.55);transition:color .2s}.page-breadcrumb a:hover{color:#fff}
+.page-breadcrumb span{color:rgba(255,255,255,.35)}
+.page-title{font-family:var(--fs);font-size:clamp(24px,5vw,40px);font-weight:700;color:#fff;line-height:1.2}
+.page-subtitle{font-size:15px;color:rgba(255,255,255,.75);margin-top:10px;max-width:520px;line-height:1.65}
+/* SECTION */
+.section{padding:64px 0}@media(min-width:768px){.section{padding:88px 0}}
+.section-label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue-primary);margin-bottom:6px;display:block}
+.section-title{font-family:var(--fs);font-size:clamp(22px,4vw,32px);color:var(--text-h);font-weight:700;line-height:1.2}
+.section-title span{color:var(--saffron)}
+/* CARDS */
+.card{background:#fff;border:1.5px solid var(--border);border-radius:var(--r-md);padding:28px 24px;box-shadow:var(--sh-sm);transition:var(--tr)}
+.card:hover{box-shadow:var(--sh-md);transform:translateY(-2px)}
+/* GRID */
+.grid-2{display:grid;gap:24px}@media(min-width:768px){.grid-2{grid-template-columns:1fr 1fr}}
+.grid-3{display:grid;gap:20px}@media(min-width:540px){.grid-3{grid-template-columns:1fr 1fr}}@media(min-width:1024px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+/* FOOTER */
+.site-footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:48px 0 0}
+.footer-grid{display:grid;gap:32px;padding-bottom:40px}
+@media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr}}
+.footer-brand .fn{font-family:var(--fs);font-size:17px;font-weight:700;color:#fff;display:block;margin-bottom:6px}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.65;max-width:260px;margin-bottom:16px}
+.footer-trust{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:var(--r-sm);transition:var(--tr)}
+.footer-trust:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+.footer-col h4{font-size:11px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,.65);transition:color .2s}
+.footer-col ul li a:hover{color:#fff}
+.fci{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,.65);margin-bottom:10px;line-height:1.5}
+.fci svg{width:14px;height:14px;flex-shrink:0;margin-top:3px;opacity:.6}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:16px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px;color:rgba(255,255,255,.4)}
+.footer-bottom a{color:rgba(255,255,255,.55)}
+/* FADE */
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
+.fade-up.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+/* HIGHLIGHT LIST */
+.hl-list{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+.hl-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text-b)}
+.hl-dot{width:22px;height:22px;background:var(--blue-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.hl-dot svg{width:11px;height:11px}
+/* CHAIRMAN */
+.chairman-wrap{background:linear-gradient(150deg,var(--blue-deep),var(--blue-primary));border-radius:var(--r-lg);padding:36px 32px;color:#fff;position:relative;overflow:hidden}
+.chairman-wrap::before{content:'"';position:absolute;top:-30px;left:16px;font-size:160px;font-family:var(--fs);color:rgba(255,255,255,.05);line-height:1;pointer-events:none}
+.ch-quote{font-size:15px;line-height:1.8;color:rgba(255,255,255,.88);font-style:italic;margin-bottom:20px;position:relative;z-index:1}
+.ch-info{display:flex;align-items:center;gap:14px}
+.ch-avatar{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.15);border:3px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-family:var(--fs);font-weight:700;font-size:20px;color:#fff;flex-shrink:0}
+.ch-name{font-size:15px;font-weight:700;color:#fff}.ch-role{font-size:12px;color:rgba(255,255,255,.6);margin-top:2px}
+/* MILESTONE */
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:grid;grid-template-columns:80px 1fr;gap:0;position:relative}
+.tl-item:not(:last-child)::after{content:'';position:absolute;left:40px;top:40px;bottom:-4px;width:2px;background:var(--border);transform:translateX(-50%)}
+.tl-year{font-family:var(--fs);font-size:14px;font-weight:700;color:var(--blue-primary);padding-top:12px;text-align:right;padding-right:24px}
+.tl-body{padding:12px 0 24px 24px;border-left:2px solid var(--blue-light)}
+.tl-title{font-size:14px;font-weight:700;color:var(--text-h);margin-bottom:4px}
+.tl-desc{font-size:13px;color:var(--text-m);line-height:1.6}
+/* STAT STRIP */
+.stat-strip{background:var(--blue-primary);padding:40px 0}
+.stat-strip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+@media(min-width:768px){.stat-strip-grid{grid-template-columns:repeat(4,1fr)}}
+.ss-item{padding:20px 16px;text-align:center;border-right:1px solid rgba(255,255,255,.15);border-bottom:1px solid rgba(255,255,255,.15)}
+.ss-item:last-child,.ss-item:nth-child(2){border-right:none}
+@media(min-width:768px){.ss-item:nth-child(2){border-right:1px solid rgba(255,255,255,.15)}.ss-item:last-child{border-right:none}.ss-item{border-bottom:none}}
+.ss-num{font-family:var(--fs);font-size:clamp(28px,4vw,40px);font-weight:700;color:#fff;line-height:1}
+.ss-num span{color:var(--saffron-lt)}
+.ss-lbl{font-size:10.5px;color:rgba(255,255,255,.65);font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-top:4px}
+/* ACCRED */
+.accred-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(min-width:768px){.accred-grid{grid-template-columns:repeat(4,1fr)}}
+.accred-card{background:var(--bg);border-radius:var(--r-md);padding:20px 16px;text-align:center;border:1.5px solid var(--border)}
+.accred-badge{display:inline-block;background:var(--blue-primary);color:#fff;font-size:13px;font-weight:800;padding:8px 14px;border-radius:var(--r-sm);margin-bottom:10px;letter-spacing:.5px}
+.accred-name{font-size:13px;font-weight:600;color:var(--text-h);margin-bottom:4px}
+.accred-sub{font-size:12px;color:var(--text-m)}
+</style>
+</head>
+<body>
+
+<div id="site-chrome-mount"></div>
+<script src="../_shared/site-chrome.js"></script>
+
+<div id="inst-header-mount" data-enquire-href="Contact.html"></div>
+<script src="_components/institution-header.js"></script>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="page-breadcrumb">
+      <a href="index.html">Home</a><span>/</span><span style="color:rgba(255,255,255,.8)">About</span>
+    </div>
+    <h1 class="page-title">About SSRK Degree College</h1>
+    <p class="page-subtitle">35+ years of shaping futures in Odisha through quality, affordable higher education.</p>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stat-strip">
+  <div class="container">
+    <div class="stat-strip-grid">
+      <div class="ss-item"><div class="ss-num">1990</div><div class="ss-lbl">Year Founded</div></div>
+      <div class="ss-item"><div class="ss-num">4<span>K+</span></div><div class="ss-lbl">Students</div></div>
+      <div class="ss-item"><div class="ss-num">80<span>+</span></div><div class="ss-lbl">Faculty Members</div></div>
+      <div class="ss-item"><div class="ss-num">12<span>+</span></div><div class="ss-lbl">Programmes</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT STORY -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;gap:48px" class="fade-up">
+      <div style="display:grid;gap:44px" id="about-grid">
+        <div>
+          <span class="section-label">Our Story</span>
+          <h2 class="section-title">Built on a <span>Vision</span> of Accessible Education</h2>
+          <p style="margin-top:16px;font-size:15px;line-height:1.85;color:var(--text-b)">SSRK Degree College was established in 1990 under the SSRK Educational Trust with a singular mission — to make quality higher education accessible to students across Odisha, especially those from rural and semi-urban backgrounds who had limited choices.</p>
+          <p style="margin-top:14px;font-size:15px;line-height:1.85;color:var(--text-b)">Beginning with just three programmes and a small batch of students, the college has grown into one of the most trusted undergraduate institutions in Cuttack, offering over 12 programmes across Arts, Science, Commerce and Pharmacy — all with government approval and university affiliation.</p>
+          <p style="margin-top:14px;font-size:15px;line-height:1.85;color:var(--text-b)">Today, more than 4,000 students study on our campus each year, supported by 80+ faculty members, modern laboratories, a rich library, and a culture of academic integrity and personal growth.</p>
+        </div>
+        <div class="chairman-wrap fade-up">
+          <p class="ch-quote">"Education is not just about degrees — it is about building the capacity to think, to lead, and to contribute meaningfully to society. At SSRK, we have always believed that every deserving student, regardless of background, must have access to quality education."</p>
+          <div class="ch-info">
+            <div class="ch-avatar">SK</div>
+            <div><div class="ch-name">Dr. Santosh Kumar Rath</div><div class="ch-role">Chairman, SSRK Educational Trust</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION MISSION -->
+<section class="section" style="background:var(--bg);padding-top:64px;padding-bottom:64px">
+  <div class="container">
+    <div class="section-header fade-up" style="text-align:center;margin-bottom:40px">
+      <span class="section-label">Our Purpose</span>
+      <h2 class="section-title">Vision &amp; Mission</h2>
+    </div>
+    <div class="grid-2 fade-up">
+      <div class="card">
+        <div style="width:52px;height:52px;background:var(--blue-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
+        </div>
+        <h3 style="font-family:var(--fs);font-size:20px;font-weight:700;color:var(--text-h);margin-bottom:10px">Our Vision</h3>
+        <p style="font-size:14px;line-height:1.8;color:var(--text-b)">To be the most trusted undergraduate institution in Odisha — known not just for academic excellence, but for producing graduates who are ethical, confident, and ready to contribute to society and the economy.</p>
+      </div>
+      <div class="card">
+        <div style="width:52px;height:52px;background:#FEF3C7;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4780A" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3 style="font-family:var(--fs);font-size:20px;font-weight:700;color:var(--text-h);margin-bottom:10px">Our Mission</h3>
+        <p style="font-size:14px;line-height:1.8;color:var(--text-b)">To provide affordable, government-approved education with caring faculty, modern facilities, and student support systems — so every student who walks through our doors has the tools and confidence to succeed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MILESTONES -->
+<section class="section">
+  <div class="container">
+    <div class="fade-up" style="max-width:720px;margin:0 auto">
+      <span class="section-label" style="text-align:center;display:block">Journey</span>
+      <h2 class="section-title" style="text-align:center;margin-bottom:44px">Key <span>Milestones</span></h2>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-year">1990</div><div class="tl-body"><div class="tl-title">College Founded</div><div class="tl-desc">Established under SSRK Educational Trust with Arts and Commerce programmes.</div></div></div>
+        <div class="tl-item"><div class="tl-year">1998</div><div class="tl-body"><div class="tl-title">Science Stream Added</div><div class="tl-desc">B.Sc programmes in Physics, Chemistry, Mathematics and Biology introduced.</div></div></div>
+        <div class="tl-item"><div class="tl-year">2005</div><div class="tl-body"><div class="tl-title">Pharmacy Programme Launched</div><div class="tl-desc">D.Pharm programme approved by Pharmacy Council of India — one of the first in Cuttack.</div></div></div>
+        <div class="tl-item"><div class="tl-year">2010</div><div class="tl-body"><div class="tl-title">New Campus &amp; Hostel</div><div class="tl-desc">Expanded to current campus at Badambadi with separate hostels for boys and girls.</div></div></div>
+        <div class="tl-item"><div class="tl-year">2018</div><div class="tl-body"><div class="tl-title">NAAC Accreditation</div><div class="tl-desc">Received NAAC B++ grade — recognition of academic quality and infrastructure standards.</div></div></div>
+        <div class="tl-item"><div class="tl-year">2023</div><div class="tl-body"><div class="tl-title">Digital Learning Centre</div><div class="tl-desc">State-of-the-art smart classrooms and digital library covering 50,000+ titles launched.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCREDITATIONS -->
+<section class="section" style="background:var(--bg);padding-top:64px;padding-bottom:64px">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;margin-bottom:36px">
+      <span class="section-label">Recognition</span>
+      <h2 class="section-title">Accreditations &amp; <span>Affiliations</span></h2>
+    </div>
+    <div class="accred-grid fade-up">
+      <div class="accred-card"><div class="accred-badge">NAAC B++</div><div class="accred-name">NAAC Accredited</div><div class="accred-sub">National Assessment and Accreditation Council</div></div>
+      <div class="accred-card"><div class="accred-badge">UU</div><div class="accred-name">Utkal University</div><div class="accred-sub">Affiliated for all UG programmes</div></div>
+      <div class="accred-card"><div class="accred-badge">PCI</div><div class="accred-name">Pharmacy Council</div><div class="accred-sub">D.Pharm approved by PCI, New Delhi</div></div>
+      <div class="accred-card"><div class="accred-badge">Govt.</div><div class="accred-name">Govt. of Odisha</div><div class="accred-sub">Higher Education Dept. recognized</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="fn">SSRK Degree College</span>
+        <p>Quality undergraduate education in Arts, Science, Commerce and Pharmacy since 1990.</p>
+        <a href="../trust/index.html" class="footer-trust">Part of SSRK Edu Trust</a>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Courses.html">Programmes</a></li>
+          <li><a href="Scholarships.html">Scholarships</a></li>
+          <li><a href="Faculty.html">Faculty</a></li>
+          <li><a href="Gallery.html">Gallery</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="fci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Badambadi, Cuttack — 753012</div>
+        <div class="fci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07"/></svg>+91 674 255 0000</div>
+        <div class="fci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4"/><polyline points="22,6 12,13 2,6"/></svg>admissions@ssrkdc.edu.in</div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 SSRK Degree College</span><a href="../trust/index.html">ssrkedu.com</a></div>
+  </div>
+</footer>
+
+<script>
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}})},{threshold:0,rootMargin:"0px 0px 50px 0px"});
+document.querySelectorAll('.fade-up').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight){el.classList.add('visible')}});
+document.querySelectorAll('.fade-up').forEach(function(el){io.observe(el)});
+// about grid responsive
+function checkGrid(){var g=document.getElementById('about-grid');if(g){g.style.gridTemplateColumns=window.innerWidth>=900?'1.5fr 360px':'1fr';g.style.alignItems=window.innerWidth>=900?'start':'stretch'}}
+checkGrid();window.addEventListener('resize',checkGrid);
+</script>
+</body>
+</html>

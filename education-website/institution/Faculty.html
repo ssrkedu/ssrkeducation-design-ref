@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Faculty — SSRK Degree College</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="../_shared/site-chrome.css">
+<link rel="stylesheet" href="_components/institution-header.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Serif:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue-deep:#172554;--blue-primary:#1E3A8A;--blue-light:#DBEAFE;--saffron:#D4780A;--white:#fff;--bg:#F5F7FA;--text-h:#0D2340;--text-b:#2C3E50;--text-m:#6B7A8D;--border:#D4E0EF;--r-sm:6px;--r-md:10px;--r-lg:16px;--sh-sm:0 1px 2px rgba(13,35,64,.04),0 3px 10px rgba(13,35,64,.07);--sh-md:0 8px 20px rgba(13,35,64,.10),0 2px 6px rgba(13,35,64,.05);--tr:.28s ease;--ff:'Noto Sans',sans-serif;--fs:'Noto Serif',serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--ff);color:var(--text-b);background:var(--white);font-size:15px;overflow-x:hidden;line-height:1.6}
+a{text-decoration:none;color:inherit}ul{list-style:none}button{cursor:pointer;border:none;background:none;font-family:inherit}
+.container{width:100%;max-width:1240px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.container{padding:0 24px}}@media(min-width:1024px){.container{padding:0 32px}}
+.page-hero{background:var(--bg);border-bottom:1px solid var(--border);padding:18px 0}
+.page-hero-inner{display:flex;align-items:center;gap:12px 32px;flex-wrap:wrap}
+.page-title{font-family:var(--fs);font-size:clamp(17px,2.2vw,22px);font-weight:700;color:var(--text-h);border-left:3px solid var(--saffron);padding-left:12px;line-height:1.2}
+.page-subtitle{font-size:13px;color:var(--text-m);line-height:1.5}
+.filter-bar{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:66px;z-index:100}
+.filter-inner{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:12px 0}
+.filter-inner::-webkit-scrollbar{display:none}
+.filter-btn{padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;color:var(--text-m);background:var(--bg);border:1.5px solid transparent;white-space:nowrap;transition:var(--tr);cursor:pointer}
+.filter-btn:hover{color:var(--blue-primary);background:var(--blue-light);transform:translateY(-1px)}
+.filter-btn.active{background:var(--blue-primary);color:#fff;border-color:var(--blue-primary);box-shadow:0 3px 10px rgba(30,58,138,.28)}
+.section{padding:48px 0 80px}
+.faculty-grid{display:grid;gap:20px}
+@media(min-width:540px){.faculty-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){.faculty-grid{grid-template-columns:repeat(3,1fr)}}
+.faculty-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--r-md);padding:24px;box-shadow:var(--sh-sm);transition:var(--tr);display:flex;flex-direction:column;gap:12px}
+.faculty-card:hover{box-shadow:var(--sh-md);transform:translateY(-4px);border-color:var(--blue-primary)}
+.faculty-card.hidden{display:none}
+.fac-avatar{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fs);font-weight:700;font-size:24px;color:#fff;flex-shrink:0;margin-bottom:4px}
+.fac-name{font-family:var(--fs);font-size:17px;font-weight:700;color:var(--text-h)}
+.fac-role{font-size:12.5px;font-weight:700;color:var(--blue-primary);letter-spacing:.3px}
+.fac-dept{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;letter-spacing:.5px;text-transform:uppercase;margin-top:2px}
+.dept-science{background:var(--blue-light);color:var(--blue-primary)}
+.dept-commerce{background:#FEF3C7;color:#92400E}
+.dept-arts{background:#EDE9FE;color:#5B21B6}
+.dept-pharmacy{background:#D1FAE5;color:#065F46}
+.fac-qual{font-size:12.5px;color:var(--text-m);line-height:1.55}
+.fac-exp{font-size:12px;color:var(--text-m);font-weight:500;display:flex;align-items:center;gap:5px}
+.fac-exp svg{width:13px;height:13px;flex-shrink:0}
+.site-footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:48px 0 0}
+.footer-grid{display:grid;gap:32px;padding-bottom:40px}@media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr}}
+.footer-brand .fn{font-family:var(--fs);font-size:17px;font-weight:700;color:#fff;display:block;margin-bottom:6px}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.65;max-width:260px;margin-bottom:16px}
+.footer-trust{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:var(--r-sm)}
+.footer-col h4{font-size:11px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
+.footer-col ul li{margin-bottom:10px}.footer-col ul li a{font-size:13px;color:rgba(255,255,255,.65)}.footer-col ul li a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:16px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px;color:rgba(255,255,255,.4)}
+.footer-bottom a{color:rgba(255,255,255,.55)}
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}.fade-up.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+</style>
+</head>
+<body>
+<div id="site-chrome-mount"></div>
+<script src="../_shared/site-chrome.js"></script>
+
+<div id="inst-header-mount" data-active="faculty" data-enquire-href="Contact.html"></div>
+<script src="_components/institution-header.js"></script>
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <h1 class="page-title">Our Faculty</h1>
+    <p class="page-subtitle">80+ experienced educators across all departments.</p>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <div class="container"><div class="filter-inner">
+    <button class="filter-btn active" onclick="filterFaculty('all',this)">All Departments</button>
+    <button class="filter-btn" onclick="filterFaculty('pharmacy',this)">Pharmacy</button>
+    <button class="filter-btn" onclick="filterFaculty('science',this)">Science</button>
+    <button class="filter-btn" onclick="filterFaculty('commerce',this)">Commerce</button>
+    <button class="filter-btn" onclick="filterFaculty('arts',this)">Arts</button>
+  </div></div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="faculty-grid" id="facultyGrid">
+      <div class="faculty-card fade-up" data-dept="pharmacy"><div class="fac-avatar" style="background:linear-gradient(135deg,#059669,#047857)">DP</div><div class="fac-name">Dr. Dipti Pattnaik</div><div class="fac-role">Principal &amp; HOD, Pharmacy</div><span class="fac-dept dept-pharmacy">Pharmacy</span><div class="fac-qual">M.Pharm, Ph.D (Pharmacology)<br>Utkal University</div><div class="fac-exp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>22 years experience</div></div>
+      <div class="faculty-card fade-up" data-dept="science" style="transition-delay:.05s"><div class="fac-avatar" style="background:linear-gradient(135deg,#1E3A8A,#3B5998)">RK</div><div class="fac-name">Prof. Ranjit Kumar Rath</div><div class="fac-role">HOD, Physics</div><span class="fac-dept dept-science">Science</span><div class="fac-qual">M.Sc (Physics), B.Ed<br>Utkal University</div><div class="fac-exp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>18 years experience</div></div>
+      <div class="faculty-card fade-up" data-dept="commerce" style="transition-delay:.1s"><div class="fac-avatar" style="background:linear-gradient(135deg,#D4780A,#b5660a)">SM</div><div class="fac-name">Dr. Susmita Mishra</div><div class="fac-role">HOD, Commerce</div><span class="fac-dept dept-commerce">Commerce</span><div class="fac-qual">M.Com, Ph.D (Accountancy)<br>Sambalpur University</div><div class="fac-exp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>16 years experience</div></div>
+      <div class="faculty-card fade-up" data-dept="arts" style="transition-delay:.15s"><div class="fac-avatar" style="background:linear-gradient(135deg,#7C3AED,#5B21B6)">BS</div><div class="fac-name">Dr. Bijaya Sahoo</div><div class="fac-role">HOD, Odia &amp; History</div><span class="fac-dept dept-arts">Arts</span><div class="fac-qual">M.A (Odia), Ph.D<br>Utkal University</div><div class="fac-exp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>20 years experience</div></div>
+      <div class="faculty-card fade-up" data-dept="pharmacy" style="transition-delay:.2s"><div class="fac-avatar" style="background:linear-gradient(135deg,#059669,#047857)">PM</div><div class="fac-name">Mr. Prasant Mahapatra</div><div class="fac-role">Asst. Professor, Pharmaceutics</div><span class="fac-dept dept-pharmacy">Pharmacy</span><div class="fac-qual">M.Pharm (Pharmaceutics)<br>BPUT, Odisha</div><div class="fac-exp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>9 years experience</div></div>
+      <div class="faculty-card fade-up" data-dept="science" style="transition-delay:.25s"><div class="fac-avatar" style="background:linear-gradient(135deg,#1E3A8A,#3B5998)">SN</div><div class="fac-name">Ms. Sasmita Nayak</div><div class="fac-role">Asst. Professor, Chemistry</div><span class="fac-dept dept-science">Science</span><div class="fac-qual">M.Sc (Chemistry)<br>Berhampur University</div><div class="fac-exp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>7 years experience</div></div>
+      <div class="faculty-card fade-up" data-dept="commerce" style="transition-delay:.3s"><div class="fac-avatar" style="background:linear-gradient(135deg,#D4780A,#b5660a)">AK</div><div class="fac-name">Mr. Abhimanyu Kumar</div><div class="fac-role">Asst. Professor, Finance</div><span class="fac-dept dept-commerce">Commerce</span><div class="fac-qual">MBA (Finance), CA Inter<br>XIMB, Bhubaneswar</div><div class="fac-exp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>8 years experience</div></div>
+      <div class="faculty-card fade-up" data-dept="arts" style="transition-delay:.35s"><div class="fac-avatar" style="background:linear-gradient(135deg,#7C3AED,#5B21B6)">PD</div><div class="fac-name">Dr. Pranati Das</div><div class="fac-role">Asst. Professor, Political Science</div><span class="fac-dept dept-arts">Arts</span><div class="fac-qual">M.A (Political Science), Ph.D<br>Utkal University</div><div class="fac-exp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>12 years experience</div></div>
+      <div class="faculty-card fade-up" data-dept="science" style="transition-delay:.4s"><div class="fac-avatar" style="background:linear-gradient(135deg,#1E3A8A,#3B5998)">MR</div><div class="fac-name">Mr. Manish Routray</div><div class="fac-role">Asst. Professor, Computer Sc.</div><span class="fac-dept dept-science">Science</span><div class="fac-qual">MCA, M.Tech (CS)<br>BPUT, Odisha</div><div class="fac-exp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>11 years experience</div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><span class="fn">SSRK Degree College</span><p>Quality higher education in Odisha since 1990.</p><a href="../trust/index.html" class="footer-trust">Part of SSRK Edu Trust</a></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="About.html">About</a></li><li><a href="Courses.html">Programmes</a></li><li><a href="Scholarships.html">Scholarships</a></li><li><a href="Faculty.html">Faculty</a></li><li><a href="Gallery.html">Gallery</a></li><li><a href="Contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Contact Us</h4><div style="font-size:13px;color:rgba(255,255,255,.65)">Badambadi, Cuttack — 753012<br>+91 674 255 0000</div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 SSRK Degree College</span><a href="../trust/index.html">ssrkedu.com</a></div>
+  </div>
+</footer>
+<script>
+function filterFaculty(dept,btn){
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');
+  document.querySelectorAll('.faculty-card').forEach(function(c){c.classList.toggle('hidden',dept!=='all'&&c.getAttribute('data-dept')!==dept)});
+}
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}})},{threshold:0,rootMargin:"0px 0px 50px 0px"});
+document.querySelectorAll('.fade-up').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight){el.classList.add('visible')}});
+document.querySelectorAll('.fade-up').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>

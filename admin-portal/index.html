@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Admin Portal — SSRK Edu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin-portal.css">
+</head>
+<body>
+
+<!-- ══ AUTH: LOGIN ══ -->
+<div id="v-login" class="auth-wrap">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <div class="auth-mark">DC</div>
+      <div><div style="font-family:var(--fs);font-weight:700;font-size:15px;color:var(--th)">SSRK Edu</div><div style="font-size:11px;color:var(--tm);margin-top:2px">Admin Portal</div></div>
+    </div>
+    <div class="auth-title">Welcome back</div>
+    <div class="auth-sub">Sign in to manage enquiries, content and users.</div>
+    <div class="fg"><label class="fl">Email Address</label><input class="fi" type="email" id="li-email" value="vikram@ssrkedu.com" placeholder="admin@ssrkedu.com"></div>
+    <div class="fg"><label class="fl">Password</label><input class="fi" type="password" id="li-pw" value="••••••••" placeholder="Your password"></div>
+    <div id="li-err" class="hidden" style="font-size:12px;color:#DC2626;margin-bottom:10px">Invalid credentials. Try: vikram@ssrkedu.com / sunita@ssrkedu.com</div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;padding:12px" onclick="doLogin()">Sign In →</button>
+    <div style="margin-top:12px;text-align:center"><span class="auth-link" onclick="nav('v-forgot')">Forgot password?</span></div>
+    <div style="margin-top:18px;padding-top:14px;border-top:1px solid var(--br);font-size:11px;color:var(--tm);text-align:center">
+      Demo logins: <strong>vikram@ssrkedu.com</strong> (Super Admin) · <strong>sunita@ssrkedu.com</strong> (Enquiry) · <strong>meera@ssrkedu.com</strong> (Content)
+    </div>
+  </div>
+</div>
+
+<!-- ══ AUTH: FORGOT PW ══ -->
+<div id="v-forgot" class="auth-wrap hidden">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <div class="auth-mark">DC</div>
+      <div><div style="font-family:var(--fs);font-weight:700;font-size:15px;color:var(--th)">SSRK Edu</div><div style="font-size:11px;color:var(--tm);margin-top:2px">Admin Portal</div></div>
+    </div>
+    <div class="auth-title">Reset password</div>
+    <div class="auth-sub">Enter your email and we'll send a reset OTP.</div>
+    <div class="fg"><label class="fl">Email Address</label><input class="fi" type="email" placeholder="admin@ssrkedu.com"></div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;padding:12px" onclick="alert('OTP sent! (demo)')">Send OTP →</button>
+    <div style="margin-top:12px;text-align:center"><span class="auth-link" onclick="nav('v-login')">← Back to login</span></div>
+  </div>
+</div>
+
+<!-- ══ APP SHELL ══ -->
+<div id="v-app" class="app-shell hidden">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sb-logo">
+      <div class="sb-mark">DC</div>
+      <div><div class="sb-name">SSRK Edu</div><div class="sb-sub">ADMIN PORTAL</div></div>
+    </div>
+    <nav class="sb-nav">
+      <div class="sb-sec">Main</div>
+      <div class="nav-item active" id="ni-dashboard" onclick="showView('dashboard')">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard
+      </div>
+      <div class="sb-sec">Modules</div>
+      <div class="nav-item" id="ni-enquiries" onclick="showView('enquiries')">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Enquiry Management
+      </div>
+      <div class="nav-item" id="ni-cms" onclick="showView('cms')">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Content Management
+      </div>
+      <div class="nav-item" id="ni-users" onclick="showView('users')">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>User Management
+      </div>
+    </nav>
+    <div class="sb-footer">
+      <div class="sb-user">
+        <div class="sb-avatar" id="sb-av">VK</div>
+        <div><div class="sb-uname" id="sb-uname">Vikram</div><div class="sb-urole" id="sb-urole">Super Admin</div></div>
+        <div class="sb-logout" onclick="doLogout()">Logout</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main-area">
+    <header class="topbar">
+      <button class="sb-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <div class="topbar-title" id="tb-title">Dashboard</div>
+      <span id="tb-badge" class="topbar-badge hidden">3 New</span>
+      <div class="topbar-user"><div style="width:28px;height:28px;background:var(--bl);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--bp)" id="tb-av">VK</div><span id="tb-uname">Vikram</span></div>
+    </header>
+
+    <div class="content-area">
+
+      <!-- DASHBOARD -->
+      <div id="view-dashboard">
+        <div class="ph"><div class="ph-title">Dashboard</div><div class="ph-actions"><span style="font-size:12px;color:var(--tm)">June 27, 2026</span></div></div>
+        <div class="stats-row">
+          <div class="card stat-card">
+            <div class="stat-icon" style="background:var(--ol)"><svg viewBox="0 0 24 24" style="stroke:var(--or)"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <div><div class="stat-num">8</div><div class="stat-lbl">New Enquiries</div></div>
+          </div>
+          <div class="card stat-card">
+            <div class="stat-icon" style="background:var(--bl)"><svg viewBox="0 0 24 24" style="stroke:var(--bp)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+            <div><div class="stat-num">47</div><div class="stat-lbl">Total Enquiries</div></div>
+          </div>
+          <div class="card stat-card">
+            <div class="stat-icon" style="background:var(--gl)"><svg viewBox="0 0 24 24" style="stroke:var(--gn)"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <div><div class="stat-num">6</div><div class="stat-lbl">Published Courses</div></div>
+          </div>
+          <div class="card stat-card">
+            <div class="stat-icon" style="background:var(--pl)"><svg viewBox="0 0 24 24" style="stroke:var(--pu)"><path d="M17 21v-2a4 4 0 0 0-4-4H5"/><circle cx="9" cy="7" r="4"/></svg></div>
+            <div><div class="stat-num">3</div><div class="stat-lbl">Active Users</div></div>
+          </div>
+        </div>
+        <div class="card" style="margin-bottom:20px">
+          <div class="card-head">
+            <div class="card-title">Recent Enquiries</div>
+            <button class="btn btn-sm btn-outline" onclick="showView('enquiries')">View All</button>
+          </div>
+          <div class="card-body">
+            <div class="tbl-wrap">
+              <table>
+                <thead><tr><th>Student</th><th>Course</th><th>Institution</th><th>Status</th><th>Submitted</th></tr></thead>
+                <tbody id="dash-tbl"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="dash-2col">
+          <div class="card">
+            <div class="card-head"><div class="card-title">Quick Actions</div></div>
+            <div class="card-body" style="display:flex;flex-direction:column;gap:8px">
+              <button class="btn btn-outline" style="justify-content:flex-start" onclick="showView('enquiries')"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Review New Enquiries</button>
+              <button class="btn btn-outline" style="justify-content:flex-start" onclick="showView('course-edit')"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Add New Course</button>
+              <button class="btn btn-outline" style="justify-content:flex-start" onclick="showView('user-edit')"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>Add New User</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-head"><div class="card-title">Enquiries by Course</div></div>
+            <div class="card-body" id="dash-breakdown"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENQUIRY LIST -->
+      <div id="view-enquiries" class="hidden">
+        <div class="ph">
+          <div class="ph-title">Enquiry Management</div>
+          <div class="ph-actions">
+            <button class="btn btn-sm btn-outline" onclick="exportCSV()"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Export CSV</button>
+            <button class="btn btn-sm btn-outline" onclick="exportCSV()">Export Excel</button>
+          </div>
+        </div>
+        <div id="enq-perm-banner" class="perm-banner hidden"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>You have read-only access. Contact Super Admin to enable write permissions.</div>
+        <div class="filter-bar">
+          <select class="f-select" id="enq-status" onchange="renderEnqTable()"><option value="">All Status</option><option value="New">New</option><option value="Reviewed">Reviewed</option></select>
+          <select class="f-select" id="enq-inst" onchange="renderEnqTable()"><option value="">All Institutions</option><option value="Degree College">Degree College</option><option value="Junior College">Junior College</option></select>
+          <select class="f-select" id="enq-course" onchange="renderEnqTable()"><option value="">All Courses</option><option value="B.Com">B.Com</option><option value="BCA">BCA</option><option value="B.Sc">B.Sc</option><option value="B.A">B.A</option><option value="D.Pharm">D.Pharm</option><option value="BBA">BBA</option></select>
+          <input class="f-input" type="search" id="enq-search" placeholder="Search name or phone…" oninput="renderEnqTable()">
+          <button class="btn btn-sm btn-ghost" onclick="clearFilters()">Clear</button>
+        </div>
+        <div class="card">
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>Student</th><th>Phone</th><th>Institution</th><th>Course</th><th>Topics</th><th>Source</th><th>Status</th><th>Submitted</th></tr></thead>
+              <tbody id="enq-tbl"></tbody>
+            </table>
+          </div>
+        </div>
+        <div style="margin-top:10px;font-size:12px;color:var(--tm)" id="enq-count"></div>
+      </div>
+
+      <!-- ENQUIRY DETAIL -->
+      <div id="view-enq-detail" class="hidden">
+        <div class="ph">
+          <div style="display:flex;align-items:center;gap:12px"><button class="btn btn-sm btn-ghost" onclick="showView('enquiries')"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back</button><div class="ph-title" id="ed-title">Enquiry Detail</div></div>
+          <div class="ph-actions" id="ed-actions"></div>
+        </div>
+        <div class="detail-grid">
+          <div class="card"><div class="card-head"><div class="card-title">Submission Details</div></div><div class="card-body" id="ed-fields"></div></div>
+          <div>
+            <div class="card" style="margin-bottom:16px">
+              <div class="card-head"><div class="card-title">Status</div></div>
+              <div style="padding:0 20px 20px">
+                <div class="fg"><label class="fl">Current Status</label><select class="fsl" id="ed-status-sel"></select></div>
+                <div style="margin-bottom:10px;font-size:12px;font-weight:600;color:var(--tm);text-transform:uppercase;letter-spacing:.5px">Notes</div>
+                <div id="ed-notes-list" style="max-height:160px;overflow-y:auto;margin-bottom:10px"></div>
+                <div class="fg"><label class="fl">Add Note</label><textarea class="fta" id="ed-note-input" placeholder="Add a note for the calling team…" rows="3"></textarea></div>
+                <div id="ed-write-btns"><button class="btn btn-sm btn-primary" style="width:100%;justify-content:center;margin-bottom:8px" onclick="saveNote()">Save Note</button><button class="btn btn-sm btn-green" style="width:100%;justify-content:center" onclick="markReviewed()">Mark Reviewed ✓</button></div>
+                <div id="ed-read-btns" class="hidden"><div class="perm-banner"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Read-only access</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CMS -->
+      <div id="view-cms" class="hidden">
+        <div class="ph"><div class="ph-title">Content Management</div><div class="ph-actions"><button class="btn btn-sm btn-primary" id="cms-create-btn" onclick="showView('course-edit')"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Create Course</button></div></div>
+        <div id="cms-perm-banner" class="perm-banner hidden"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>You have read-only access to Content Management.</div>
+        <div class="ctx-bar">
+          <button class="ctx-btn" onclick="setCtx(this,'ssrk')">SSRK Edu (Parent)</button>
+          <button class="ctx-btn active" onclick="setCtx(this,'dc')">SSRK Degree College</button>
+          <button class="ctx-btn" onclick="setCtx(this,'jc')">SSRK Junior College</button>
+        </div>
+        <div class="cms-snav">
+          <button class="cms-snav-btn" onclick="setCmsSec(this,'home')">Home</button>
+          <button class="cms-snav-btn" onclick="setCmsSec(this,'about')">About</button>
+          <button class="cms-snav-btn active" onclick="setCmsSec(this,'courses')">Courses</button>
+          <button class="cms-snav-btn" onclick="setCmsSec(this,'faculty')">Faculty</button>
+          <button class="cms-snav-btn" onclick="setCmsSec(this,'scholarships')">Scholarships</button>
+          <button class="cms-snav-btn" onclick="setCmsSec(this,'gallery')">Gallery</button>
+          <button class="cms-snav-btn" onclick="setCmsSec(this,'contact')">Contact</button>
+          <button class="cms-snav-btn" onclick="setCmsSec(this,'seo')">SEO</button>
+        </div>
+        <div class="card">
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>Course Name</th><th>Slug</th><th>Duration</th><th>Seats</th><th>Status</th><th>Last Updated</th><th>Actions</th></tr></thead>
+              <tbody id="cms-tbl"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- COURSE EDIT -->
+      <div id="view-course-edit" class="hidden">
+        <div class="ph">
+          <div style="display:flex;align-items:center;gap:12px"><button class="btn btn-sm btn-ghost" onclick="showView('cms')"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back</button><div class="ph-title" id="ce-title">New Course</div></div>
+          <div class="ph-actions">
+            <button class="btn btn-sm btn-outline" onclick="alert('Saved as draft!')">Save Draft</button>
+            <button class="btn btn-sm btn-saffron" onclick="alert('Published!')">Publish →</button>
+          </div>
+        </div>
+        <div class="edit-grid">
+          <div>
+            <div class="card" style="padding:20px;margin-bottom:16px">
+              <div class="fsec-title" style="margin-bottom:14px">Course Content</div>
+              <div class="ltabs">
+                <div class="ltab active" onclick="setLang(this,'od')">ଓଡ଼ିଆ (Odia) <span style="color:#DC2626;font-size:10px">*Required</span></div>
+                <div class="ltab" onclick="setLang(this,'en')">English <span style="color:var(--tm);font-size:10px">Optional</span></div>
+              </div>
+              <div class="lpanel active" id="lp-od">
+                <div class="fg"><label class="fl">Course Name (Odia) *</label><input class="fi" placeholder="ଯଥା: ବ୍ୟବସାୟ ପରିଚାଳନା ସ୍ନାତକ"></div>
+                <div class="fg"><label class="fl">Short Description (Odia)</label><textarea class="fta" placeholder="ସଂକ୍ଷିପ୍ତ ବିବରଣ…"></textarea></div>
+                <div class="fg"><label class="fl">Full Overview (Odia)</label><textarea class="fta" style="min-height:120px" placeholder="ସମ୍ପୂର୍ଣ ବିବରଣ…"></textarea></div>
+              </div>
+              <div class="lpanel" id="lp-en">
+                <div class="fg"><label class="fl">Course Name (English)</label><input class="fi" placeholder="e.g. Bachelor of Business Administration"></div>
+                <div class="fg"><label class="fl">Short Description (English)</label><textarea class="fta" placeholder="Short description…"></textarea></div>
+                <div class="fg"><label class="fl">Full Overview (English)</label><textarea class="fta" style="min-height:120px" placeholder="Full course overview…"></textarea></div>
+              </div>
+            </div>
+            <div class="card" style="padding:20px">
+              <div class="fsec-title" style="margin-bottom:14px">Eligibility & Syllabus</div>
+              <div class="fg"><label class="fl">Eligibility Criteria</label><textarea class="fta" placeholder="e.g. Passed 10+2 with Commerce stream…"></textarea></div>
+              <div class="fg"><label class="fl">Career Opportunities</label><textarea class="fta" placeholder="Describe career paths…"></textarea></div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div class="card" style="padding:18px">
+              <div class="fsec-title" style="margin-bottom:12px">Programme Details</div>
+              <div class="fg"><label class="fl">Slug (URL key) *</label><input class="fi" placeholder="e.g. b-com"><div class="fhint">Used in the URL: /courses/b-com</div></div>
+              <div class="fg"><label class="fl">Course Code</label><input class="fi" placeholder="e.g. B.COM"></div>
+              <div class="frow">
+                <div class="fg"><label class="fl">Duration *</label><input class="fi" placeholder="3 Years"></div>
+                <div class="fg"><label class="fl">Total Seats *</label><input class="fi" type="number" placeholder="120"></div>
+              </div>
+              <div class="fg"><label class="fl">Approval / Affiliation</label><input class="fi" placeholder="Utkal University"></div>
+            </div>
+            <div class="card" style="padding:18px">
+              <div class="fsec-title" style="margin-bottom:12px">Fee Structure</div>
+              <div class="frow">
+                <div class="fg"><label class="fl">Tuition / Year</label><input class="fi" placeholder="₹14,000"></div>
+                <div class="fg"><label class="fl">Admission Fee</label><input class="fi" placeholder="₹2,500"></div>
+              </div>
+              <div class="frow">
+                <div class="fg"><label class="fl">Exam Fee / Year</label><input class="fi" placeholder="₹2,000"></div>
+                <div class="fg"><label class="fl">Total / Year</label><input class="fi" placeholder="₹18,500"></div>
+              </div>
+            </div>
+            <div class="card" style="padding:18px">
+              <div class="fsec-title" style="margin-bottom:12px">Visibility</div>
+              <div class="tog-wrap"><label class="tog"><input type="checkbox" checked><div class="tog-sl"></div></label>Published (live on site)</div>
+              <div style="margin-top:10px" class="tog-wrap"><label class="tog"><input type="checkbox" checked><div class="tog-sl"></div></label>Show in course list</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- USERS -->
+      <div id="view-users" class="hidden">
+        <div class="ph"><div class="ph-title">User Management</div><div class="ph-actions"><button class="btn btn-sm btn-primary" onclick="showView('user-edit')"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Create User</button></div></div>
+        <div class="card">
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Permissions</th><th>Status</th><th>Last Login</th><th>Actions</th></tr></thead>
+              <tbody id="users-tbl"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- USER EDIT -->
+      <div id="view-user-edit" class="hidden">
+        <div class="ph">
+          <div style="display:flex;align-items:center;gap:12px"><button class="btn btn-sm btn-ghost" onclick="showView('users')"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back</button><div class="ph-title" id="ue-title">New User</div></div>
+          <div class="ph-actions"><button class="btn btn-sm btn-primary" onclick="alert('User saved!')">Save User</button></div>
+        </div>
+        <div class="edit-grid">
+          <div class="card" style="padding:20px">
+            <div class="fsec-title" style="margin-bottom:14px">Account Details</div>
+            <div class="frow">
+              <div class="fg"><label class="fl">Full Name *</label><input class="fi" placeholder="e.g. Sunita Patra"></div>
+              <div class="fg"><label class="fl">Email Address *</label><input class="fi" type="email" placeholder="sunita@ssrkedu.com"></div>
+            </div>
+            <div class="frow">
+              <div class="fg"><label class="fl">Temporary Password *</label><input class="fi" type="password" placeholder="Min 8 characters"></div>
+              <div class="fg"><label class="fl">Confirm Password *</label><input class="fi" type="password" placeholder="Repeat password"></div>
+            </div>
+            <div style="margin-top:6px" class="tog-wrap"><label class="tog"><input type="checkbox" checked><div class="tog-sl"></div></label>Account Active</div>
+          </div>
+          <div class="card" style="padding:18px">
+            <div class="fsec-title" style="margin-bottom:12px">Permissions</div>
+            <div style="font-size:12px;color:var(--tm);margin-bottom:12px">Super Admin has all permissions by default. For Admin role, select permissions below.</div>
+            <label class="perm-item">
+              <input type="checkbox"><div><div class="perm-lbl">Content Management</div><div class="perm-desc">Create, edit and publish pages, courses, faculty.</div></div>
+            </label>
+            <label class="perm-item">
+              <input type="checkbox" checked><div><div class="perm-lbl">Enquiry Management</div><div class="perm-desc">View, update status, add notes, export enquiries.</div></div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /content-area -->
+  </div><!-- /main-area -->
+</div><!-- /app-shell -->
+
+<script>
+// ─── DATA ───────────────────────────────────────────────
+var users = [
+  {id:1,name:'Vikram Sharma',initials:'VS',email:'vikram@ssrkedu.com',role:'super_admin',perms:['content_management','enquiry_management'],active:true,lastLogin:'Today, 9:41 AM'},
+  {id:2,name:'Sunita Patra',initials:'SP',email:'sunita@ssrkedu.com',role:'admin',perms:['enquiry_management'],active:true,lastLogin:'Today, 8:15 AM'},
+  {id:3,name:'Meera Das',initials:'MD',email:'meera@ssrkedu.com',role:'admin',perms:['content_management'],active:true,lastLogin:'Yesterday, 4:30 PM'}
+];
+
+var enquiries = [
+  {id:1,name:'Priya Sharma',phone:'9437001122',inst:'Degree College',course:'B.Com',topics:'Fees, Eligibility',source:'Website Form',status:'New',date:'27 Jun 2026',notes:[]},
+  {id:2,name:'Rahul Patra',phone:'8763441233',inst:'Degree College',course:'BCA',topics:'Scholarship',source:'Website Form',status:'New',date:'27 Jun 2026',notes:[]},
+  {id:3,name:'Anita Mishra',phone:'7894561230',inst:'Degree College',course:'B.Sc',topics:'Admissions',source:'Google Ad',status:'Reviewed',date:'26 Jun 2026',notes:['Called, interested in B.Sc PCM. Will visit campus on Monday.']},
+  {id:4,name:'Suresh Nayak',phone:'9856321478',inst:'Junior College',course:'Commerce',topics:'Hostel',source:'WhatsApp',status:'Reviewed',date:'26 Jun 2026',notes:['Hostel details shared via WhatsApp.']},
+  {id:5,name:'Kavya Rath',phone:'8765431290',inst:'Degree College',course:'D.Pharm',topics:'Fees, PCI approval',source:'Website Form',status:'New',date:'25 Jun 2026',notes:[]},
+  {id:6,name:'Bikash Das',phone:'9778342156',inst:'Degree College',course:'B.A',topics:'Scholarship',source:'Walk-in',status:'Reviewed',date:'25 Jun 2026',notes:['OBC scholarship info provided.']},
+  {id:7,name:'Sonal Swain',phone:'9040123456',inst:'Degree College',course:'B.Com',topics:'Eligibility',source:'Website Form',status:'New',date:'24 Jun 2026',notes:[]},
+  {id:8,name:'Manish Sahoo',phone:'7654321098',inst:'Degree College',course:'BCA',topics:'Placement',source:'Google Ad',status:'Reviewed',date:'24 Jun 2026',notes:['Placement stats shared via email.']},
+  {id:9,name:'Deepika Behera',phone:'8901234567',inst:'Degree College',course:'B.Sc',topics:'Fees',source:'Website Form',status:'New',date:'23 Jun 2026',notes:[]},
+  {id:10,name:'Ajit Mohanty',phone:'9123456780',inst:'Degree College',course:'D.Pharm',topics:'Hostel, Scholarship',source:'Referral',status:'New',date:'23 Jun 2026',notes:[]}
+];
+
+var courses=[
+  {name:'D.Pharm',slug:'d-pharm',dur:'2 Years',seats:60,status:'Published',updated:'20 Jun 2026'},
+  {name:'B.Sc',slug:'b-sc',dur:'3 Years',seats:80,status:'Published',updated:'18 Jun 2026'},
+  {name:'B.Com',slug:'b-com',dur:'3 Years',seats:120,status:'Published',updated:'15 Jun 2026'},
+  {name:'B.A',slug:'b-a',dur:'3 Years',seats:160,status:'Published',updated:'15 Jun 2026'},
+  {name:'BBA',slug:'bba',dur:'3 Years',seats:60,status:'Published',updated:'10 Jun 2026'},
+  {name:'BCA',slug:'bca',dur:'3 Years',seats:60,status:'Draft',updated:'27 Jun 2026'}
+];
+
+// ─── STATE ──────────────────────────────────────────────
+var currentUser = null;
+var currentEnq = null;
+var demoCredentials = {
+  'vikram@ssrkedu.com': {user: users[0], pw:'any'},
+  'sunita@ssrkedu.com': {user: users[1], pw:'any'},
+  'meera@ssrkedu.com': {user: users[2], pw:'any'}
+};
+
+// ─── ROUTING ────────────────────────────────────────────
+function nav(viewId){
+  document.querySelectorAll('[id^="v-"]').forEach(function(el){el.classList.add('hidden')});
+  document.getElementById(viewId).classList.remove('hidden');
+}
+
+function showView(name){
+  var views=['dashboard','enquiries','enq-detail','cms','course-edit','users','user-edit'];
+  views.forEach(function(v){document.getElementById('view-'+v).classList.add('hidden')});
+  document.getElementById('view-'+name).classList.remove('hidden');
+  // Update sidebar active
+  var map={dashboard:'ni-dashboard',enquiries:'ni-enquiries','enq-detail':'ni-enquiries',cms:'ni-cms','course-edit':'ni-cms',users:'ni-users','user-edit':'ni-users'};
+  document.querySelectorAll('.nav-item').forEach(function(n){n.classList.remove('active')});
+  if(map[name])document.getElementById(map[name]).classList.add('active');
+  // Update topbar title
+  var titles={dashboard:'Dashboard',enquiries:'Enquiry Management','enq-detail':'Enquiry Detail',cms:'Content Management','course-edit':'Course Editor',users:'User Management','user-edit':'User Editor'};
+  document.getElementById('tb-title').textContent = titles[name]||name;
+  // Render views
+  if(name==='dashboard')renderDashboard();
+  if(name==='enquiries')renderEnqTable();
+  if(name==='cms')renderCmsTable();
+  if(name==='users')renderUsersTable();
+  // Permissions
+  applyPermissions(name);
+}
+
+function applyPermissions(name){
+  if(!currentUser)return;
+  var isSuper=currentUser.role==='super_admin';
+  var hasCms=isSuper||currentUser.perms.includes('content_management');
+  var hasEnq=isSuper||currentUser.perms.includes('enquiry_management');
+  // CMS
+  var cmsBanner=document.getElementById('cms-perm-banner');
+  var cmsBtn=document.getElementById('cms-create-btn');
+  if(cmsBanner){cmsBanner.classList.toggle('hidden',hasCms);if(cmsBtn)cmsBtn.classList.toggle('hidden',!hasCms);}
+  // Enquiry
+  var enqBanner=document.getElementById('enq-perm-banner');
+  if(enqBanner)enqBanner.classList.toggle('hidden',hasEnq);
+  // Users — only super admin
+  var niUsers=document.getElementById('ni-users');
+  if(niUsers)niUsers.classList.toggle('hidden',!isSuper);
+}
+
+// ─── LOGIN ──────────────────────────────────────────────
+function doLogin(){
+  var email=document.getElementById('li-email').value.trim().toLowerCase();
+  var match=demoCredentials[email];
+  if(!match){document.getElementById('li-err').classList.remove('hidden');return;}
+  document.getElementById('li-err').classList.add('hidden');
+  currentUser=match.user;
+  // Update UI
+  document.getElementById('sb-av').textContent=currentUser.initials;
+  document.getElementById('sb-uname').textContent=currentUser.name.split(' ')[0];
+  document.getElementById('sb-urole').textContent=currentUser.role==='super_admin'?'Super Admin':'Admin';
+  document.getElementById('tb-av').textContent=currentUser.initials;
+  document.getElementById('tb-uname').textContent=currentUser.name.split(' ')[0];
+  // New badge
+  var newCount=enquiries.filter(function(e){return e.status==='New'}).length;
+  var badge=document.getElementById('tb-badge');
+  badge.textContent=newCount+' New';badge.classList.remove('hidden');
+  nav('v-app');
+  showView('dashboard');
+}
+
+function doLogout(){nav('v-login');currentUser=null;}
+
+// ─── DASHBOARD ──────────────────────────────────────────
+function renderDashboard(){
+  var recent=enquiries.slice(0,5);
+  var tb=document.getElementById('dash-tbl');
+  tb.innerHTML=recent.map(function(e){
+    return '<tr onclick="openEnq('+e.id+')" title="Click to view"><td><strong>'+e.name+'</strong></td><td>'+e.course+'</td><td>'+e.inst+'</td><td><span class="badge '+(e.status==='New'?'b-new':'b-reviewed')+'">'+e.status+'</span></td><td style="color:var(--tm)">'+e.date+'</td></tr>';
+  }).join('');
+  // Breakdown
+  var counts={};
+  enquiries.forEach(function(e){counts[e.course]=(counts[e.course]||0)+1});
+  var bd=document.getElementById('dash-breakdown');
+  bd.innerHTML=Object.keys(counts).map(function(c){
+    var pct=Math.round(counts[c]/enquiries.length*100);
+    return '<div style="margin-bottom:10px"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span style="font-weight:600;color:var(--th)">'+c+'</span><span style="color:var(--tm)">'+counts[c]+'</span></div><div style="background:var(--br);border-radius:4px;height:6px"><div style="background:var(--bp);height:6px;border-radius:4px;width:'+pct+'%"></div></div></div>';
+  }).join('');
+}
+
+// ─── ENQUIRY TABLE ──────────────────────────────────────
+function renderEnqTable(){
+  var status=document.getElementById('enq-status').value;
+  var inst=document.getElementById('enq-inst').value;
+  var course=document.getElementById('enq-course').value;
+  var q=(document.getElementById('enq-search').value||'').toLowerCase();
+  var filtered=enquiries.filter(function(e){
+    return (!status||e.status===status)&&(!inst||e.inst===inst)&&(!course||e.course===course)&&(!q||e.name.toLowerCase().includes(q)||e.phone.includes(q));
+  });
+  var tb=document.getElementById('enq-tbl');
+  tb.innerHTML=filtered.length?filtered.map(function(e){
+    return '<tr onclick="openEnq('+e.id+')"><td><strong>'+e.name+'</strong></td><td>'+e.phone+'</td><td>'+e.inst+'</td><td>'+e.course+'</td><td style="color:var(--tm);font-size:12px">'+e.topics+'</td><td style="color:var(--tm);font-size:12px">'+e.source+'</td><td><span class="badge '+(e.status==='New'?'b-new':'b-reviewed')+'">'+e.status+'</span></td><td style="color:var(--tm);font-size:12px">'+e.date+'</td></tr>';
+  }).join(''):'<tr><td colspan="8" style="text-align:center;color:var(--tm);padding:32px">No enquiries match your filters.</td></tr>';
+  document.getElementById('enq-count').textContent='Showing '+filtered.length+' of '+enquiries.length+' enquiries';
+}
+
+function clearFilters(){['enq-status','enq-inst','enq-course'].forEach(function(id){document.getElementById(id).value=''});document.getElementById('enq-search').value='';renderEnqTable();}
+
+function openEnq(id){
+  currentEnq=enquiries.find(function(e){return e.id===id});
+  if(!currentEnq)return;
+  var isSuper=currentUser.role==='super_admin';
+  var hasEnq=isSuper||currentUser.perms.includes('enquiry_management');
+  document.getElementById('ed-title').textContent=currentEnq.name;
+  document.getElementById('ed-fields').innerHTML=[
+    {l:'Student Name',v:currentEnq.name},{l:'Phone',v:currentEnq.phone},
+    {l:'Institution',v:currentEnq.inst},{l:'Course',v:currentEnq.course},
+    {l:'Topics',v:currentEnq.topics},{l:'Source',v:currentEnq.source},
+    {l:'Submitted',v:currentEnq.date}
+  ].map(function(r){return '<div class="drow"><div class="dlbl">'+r.l+'</div><div class="dval">'+r.v+'</div></div>';}).join('');
+  var sel=document.getElementById('ed-status-sel');
+  sel.innerHTML='<option value="New">New</option><option value="Reviewed">Reviewed</option>';
+  sel.value=currentEnq.status;
+  sel.disabled=!hasEnq;
+  renderNotes();
+  document.getElementById('ed-write-btns').classList.toggle('hidden',!hasEnq);
+  document.getElementById('ed-read-btns').classList.toggle('hidden',hasEnq);
+  showView('enq-detail');
+}
+
+function renderNotes(){
+  var nl=document.getElementById('ed-notes-list');
+  nl.innerHTML=currentEnq.notes.length?currentEnq.notes.map(function(n){return '<div class="note-entry"><div class="note-meta">'+currentUser.name+' · Just now</div>'+n+'</div>';}).join(''):'<div style="font-size:12px;color:var(--tm);padding:8px 0">No notes yet.</div>';
+}
+
+function saveNote(){var t=document.getElementById('ed-note-input').value.trim();if(!t)return;currentEnq.notes.push(t);document.getElementById('ed-note-input').value='';renderNotes();}
+function markReviewed(){currentEnq.status='Reviewed';document.getElementById('ed-status-sel').value='Reviewed';}
+function exportCSV(){alert('CSV export triggered for current filter context. (demo)');}
+
+// ─── CMS ────────────────────────────────────────────────
+function setCtx(btn,ctx){document.querySelectorAll('.ctx-btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');}
+function setCmsSec(btn,sec){document.querySelectorAll('.cms-snav-btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');}
+
+function renderCmsTable(){
+  var tb=document.getElementById('cms-tbl');
+  var hasCms=currentUser&&(currentUser.role==='super_admin'||currentUser.perms.includes('content_management'));
+  tb.innerHTML=courses.map(function(c){
+    var badge=c.status==='Published'?'<span class="badge b-published">Published</span>':'<span class="badge b-draft">Draft</span>';
+    var actions=hasCms?'<button class="btn btn-sm btn-outline" onclick="showView(\'course-edit\')">Edit</button> <button class="btn btn-sm btn-danger">Delete</button>':'<span style="font-size:12px;color:var(--tm)">Read only</span>';
+    return '<tr><td><strong>'+c.name+'</strong></td><td style="color:var(--tm);font-size:12px">'+c.slug+'</td><td>'+c.dur+'</td><td>'+c.seats+'</td><td>'+badge+'</td><td style="color:var(--tm);font-size:12px">'+c.updated+'</td><td>'+actions+'</td></tr>';
+  }).join('');
+}
+
+// ─── USERS ──────────────────────────────────────────────
+function renderUsersTable(){
+  var tb=document.getElementById('users-tbl');
+  tb.innerHTML=users.map(function(u){
+    var role=u.role==='super_admin'?'<span class="badge b-super">Super Admin</span>':'<span class="badge b-admin">Admin</span>';
+    var perms=u.role==='super_admin'?'All access':u.perms.map(function(p){return p.replace('_management','')}).join(', ')||'None';
+    var status=u.active?'<span class="badge b-published">Active</span>':'<span class="badge b-inactive">Inactive</span>';
+    return '<tr onclick="showView(\'user-edit\')"><td><div style="display:flex;align-items:center;gap:8px"><div style="width:28px;height:28px;background:var(--bl);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--bp)">'+u.initials+'</div><strong>'+u.name+'</strong></div></td><td style="color:var(--tm)">'+u.email+'</td><td>'+role+'</td><td style="font-size:12px;color:var(--tm)">'+perms+'</td><td>'+status+'</td><td style="color:var(--tm);font-size:12px">'+u.lastLogin+'</td><td><button class="btn btn-sm btn-outline" onclick="event.stopPropagation();showView(\'user-edit\')">Edit</button></td></tr>';
+  }).join('');
+}
+
+// ─── LANG TABS ──────────────────────────────────────────
+function setLang(tab,lang){
+  document.querySelectorAll('.ltab').forEach(function(t){t.classList.remove('active')});
+  document.querySelectorAll('.lpanel').forEach(function(p){p.classList.remove('active')});
+  tab.classList.add('active');
+  document.getElementById('lp-'+lang).classList.add('active');
+}
+</script>
+</body>
+</html>

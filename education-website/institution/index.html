@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="or">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>SSRK Degree College | ssrkdc.ssrkedu.com</title>
+<meta name="description" content="SSRK Degree College, Cuttack — quality undergraduate programmes in science, arts, commerce and pharmacy. Admissions open 2025–26.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../_shared/site-chrome.css">
+<link rel="stylesheet" href="_components/institution-header.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600;700&family=Noto+Sans+Oriya:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root{
+  --blue-deep:    #172554;
+  --blue-primary: #1E3A8A;
+  --blue-mid:     #3B5998;
+  --blue-light:   #DBEAFE;
+  --saffron:      #D4780A;
+  --saffron-lt:   #F0A030;
+  --inst-primary: #1E3A8A; /* per-institution override point */
+  --white:#FFFFFF;
+  --bg:#F5F7FA;
+  --text-h:#0D2340;
+  --text-b:#2C3E50;
+  --text-m:#6B7A8D;
+  --border:#D4E0EF;
+  --r-sm:6px;--r-md:10px;--r-lg:16px;
+  --sh-sm:0 1px 2px rgba(13,35,64,.04),0 3px 10px rgba(13,35,64,.07);
+  --sh-md:0 8px 20px rgba(13,35,64,.10),0 2px 6px rgba(13,35,64,.05);
+  --sh-lg:0 18px 44px rgba(13,35,64,.15),0 4px 12px rgba(13,35,64,.07);
+  --tr:.28s ease;
+  --ff:'Noto Sans',sans-serif;
+  --fs:'Noto Serif',serif;
+  --fo:'Noto Sans Oriya','Noto Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:var(--ff);color:var(--text-b);background:var(--white);line-height:1.6;font-size:15px;overflow-x:clip}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+
+/* ── CONTAINER ── */
+.container{width:100%;max-width:1240px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.container{padding:0 24px}}
+@media(min-width:1024px){.container{padding:0 32px}}
+
+/* ── BUTTONS ── */
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--saffron);color:#fff;padding:13px 28px;border-radius:var(--r-sm);font-weight:700;font-size:14px;transition:var(--tr);border:none;cursor:pointer;box-shadow:0 2px 8px rgba(212,120,10,.28)}
+.btn-primary:hover{background:#b5660a;transform:translateY(-2px);box-shadow:0 9px 20px rgba(212,120,10,.38)}
+.btn-primary:active{transform:translateY(0);box-shadow:0 2px 6px rgba(212,120,10,.3)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;border:2px solid rgba(255,255,255,.65);padding:11px 22px;border-radius:var(--r-sm);font-weight:600;font-size:14px;transition:var(--tr);cursor:pointer}
+.btn-outline:hover{background:rgba(255,255,255,.18);border-color:#fff;transform:translateY(-2px)}
+.btn-blue{display:inline-flex;align-items:center;gap:6px;background:var(--blue-primary);color:#fff;padding:10px 22px;border-radius:var(--r-sm);font-weight:600;font-size:13px;transition:var(--tr);border:none;cursor:pointer;box-shadow:0 2px 6px rgba(30,58,138,.22)}
+.btn-blue:hover{background:var(--blue-deep);transform:translateY(-2px);box-shadow:0 8px 16px rgba(30,58,138,.3)}
+
+/* ── TYPOGRAPHY ── */
+.section-label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue-primary);margin-bottom:6px;display:block}
+.section-title{font-family:var(--fs);font-size:clamp(22px,4vw,32px);color:var(--text-h);font-weight:700;line-height:1.2}
+.section-title span{color:var(--saffron)}
+.section-header{text-align:center;margin-bottom:40px}
+.section-header p{color:var(--text-m);max-width:500px;margin:10px auto 0;font-size:14.5px}
+
+/* ── HERO ── */
+.hero{position:relative;background:linear-gradient(135deg,var(--blue-deep) 0%,var(--blue-primary) 60%,#1a4fa0 100%);display:flex;align-items:center;overflow:hidden}
+.hero::before{content:'';position:absolute;bottom:-100px;right:-80px;width:380px;height:380px;border:80px solid rgba(255,255,255,.04);border-radius:50%;pointer-events:none}
+.hero::after{content:'';position:absolute;top:-40px;right:80px;width:200px;height:200px;border:50px solid rgba(255,255,255,.04);border-radius:50%;pointer-events:none}
+.hero-inner{position:relative;z-index:2;padding:52px 0 96px;width:100%;text-align:left;align-self:flex-start}
+.hero-inner > *{margin-left:24px}
+@media(min-width:1024px){.hero-inner > *{margin-left:48px}}
+@media(min-width:768px){.hero-inner{padding:80px 0 72px}}
+@media(min-width:1024px){.hero-inner{padding:100px 0}}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:rgba(255,255,255,.92);font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:18px}
+.hero-title{font-family:var(--fs);font-size:clamp(26px,5.5vw,52px);font-weight:700;line-height:1.13;color:#fff;margin-bottom:14px;text-shadow:0 2px 14px rgba(0,0,0,.25)}
+.hero-title em{color:var(--saffron-lt);font-style:normal}
+.hero-sub{font-size:clamp(13.5px,2.2vw,17px);color:rgba(255,255,255,.82);margin-bottom:32px;max-width:540px;line-height:1.7}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+@media(max-width:480px){.hero-actions{flex-direction:column;gap:10px}.hero-actions a,.hero-actions button{width:100%;justify-content:center}}
+.hero-scroll{margin-top:40px;display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.5);font-size:12px;font-weight:500}
+.hero-scroll::before{content:'';display:block;width:32px;height:1px;background:rgba(255,255,255,.3)}
+
+/* ── OVERVIEW ── */
+.overview-section{padding:64px 0;background:#fff}
+@media(min-width:768px){.overview-section{padding:88px 0}}
+.overview-grid{display:grid;gap:48px}
+@media(min-width:1024px){.overview-grid{grid-template-columns:1fr 340px;gap:64px;align-items:start}}
+.overview-text p{color:var(--text-b);font-size:15px;line-height:1.85;margin-bottom:16px}
+.overview-highlights{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0 0}
+.ov-item{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-b);font-weight:500;padding:10px;background:var(--bg);border-radius:var(--r-sm)}
+.ov-dot{width:20px;height:20px;background:var(--blue-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+/* Stats card in overview */
+.overview-card{background:linear-gradient(150deg,var(--blue-deep) 0%,var(--blue-primary) 100%);border-radius:var(--r-lg);padding:28px 24px;color:#fff;display:flex;flex-direction:column;gap:0}
+.ov-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.12);border-radius:var(--r-md);overflow:hidden;margin-bottom:20px}
+.ov-stat{background:rgba(255,255,255,.07);padding:18px 14px;text-align:center}
+.ov-stat-num{font-family:var(--fs);font-size:26px;font-weight:700;color:#fff;line-height:1}
+.ov-stat-num span{color:var(--saffron-lt)}
+.ov-stat-lbl{font-size:10px;color:rgba(255,255,255,.65);font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-top:4px}
+.ov-accred{background:rgba(255,255,255,.1);border-radius:var(--r-md);border:1px solid rgba(255,255,255,.18);padding:14px 16px;display:flex;align-items:center;gap:12px}
+.ov-accred-badge{background:var(--saffron);color:#fff;font-size:9.5px;font-weight:800;letter-spacing:.5px;padding:6px 9px;border-radius:6px;line-height:1.35;text-align:center;flex-shrink:0}
+.ov-accred-info{font-size:12px;color:rgba(255,255,255,.8);line-height:1.5}
+.ov-accred-info strong{color:#fff}
+
+/* ── FEATURED COURSES ── */
+.courses-section{padding:64px 0;background:var(--bg)}
+@media(min-width:768px){.courses-section{padding:88px 0}}
+.courses-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:32px;gap:16px;flex-wrap:wrap}
+.view-all-link{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--blue-primary);white-space:nowrap}
+.view-all-link:hover{color:var(--saffron)}
+.view-all-link svg{width:14px;height:14px;transition:transform .2s}
+.view-all-link:hover svg{transform:translateX(3px)}
+
+/* Carousel */
+.carousel-wrap{position:relative}
+.carousel-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px}
+.carousel-track::-webkit-scrollbar{display:none}
+.course-card{min-width:280px;max-width:320px;flex-shrink:0;background:#fff;border-radius:var(--r-md);padding:24px;box-shadow:var(--sh-sm);border:1.5px solid var(--border);scroll-snap-align:start;transition:var(--tr);display:flex;flex-direction:column;gap:12px;cursor:pointer}
+@media(min-width:768px){.course-card{min-width:300px}}
+@media(min-width:1024px){.course-card{min-width:0;flex:1}}
+.course-card:hover{box-shadow:var(--sh-md);transform:translateY(-3px);border-color:var(--blue-primary)}
+.course-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:3px 10px;border-radius:12px;background:var(--blue-light);color:var(--blue-primary)}
+.course-name{font-family:var(--fs);font-size:17px;font-weight:700;color:var(--text-h);line-height:1.3}
+.course-code{font-size:11px;font-weight:700;color:var(--text-m);letter-spacing:.5px;text-transform:uppercase;margin-top:-6px}
+.course-desc{font-size:13.5px;color:var(--text-m);line-height:1.6;flex:1}
+.course-meta{display:flex;gap:12px;flex-wrap:wrap}
+.course-meta-item{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text-m);font-weight:500}
+.course-meta-item svg{width:13px;height:13px;flex-shrink:0}
+.course-footer{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border);margin-top:auto}
+.course-cta{font-size:13px;font-weight:700;color:var(--blue-primary);display:flex;align-items:center;gap:4px;transition:var(--tr)}
+.course-cta:hover{color:var(--saffron)}
+.course-cta svg{width:14px;height:14px;transition:transform .2s}
+.course-cta:hover svg{transform:translateX(3px)}
+.course-enquire{font-size:12px;font-weight:600;color:var(--text-m);background:var(--bg);padding:6px 12px;border-radius:var(--r-sm);transition:var(--tr)}
+.course-enquire:hover{background:var(--blue-light);color:var(--blue-primary)}
+
+/* Carousel controls */
+.carousel-arrows{display:none;position:absolute;top:50%;transform:translateY(-50%);justify-content:space-between;width:100%;pointer-events:none;padding:0 4px}
+@media(min-width:1024px){.carousel-arrows{display:flex}}
+.car-arrow{width:38px;height:38px;background:#fff;border:1.5px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:all;transition:var(--tr);box-shadow:var(--sh-sm)}
+.car-arrow:hover{background:var(--blue-primary);border-color:var(--blue-primary);color:#fff}
+.car-arrow:hover svg{stroke:#fff}
+.car-arrow svg{width:18px;height:18px;stroke:var(--text-h)}
+.carousel-dots{display:flex;justify-content:center;gap:7px;margin-top:20px}
+.car-dot{width:7px;height:7px;border-radius:50%;background:var(--border);cursor:pointer;transition:var(--tr);border:none}
+.car-dot.active{background:var(--blue-primary);width:20px;border-radius:4px}
+
+/* Empty state */
+.courses-empty{background:#fff;border-radius:var(--r-md);padding:48px 24px;text-align:center;border:1.5px dashed var(--border)}
+.courses-empty p{color:var(--text-m);font-size:14.5px;margin-bottom:16px}
+
+/* ── SCHOLARSHIPS ── */
+.scholarships-section{padding:56px 0;background:#fff}
+@media(min-width:768px){.scholarships-section{padding:72px 0}}
+.schol-inner{background:linear-gradient(135deg,#0c4a26 0%,#166534 100%);border-radius:var(--r-lg);padding:40px 32px;display:grid;gap:28px;position:relative;overflow:hidden}
+@media(min-width:768px){.schol-inner{grid-template-columns:1fr auto;align-items:center;gap:40px;padding:44px 40px}}
+.schol-inner::before{content:'';position:absolute;top:-60px;right:-60px;width:260px;height:260px;border:60px solid rgba(255,255,255,.05);border-radius:50%;pointer-events:none}
+.schol-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.92);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:16px;margin-bottom:12px}
+.schol-title{font-family:var(--fs);font-size:clamp(20px,3.5vw,26px);font-weight:700;color:#fff;margin-bottom:10px;line-height:1.25}
+.schol-desc{font-size:14px;color:rgba(255,255,255,.8);line-height:1.7;max-width:500px;margin-bottom:16px}
+.schol-types{display:flex;flex-wrap:wrap;gap:8px}
+.schol-type{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.9);font-size:12px;font-weight:600;padding:5px 12px;border-radius:14px}
+.schol-cta{display:inline-flex;align-items:center;gap:7px;background:#fff;color:#166534;padding:12px 24px;border-radius:var(--r-sm);font-size:13.5px;font-weight:700;transition:var(--tr);white-space:nowrap;flex-shrink:0}
+.schol-cta:hover{background:var(--saffron-lt);color:#fff}
+
+/* ── ADMISSION CTA ── */
+.adm-cta-section{background:var(--bg);padding:64px 0}
+.adm-cta-inner{background:linear-gradient(135deg,var(--blue-deep) 0%,var(--blue-primary) 100%);border-radius:var(--r-lg);padding:48px 32px;text-align:center;position:relative;overflow:hidden}
+@media(min-width:768px){.adm-cta-inner{padding:56px 48px}}
+.adm-cta-inner::before{content:'';position:absolute;bottom:-80px;right:-60px;width:280px;height:280px;border:70px solid rgba(255,255,255,.05);border-radius:50%;pointer-events:none}
+.adm-cta-inner::after{content:'';position:absolute;top:-50px;left:5%;width:180px;height:180px;border:50px solid rgba(255,255,255,.04);border-radius:50%;pointer-events:none}
+.adm-cta-label{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.9);font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 14px;border-radius:16px;margin-bottom:16px}
+.adm-cta-title{font-family:var(--fs);font-size:clamp(22px,4.5vw,34px);font-weight:700;color:#fff;margin-bottom:12px;line-height:1.2;position:relative;z-index:1}
+.adm-cta-sub{font-size:15px;color:rgba(255,255,255,.78);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7;position:relative;z-index:1}
+.adm-cta-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;position:relative;z-index:1}
+
+/* ── ENQUIRY SECTION ── */
+.enquiry-section{padding:64px 0;background:linear-gradient(140deg,var(--blue-deep) 0%,var(--blue-primary) 100%);position:relative;overflow:hidden}
+@media(min-width:768px){.enquiry-section{padding:88px 0}}
+.enquiry-section::before{content:'';position:absolute;top:-120px;right:-100px;width:400px;height:400px;border:90px solid rgba(255,255,255,.04);border-radius:50%;pointer-events:none}
+.enquiry-grid{display:grid;gap:44px;position:relative;z-index:2}
+@media(min-width:1024px){.enquiry-grid{grid-template-columns:1fr 460px;align-items:start;gap:64px}}
+.enquiry-info{color:#fff}
+.enquiry-info .section-label{color:var(--saffron-lt)}
+.enquiry-info h2{font-family:var(--fs);font-size:clamp(24px,4vw,34px);font-weight:700;color:#fff;margin-bottom:14px}
+.enquiry-info p{color:rgba(255,255,255,.78);font-size:15px;line-height:1.75;margin-bottom:24px}
+.enq-points{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.enq-point{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.88);font-size:14px}
+.enq-point-dot{width:22px;height:22px;background:rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.enq-contact{display:flex;flex-direction:column;gap:8px}
+.enq-contact-item{display:flex;align-items:center;gap:9px;font-size:13.5px;color:rgba(255,255,255,.8)}
+.enq-contact-item svg{width:16px;height:16px;flex-shrink:0;opacity:.7}
+
+/* Form Card */
+.enquiry-form-card{background:#fff;border-radius:var(--r-lg);padding:28px 24px;box-shadow:var(--sh-lg)}
+.enquiry-form-card h3{font-family:var(--fs);font-size:19px;font-weight:700;color:var(--text-h);margin-bottom:6px}
+.enquiry-form-card p.form-sub{font-size:13px;color:var(--text-m);margin-bottom:20px}
+.form-group{margin-bottom:13px}
+.form-group label{display:block;font-size:11px;font-weight:700;color:var(--text-m);margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 13px;border:1.5px solid var(--border);border-radius:var(--r-sm);font-size:14px;font-family:var(--ff);color:var(--text-b);transition:border-color .2s,background .2s;background:var(--bg);-webkit-appearance:none}
+.form-group textarea{resize:vertical;min-height:80px}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--blue-primary);background:#fff}
+.form-group.error input,.form-group.error select{border-color:#DC2626;background:#FFF5F5}
+.form-error{font-size:11.5px;color:#DC2626;margin-top:4px;display:none}
+.form-group.error .form-error{display:block}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+/* Multi-Select */
+.multi-select-wrapper{position:relative;margin-bottom:4px}
+.multi-select-btn{width:100%;padding:11px 13px;border:1.5px solid var(--border);border-radius:var(--r-sm);font-size:14px;background:var(--bg);color:var(--text-m);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:8px;transition:var(--tr);text-align:left;font-family:var(--ff)}
+.multi-select-btn:hover{border-color:var(--blue-primary);background:#fff}
+.multi-select-btn.open{border-color:var(--blue-primary);border-radius:var(--r-sm) var(--r-sm) 0 0;background:#fff}
+.multi-select-btn svg{flex-shrink:0;color:var(--text-m);transition:transform .22s}
+.multi-select-btn.open svg{transform:rotate(180deg);color:var(--blue-primary)}
+.multi-select-menu{position:absolute;top:100%;left:0;right:0;background:#fff;border:1.5px solid var(--blue-primary);border-top:none;border-radius:0 0 var(--r-sm) var(--r-sm);max-height:0;overflow:hidden;transition:max-height .28s ease;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,.13)}
+.multi-select-menu.open{max-height:260px;overflow-y:auto}
+.multi-select-item{display:flex;align-items:center;gap:10px;padding:9px 14px;cursor:pointer;transition:background .15s;border-bottom:1px solid #EEF2F7;user-select:none}
+.multi-select-item:last-child{border-bottom:none}
+.multi-select-item:hover{background:var(--blue-light)}
+.multi-select-item input[type=checkbox]{appearance:none;-webkit-appearance:none;width:16px;height:16px;border:2px solid var(--border);border-radius:4px;background:#fff;cursor:pointer;flex-shrink:0;display:grid;place-items:center;transition:all .15s}
+.multi-select-item input[type=checkbox]:checked{background:var(--blue-primary);border-color:var(--blue-primary)}
+.multi-select-item input[type=checkbox]:checked::after{content:'';display:block;width:4px;height:8px;border:2px solid #fff;border-top:none;border-left:none;transform:rotate(45deg) translate(-1px,-1px)}
+.multi-select-item span{font-size:13px;color:var(--text-b);flex:1}
+.multi-select-item.checked span{color:var(--blue-primary);font-weight:600}
+.selected-pills{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 4px}
+.pill{display:inline-flex;align-items:center;gap:4px;background:var(--blue-light);color:var(--blue-primary);border:1.5px solid #BFDBFE;padding:3px 10px 3px 12px;border-radius:20px;font-size:12px;font-weight:600;animation:popIn .2s ease}
+.pill button{background:none;border:none;cursor:pointer;color:var(--blue-mid);font-size:13px;line-height:1;padding:0;display:flex;align-items:center;transition:color .15s}
+.pill button:hover{color:#B91C1C}
+
+/* Submit & Success */
+.submit-btn{width:100%;padding:13px;background:var(--blue-primary);color:#fff;border-radius:var(--r-sm);font-size:15px;font-weight:700;transition:var(--tr);margin-top:8px;font-family:var(--ff);border:none;cursor:pointer}
+.submit-btn:hover{background:var(--blue-deep);transform:translateY(-2px);box-shadow:0 8px 18px rgba(30,58,138,.32)}
+.submit-btn:disabled{opacity:.65;cursor:not-allowed;transform:none}
+.form-note{font-size:11px;color:var(--text-m);text-align:center;margin-top:8px}
+.duplicate-msg{background:#FFF7ED;border:1.5px solid #FED7AA;border-radius:var(--r-sm);padding:12px 14px;font-size:13px;color:#92400E;margin-bottom:12px;display:none}
+.duplicate-msg.show{display:block}
+
+/* Success Panel */
+.success-panel{display:none;text-align:center;padding:32px 16px}
+.success-panel.show{display:block}
+.success-icon{width:72px;height:72px;background:#DCFCE7;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.success-icon svg{width:36px;height:36px;stroke:#16a34a}
+.success-panel h3{font-family:var(--fs);font-size:20px;font-weight:700;color:var(--text-h);margin-bottom:10px}
+.success-panel p{font-size:14px;color:var(--text-m);line-height:1.6;max-width:300px;margin:0 auto 20px}
+.success-ref{background:var(--bg);border-radius:var(--r-sm);padding:10px 16px;font-size:12px;color:var(--text-m);margin-bottom:20px;display:inline-block}
+.success-ref strong{color:var(--blue-primary)}
+
+/* ── FOOTER ── */
+.site-footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:48px 0 0}
+.footer-grid{display:grid;gap:32px;padding-bottom:40px}
+@media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr}}
+.footer-brand .logo-name{font-family:var(--fs);font-size:17px;font-weight:700;color:#fff;display:block;margin-bottom:4px}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.65;margin:10px 0 16px;max-width:260px}
+.footer-trust-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:var(--r-sm);transition:var(--tr)}
+.footer-trust-link:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+.footer-col h4{font-size:11px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,.65);transition:color .2s}
+.footer-col ul li a:hover{color:#fff}
+.footer-contact-item{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,.65);margin-bottom:10px;line-height:1.5}
+.footer-contact-item svg{width:14px;height:14px;flex-shrink:0;margin-top:3px;opacity:.6}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:16px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px;color:rgba(255,255,255,.4)}
+.footer-bottom a{color:rgba(255,255,255,.55);transition:color .2s}
+.footer-bottom a:hover{color:#fff}
+
+/* ── MOBILE STICKY CTA ── */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:990;background:#fff;border-top:1px solid var(--border);padding:10px 16px;box-shadow:0 -4px 20px rgba(0,0,0,.12);display:flex;gap:10px}
+@media(min-width:1024px){.sticky-cta{display:none}}
+.sticky-cta a{flex:1;text-align:center;padding:12px;border-radius:var(--r-sm);font-size:14px;font-weight:700;transition:var(--tr)}
+.sticky-call{background:var(--bg);color:var(--text-h);border:1.5px solid var(--border)}
+.sticky-call:hover{border-color:var(--blue-primary);color:var(--blue-primary)}
+.sticky-enquire{background:var(--blue-primary);color:#fff}
+.sticky-enquire:hover{background:var(--blue-deep)}
+
+/* ── SCROLL ANIMATION ── */
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease;pointer-events:none}
+.fade-up.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+
+/* ── SKELETON ── */
+.skeleton{background:linear-gradient(90deg,#eee 25%,#f5f5f5 50%,#eee 75%);background-size:200% 100%;animation:shimmer 1.4s infinite}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* ── KEYFRAMES ── */
+@keyframes popIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+
+/* ── ODIA FONT for Odia text ── */
+[lang="or"],[data-odia]{font-family:var(--fo)}
+
+@media(max-width:1023px){body{padding-bottom:72px}}
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<div id="site-chrome-mount"></div>
+<script src="../_shared/site-chrome.js"></script>
+
+<div id="inst-header-mount" data-active="home" data-show-lang="true" data-show-trust="true" data-i18n="true" data-enquire-href="#enquiry"></div>
+<script src="_components/institution-header.js"></script>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="hero" aria-labelledby="hero-heading" data-screen-label="hero">
+  <div class="container hero-inner">
+    <div class="hero-badge" data-t="heroBadge">Admissions Open · 2025–26</div>
+    <h1 class="hero-title" id="hero-heading">
+      <span data-t="heroTitle1">SSRK Degree College,</span><br>
+      <em data-t="heroTitle2">Cuttack</em>
+    </h1>
+    <p class="hero-sub" data-t="heroSub">Government-affiliated undergraduate programmes in Science, Arts, Commerce &amp; Pharmacy — quality education within your reach.</p>
+    <div class="hero-actions">
+      <a href="#enquiry" class="btn-primary" data-t="heroCta1">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span data-t="heroCta1Text">Enquire for Admission</span>
+      </a>
+      <a href="#featured-courses" class="btn-outline" data-t="heroCta2">
+        <span data-t="heroCta2Text">Explore Programmes</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </a>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span data-t="heroScroll">Scroll to discover</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ OVERVIEW ══ -->
+<section class="overview-section" id="overview" aria-labelledby="overview-heading" data-screen-label="overview">
+  <div class="container">
+    <div class="overview-grid">
+      <div class="overview-text fade-up">
+        <span class="section-label" data-t="overviewLabel">About the College</span>
+        <h2 class="section-title" id="overview-heading"><span data-t="overviewTitleAccent">Quality Education</span> <span data-t="overviewTitleRest">for Every Student</span></h2>
+        <p style="margin-top:16px" data-t="overviewP1">SSRK Degree College has been shaping the futures of students across Odisha since 1990. Affiliated to Utkal University and approved by the Government of Odisha, our campus provides a nurturing environment where academic excellence meets holistic development.</p>
+        <p data-t="overviewP2">Our faculty bring decades of teaching experience, research contributions, and industry connections — giving students both the theoretical foundation and practical exposure needed for modern careers.</p>
+        <p data-t="overviewP3">Whether you are a student from Cuttack, a parent exploring options for your child, or a teacher looking to grow — SSRK Degree College is committed to your success at every step.</p>
+        <div class="overview-highlights">
+          <div class="ov-item">
+            <div class="ov-dot">
+              <svg viewBox="0 0 12 12" fill="none" stroke="#1E3A8A" stroke-width="2"><polyline points="2,6 5,9 10,3"/></svg>
+            </div>
+            <span data-t="hl1">Utkal University Affiliated</span>
+          </div>
+          <div class="ov-item">
+            <div class="ov-dot">
+              <svg viewBox="0 0 12 12" fill="none" stroke="#1E3A8A" stroke-width="2"><polyline points="2,6 5,9 10,3"/></svg>
+            </div>
+            <span data-t="hl2">35+ Years of Excellence</span>
+          </div>
+          <div class="ov-item">
+            <div class="ov-dot">
+              <svg viewBox="0 0 12 12" fill="none" stroke="#1E3A8A" stroke-width="2"><polyline points="2,6 5,9 10,3"/></svg>
+            </div>
+            <span data-t="hl3">Govt. Scholarships Available</span>
+          </div>
+          <div class="ov-item">
+            <div class="ov-dot">
+              <svg viewBox="0 0 12 12" fill="none" stroke="#1E3A8A" stroke-width="2"><polyline points="2,6 5,9 10,3"/></svg>
+            </div>
+            <span data-t="hl4">Hostel &amp; Transport</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="overview-card fade-up" style="transition-delay:.12s">
+        <div class="ov-stat-grid">
+          <div class="ov-stat">
+            <div class="ov-stat-num">35<span>+</span></div>
+            <div class="ov-stat-lbl" data-t="stat1">Years</div>
+          </div>
+          <div class="ov-stat">
+            <div class="ov-stat-num">4<span>K+</span></div>
+            <div class="ov-stat-lbl" data-t="stat2">Students</div>
+          </div>
+          <div class="ov-stat">
+            <div class="ov-stat-num">80<span>+</span></div>
+            <div class="ov-stat-lbl" data-t="stat3">Faculty</div>
+          </div>
+          <div class="ov-stat">
+            <div class="ov-stat-num">12<span></span></div>
+            <div class="ov-stat-lbl" data-t="stat4">Programmes</div>
+          </div>
+        </div>
+        <div class="ov-accred">
+          <div class="ov-accred-badge">NAAC<br>B++</div>
+          <div class="ov-accred-info"><strong data-t="accredTitle">NAAC Accredited</strong><br><span data-t="accredSub">Utkal University affiliated · Govt. of Odisha approved</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FEATURED COURSES ══ -->
+<section class="courses-section" id="featured-courses" aria-labelledby="courses-heading" data-screen-label="featured-courses">
+  <div class="container">
+    <div class="courses-header fade-up">
+      <div>
+        <span class="section-label" data-t="coursesLabel">Programmes Offered</span>
+        <h2 class="section-title" id="courses-heading" data-t="coursesTitle">Featured <span>Programmes</span></h2>
+      </div>
+      <a href="Courses.html" class="view-all-link" data-t="coursesViewAll">
+        View all programmes
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="carousel-wrap">
+      <div class="carousel-track" id="courseCarousel" role="list" aria-label="Featured programmes">
+
+        <div class="course-card fade-up" role="listitem" tabindex="0">
+          <div><span class="course-tag">Science</span></div>
+          <div>
+            <div class="course-name">D.Pharm</div>
+            <div class="course-code">Diploma in Pharmacy</div>
+          </div>
+          <p class="course-desc">Two-year diploma preparing students for careers in pharmaceutical companies, hospitals, and community pharmacies.</p>
+          <div class="course-meta">
+            <div class="course-meta-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              2 Years
+            </div>
+            <div class="course-meta-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              60 Seats
+            </div>
+          </div>
+          <div class="course-footer">
+            <a href="Course-Detail.html#d-pharm" class="course-cta">
+              View details
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <button class="course-enquire" onclick="enquireAbout('D.Pharm')">Enquire</button>
+          </div>
+        </div>
+
+        <div class="course-card fade-up" role="listitem" tabindex="0" style="transition-delay:.08s">
+          <div><span class="course-tag">Commerce</span></div>
+          <div>
+            <div class="course-name">B.Com</div>
+            <div class="course-code">Bachelor of Commerce</div>
+          </div>
+          <p class="course-desc">Three-year undergraduate programme covering accounting, finance, business law, and taxation for careers in business and banking.</p>
+          <div class="course-meta">
+            <div class="course-meta-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              3 Years
+            </div>
+            <div class="course-meta-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              120 Seats
+            </div>
+          </div>
+          <div class="course-footer">
+            <a href="Course-Detail.html#b-com" class="course-cta">
+              View details
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <button class="course-enquire" onclick="enquireAbout('B.Com')">Enquire</button>
+          </div>
+        </div>
+
+        <div class="course-card fade-up" role="listitem" tabindex="0" style="transition-delay:.16s">
+          <div><span class="course-tag">Science</span></div>
+          <div>
+            <div class="course-name">B.Sc</div>
+            <div class="course-code">Bachelor of Science</div>
+          </div>
+          <p class="course-desc">Streams in Physics, Chemistry, Mathematics and Biology. Foundation for postgraduate studies and competitive exams.</p>
+          <div class="course-meta">
+            <div class="course-meta-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              3 Years
+            </div>
+            <div class="course-meta-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              80 Seats
+            </div>
+          </div>
+          <div class="course-footer">
+            <a href="Course-Detail.html#b-sc" class="course-cta">
+              View details
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <button class="course-enquire" onclick="enquireAbout('B.Sc')">Enquire</button>
+          </div>
+        </div>
+
+        <div class="course-card fade-up" role="listitem" tabindex="0" style="transition-delay:.24s">
+          <div><span class="course-tag" style="background:#FEF3C7;color:#92400E">Arts</span></div>
+          <div>
+            <div class="course-name">B.A</div>
+            <div class="course-code">Bachelor of Arts</div>
+          </div>
+          <p class="course-desc">Humanities and social sciences covering Odia, History, Political Science, Economics, and Sociology.</p>
+          <div class="course-meta">
+            <div class="course-meta-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              3 Years
+            </div>
+            <div class="course-meta-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              160 Seats
+            </div>
+          </div>
+          <div class="course-footer">
+            <a href="Course-Detail.html#b-a" class="course-cta">
+              View details
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <button class="course-enquire" onclick="enquireAbout('B.A')">Enquire</button>
+          </div>
+        </div>
+
+      </div><!-- end carousel-track -->
+
+      <!-- Desktop arrows -->
+      <div class="carousel-arrows" aria-hidden="true">
+        <button class="car-arrow" id="carPrev" onclick="carouselMove(-1)" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="car-arrow" id="carNext" onclick="carouselMove(1)" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="carousel-dots" id="carDots" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ══ SCHOLARSHIPS ══ -->
+<section class="scholarships-section" id="scholarships" aria-labelledby="schol-heading" data-screen-label="scholarships">
+  <div class="container">
+    <div class="schol-inner fade-up">
+      <div>
+        <div class="schol-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Financial Support Available
+        </div>
+        <h2 class="schol-title" id="schol-heading" data-t="scholTitle">Scholarships &amp; Financial Aid</h2>
+        <p class="schol-desc" data-t="scholDesc">We believe financial constraints should never stop a deserving student. SSRK Degree College facilitates both government and merit-based scholarship schemes for eligible students.</p>
+        <div class="schol-types">
+          <span class="schol-type" data-t="scholType1">Merit Scholarship</span>
+          <span class="schol-type" data-t="scholType2">ST/SC Scholarship</span>
+          <span class="schol-type" data-t="scholType3">OBC Scholarship</span>
+          <span class="schol-type" data-t="scholType4">Girl Child Scheme</span>
+        </div>
+      </div>
+      <a href="Scholarships.html" class="schol-cta" data-t="scholCta">
+        Learn More
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ADMISSION CTA ══ -->
+<section class="adm-cta-section" id="admission-cta" data-screen-label="admission-cta">
+  <div class="container">
+    <div class="adm-cta-inner fade-up">
+      <div class="adm-cta-label" data-t="admCtaLabel">Admissions 2025–26</div>
+      <h2 class="adm-cta-title" data-t="admCtaTitle">Ready to Begin Your Journey?</h2>
+      <p class="adm-cta-sub" data-t="admCtaSub">Seats are filling fast. Submit your enquiry today and our admissions counselor will contact you within 24 hours.</p>
+      <div class="adm-cta-actions">
+        <a href="#enquiry" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span data-t="admCtaCta">Submit Enquiry Now</span>
+        </a>
+        <a href="tel:+916742550000" class="btn-outline" data-t="admCtaCall">📞 Call Admissions Office</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ENQUIRY FORM ══ -->
+<section class="enquiry-section" id="enquiry" aria-labelledby="enquiry-heading" data-screen-label="enquiry">
+  <div class="container">
+    <div class="enquiry-grid">
+
+      <!-- Left Info -->
+      <div class="enquiry-info fade-up">
+        <span class="section-label" data-t="enquiryLabel">Admission Enquiry</span>
+        <h2 id="enquiry-heading" data-t="enquiryTitle">We Are Here to Help You Choose Right</h2>
+        <p data-t="enquiryDesc">Fill the form and our admissions team will reach out to answer all your questions — about courses, fees, scholarships, hostel, and more.</p>
+        <div class="enq-points">
+          <div class="enq-point">
+            <div class="enq-point-dot">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span data-t="enqP1">Callback within 24 hours</span>
+          </div>
+          <div class="enq-point">
+            <div class="enq-point-dot">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span data-t="enqP2">No spam calls, only genuine assistance</span>
+          </div>
+          <div class="enq-point">
+            <div class="enq-point-dot">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span data-t="enqP3">Available in Odia &amp; English</span>
+          </div>
+        </div>
+        <div class="enq-contact">
+          <div class="enq-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.35a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.1-1.1a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +91 674 255 0000
+          </div>
+          <div class="enq-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            admissions@ssrkdc.edu.in
+          </div>
+          <div class="enq-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Badambadi, Cuttack — 753012
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Card -->
+      <div class="enquiry-form-card fade-up" style="transition-delay:.1s">
+        <!-- Duplicate warning -->
+        <div class="duplicate-msg" id="dupMsg">
+          <strong>Already submitted!</strong> You submitted an enquiry recently. Our team will contact you soon. <a href="tel:+916742550000" style="color:#92400E;font-weight:700">Call us</a> for urgent queries.
+        </div>
+
+        <!-- Form -->
+        <div id="enquiryFormWrap">
+          <h3 data-t="formTitle">Admission Enquiry Form</h3>
+          <p class="form-sub" data-t="formSub">All fields marked * are required</p>
+
+          <form id="enquiryForm" novalidate>
+            <input type="hidden" name="institution" value="SSRK Degree College">
+            <input type="hidden" name="source" value="institution_home">
+
+            <div class="form-row">
+              <div class="form-group" id="fg-name">
+                <label for="fname" data-t="fieldName">Full Name *</label>
+                <input type="text" id="fname" name="name" placeholder="Your full name" autocomplete="name">
+                <div class="form-error" id="err-name">Please enter your name</div>
+              </div>
+              <div class="form-group" id="fg-phone">
+                <label for="fphone" data-t="fieldPhone">Mobile Number *</label>
+                <input type="tel" id="fphone" name="phone" placeholder="10-digit mobile" autocomplete="tel" maxlength="10">
+                <div class="form-error" id="err-phone">Enter a valid 10-digit number</div>
+              </div>
+            </div>
+
+            <div class="form-group" id="fg-email">
+              <label for="femail" data-t="fieldEmail">Email Address</label>
+              <input type="email" id="femail" name="email" placeholder="Optional" autocomplete="email">
+              <div class="form-error" id="err-email">Enter a valid email address</div>
+            </div>
+
+            <div class="form-group" id="fg-course">
+              <label for="fcourse" data-t="fieldCourse">Programme Interested In *</label>
+              <select id="fcourse" name="course">
+                <option value="">All programmes / Not sure yet</option>
+                <option value="d-pharm">D.Pharm — Diploma in Pharmacy</option>
+                <option value="b-com">B.Com — Bachelor of Commerce</option>
+                <option value="b-sc">B.Sc — Bachelor of Science</option>
+                <option value="b-a">B.A — Bachelor of Arts</option>
+                <option value="bba">BBA — Bachelor of Business Administration</option>
+                <option value="bca">BCA — Bachelor of Computer Applications</option>
+              </select>
+              <div class="form-error" id="err-course">Please select a programme</div>
+            </div>
+
+            <div class="form-group">
+              <label data-t="fieldTopics">I want to know about (optional)</label>
+              <div class="multi-select-wrapper">
+                <button type="button" class="multi-select-btn" id="topicBtn" onclick="toggleTopicSelect(event)">
+                  <span id="topicPlaceholder" data-t="topicPlaceholder">Select topics...</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="multi-select-menu" id="topicMenu">
+                  <label class="multi-select-item"><input type="checkbox" value="admission_process" onchange="handleTopicChange(event)"><span>Admission Process</span></label>
+                  <label class="multi-select-item"><input type="checkbox" value="scholarships" onchange="handleTopicChange(event)"><span>Scholarships &amp; Fee Waiver</span></label>
+                  <label class="multi-select-item"><input type="checkbox" value="eligibility" onchange="handleTopicChange(event)"><span>Eligibility Criteria</span></label>
+                  <label class="multi-select-item"><input type="checkbox" value="fees" onchange="handleTopicChange(event)"><span>Fee Structure</span></label>
+                  <label class="multi-select-item"><input type="checkbox" value="hostel" onchange="handleTopicChange(event)"><span>Hostel Facilities</span></label>
+                  <label class="multi-select-item"><input type="checkbox" value="transport" onchange="handleTopicChange(event)"><span>Transport</span></label>
+                  <label class="multi-select-item"><input type="checkbox" value="placements" onchange="handleTopicChange(event)"><span>Placements</span></label>
+                  <label class="multi-select-item"><input type="checkbox" value="campus_visit" onchange="handleTopicChange(event)"><span>Campus Visit</span></label>
+                </div>
+              </div>
+              <div id="topicPills" class="selected-pills"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="fmsg" data-t="fieldMsg">Message (optional)</label>
+              <textarea id="fmsg" name="message" placeholder="Any specific questions?"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn" data-t="formSubmit">Submit Enquiry →</button>
+            <p class="form-note" data-t="formNote">We respect your privacy. No spam calls.</p>
+          </form>
+        </div>
+
+        <!-- Success Panel -->
+        <div class="success-panel" id="successPanel" role="alert" aria-live="polite">
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3 data-t="successTitle">Enquiry Received!</h3>
+          <p data-t="successMsg">Thank you! Our admissions team will call you within 24 hours. Keep your phone nearby.</p>
+          <div class="success-ref">Reference: <strong id="refId">SSRKDC-2025-0001</strong></div>
+          <a href="tel:+916742550000" class="btn-blue">📞 Call us now</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-name">SSRK Degree College</span>
+        <div style="font-size:11px;color:rgba(255,255,255,.45);margin-bottom:8px;letter-spacing:.5px;text-transform:uppercase">Cuttack, Odisha</div>
+        <p>Providing quality higher education in Arts, Science, Commerce and Pharmacy since 1990.</p>
+        <a href="../trust/index.html" class="footer-trust-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Part of SSRK Edu Trust
+        </a>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Courses.html">Programmes</a></li>
+          <li><a href="Scholarships.html">Scholarships</a></li>
+          <li><a href="Faculty.html">Faculty</a></li>
+          <li><a href="Gallery.html">Gallery</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Badambadi, Cuttack — 753012, Odisha
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12"/></svg>
+          +91 674 255 0000
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4"/><polyline points="22,6 12,13 2,6"/></svg>
+          admissions@ssrkdc.edu.in
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 SSRK Degree College. All rights reserved.</span>
+      <div style="display:flex;gap:16px">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="../trust/index.html">ssrkedu.com</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ MOBILE STICKY CTA ══ -->
+<div class="sticky-cta" id="stickyCta" aria-label="Quick actions">
+  <a href="tel:+916742550000" class="sticky-call">📞 Call</a>
+  <a href="#enquiry" class="sticky-enquire" data-t="stickyEnquire">Enquire Now</a>
+</div>
+
+<script>
+/* ══════════════════════════════════
+   TRANSLATIONS
+══════════════════════════════════ */
+var T = {
+  en: {
+    logoName:'SSRK Degree College', logoSub:'Cuttack, Odisha', trustLink:'Part of SSRK Edu',
+    navHome:'Home', navCourses:'Courses', navSchol:'Scholarships', navFaculty:'Faculty', navGallery:'Gallery', navContact:'Contact',
+    headerEnquire:'Enquire Now', heroBadge:'Admissions Open · 2025–26',
+    heroTitle1:'SSRK Degree College,', heroTitle2:'Cuttack',
+    heroSub:'Government-affiliated undergraduate programmes in Science, Arts, Commerce & Pharmacy — quality education within your reach.',
+    heroCta1Text:'Enquire for Admission', heroCta2Text:'Explore Programmes', heroScroll:'Scroll to discover',
+    overviewLabel:'About the College', overviewTitleAccent:'Quality Education', overviewTitleRest:'for Every Student',
+    overviewP1:'SSRK Degree College has been shaping the futures of students across Odisha since 1990. Affiliated to Utkal University and approved by the Government of Odisha.',
+    overviewP2:'Our faculty bring decades of teaching experience, research contributions, and industry connections — giving students both the theoretical foundation and practical exposure needed.',
+    overviewP3:'Whether you are a student from Cuttack, a parent exploring options for your child, or a teacher looking to grow — SSRK Degree College is committed to your success.',
+    hl1:'Utkal University Affiliated', hl2:'35+ Years of Excellence', hl3:'Govt. Scholarships Available', hl4:'Hostel & Transport',
+    stat1:'Years', stat2:'Students', stat3:'Faculty', stat4:'Programmes',
+    accredTitle:'NAAC Accredited', accredSub:'Utkal University affiliated · Govt. of Odisha approved',
+    coursesLabel:'Programmes Offered', coursesTitle:'Featured Programmes', coursesViewAll:'View all programmes',
+    scholTitle:'Scholarships & Financial Aid',
+    scholDesc:'We believe financial constraints should never stop a deserving student. SSRK Degree College facilitates both government and merit-based scholarship schemes.',
+    scholType1:'Merit Scholarship', scholType2:'ST/SC Scholarship', scholType3:'OBC Scholarship', scholType4:'Girl Child Scheme', scholCta:'Learn More',
+    admCtaLabel:'Admissions 2025–26', admCtaTitle:'Ready to Begin Your Journey?',
+    admCtaSub:'Seats are filling fast. Submit your enquiry today and our admissions counselor will contact you within 24 hours.',
+    admCtaCta:'Submit Enquiry Now', admCtaCall:'📞 Call Admissions Office',
+    enquiryLabel:'Admission Enquiry', enquiryTitle:'We Are Here to Help You Choose Right',
+    enquiryDesc:'Fill the form and our admissions team will reach out to answer all your questions — about courses, fees, scholarships, hostel, and more.',
+    enqP1:'Callback within 24 hours', enqP2:'No spam calls, only genuine assistance', enqP3:'Available in Odia & English',
+    formTitle:'Admission Enquiry Form', formSub:'All fields marked * are required',
+    fieldName:'Full Name *', fieldPhone:'Mobile Number *', fieldEmail:'Email Address', fieldCourse:'Programme Interested In *',
+    fieldTopics:'I want to know about (optional)', topicPlaceholder:'Select topics...', fieldMsg:'Message (optional)',
+    formSubmit:'Submit Enquiry →', formNote:'We respect your privacy. No spam calls.',
+    successTitle:'Enquiry Received!', successMsg:'Thank you! Our admissions team will call you within 24 hours. Keep your phone nearby.',
+    stickyEnquire:'Enquire Now'
+  },
+  or: {
+    logoName:'ଏସ.ଏସ.ଆର.କେ ଡିଗ୍ରୀ କଲେଜ', logoSub:'କଟକ, ଓଡ଼ିଶା', trustLink:'SSRK Edu ର ଅଂଶ',
+    navHome:'ହୋମ', navCourses:'ପାଠ୍ୟକ୍ରମ', navSchol:'ବୃତ୍ତି', navFaculty:'ଅଧ୍ୟାପକ', navGallery:'ଗ୍ୟାଲେରୀ', navContact:'ଯୋଗାଯୋଗ',
+    headerEnquire:'ଆବେଦନ କରନ୍ତୁ', heroBadge:'ଭର୍ତ୍ତି ଚାଲିଛି · ୨୦୨୫–୨୬',
+    heroTitle1:'SSRK ଡିଗ୍ରୀ କଲେଜ,', heroTitle2:'କଟକ',
+    heroSub:'ବିଜ୍ଞାନ, କଳା, ବାଣିଜ୍ୟ ଓ ଫାର୍ମାସି ରେ ସ୍ନାତକ ଡିଗ୍ରୀ — ଆପଣଙ୍କ ନାଗାଲ ମଧ୍ୟରେ ଗୁଣବତ୍ତା ଶିକ୍ଷା।',
+    heroCta1Text:'ଭର୍ତ୍ତି ଆବେଦନ', heroCta2Text:'ପାଠ୍ୟକ୍ରମ ଦେଖନ୍ତୁ', heroScroll:'ତଳକୁ ଦେଖନ୍ତୁ',
+    overviewLabel:'କଲେଜ ବିଷୟରେ', overviewTitleAccent:'ଗୁଣବତ୍ତା ଶିକ୍ଷା', overviewTitleRest:'ପ୍ରତ୍ୟେକ ଛାତ୍ର ପାଇଁ',
+    overviewP1:'SSRK ଡିଗ୍ରୀ କଲେଜ ୧୯୯୦ ଠାରୁ ଓଡ଼ିଶାର ଛାତ୍ରଛାତ୍ରୀଙ୍କ ଭବିଷ୍ୟତ ଗଢ଼ିଆସୁଛି। ଉତ୍କଳ ବିଶ୍ୱବିଦ୍ୟାଳୟ ସହ ଅନୁବନ୍ଧ ଏବଂ ଓଡ଼ିଶା ସରକାରଙ୍କ ଦ୍ୱାରା ଅନୁମୋଦିତ।',
+    overviewP2:'ଆମ ଅଧ୍ୟାପକଗଣ ଦଶକଧରି ଶିକ୍ଷାଦାନ ଅଭିଜ୍ଞତା, ଗବେଷଣା ଓ ଶିଳ୍ପ ସଂଯୋଗ ଆଣୁଛନ୍ତି।',
+    overviewP3:'ଛାତ୍ର, ଅଭିଭାବକ ବା ଶିକ୍ଷକ — SSRK ଡିଗ୍ରୀ କଲେଜ ଆପଣଙ୍କ ସଫଳତା ପ୍ରତି ପ୍ରତିଶ୍ରୁତିବଦ୍ଧ।',
+    hl1:'ଉତ୍କଳ ବିଶ୍ୱବିଦ୍ୟାଳୟ ଅନୁବନ୍ଧ', hl2:'୩୫+ ବର୍ଷ ଉତ୍କର୍ଷ', hl3:'ସରକାରୀ ବୃତ୍ତି ଉପଲବ୍ଧ', hl4:'ଛାତ୍ରାବାସ ଓ ପରିବହନ',
+    stat1:'ବର୍ଷ', stat2:'ଛାତ୍ର', stat3:'ଅଧ୍ୟାପକ', stat4:'ପାଠ୍ୟକ୍ରମ',
+    accredTitle:'NAAC ମାନ୍ୟତାପ୍ରାପ୍ତ', accredSub:'ଉତ୍କଳ ବିଶ୍ୱ ଅନୁବନ୍ଧ · ଓଡ଼ିଶା ସରକାର ଅନୁମୋଦିତ',
+    coursesLabel:'ଉପଲବ୍ଧ ପାଠ୍ୟକ୍ରମ', coursesTitle:'ବିଶେଷ ପାଠ୍ୟକ୍ରମ', coursesViewAll:'ସମସ୍ତ ଦେଖନ୍ତୁ',
+    scholTitle:'ବୃତ୍ତି ଓ ଆର୍ଥିକ ସହାୟତା',
+    scholDesc:'ଆର୍ଥିକ ଅଭାବ ଯୋଗ୍ୟ ଛାତ୍ରଙ୍କୁ ରୋକିବା ଉଚିତ ନୁହେଁ। SSRK ଡିଗ୍ରୀ କଲେଜ ସରକାରୀ ଓ ମେଧା ଆଧାରିତ ବୃତ୍ତି ଯୋଜନା ସୁଗମ କରାଏ।',
+    scholType1:'ମେଧା ବୃତ୍ତି', scholType2:'ST/SC ବୃତ୍ତି', scholType3:'OBC ବୃତ୍ତି', scholType4:'ବାଳିକା ଯୋଜନା', scholCta:'ଅଧିକ ଜାଣନ୍ତୁ',
+    admCtaLabel:'ଭର୍ତ୍ତି ୨୦୨୫–୨୬', admCtaTitle:'ଆପଣଙ୍କ ଯାତ୍ରା ଆରମ୍ଭ କରିବାକୁ ପ୍ରସ୍ତୁତ?',
+    admCtaSub:'ଆସନ ଦ୍ରୁତ ଭରିଯାଉଛି। ଆଜି ଆବେଦନ ପଠାନ୍ତୁ।',
+    admCtaCta:'ଆବେଦନ ପଠାନ୍ତୁ', admCtaCall:'📞 ଆଡ୍ମିଶନ ଅଫିସ ଡାକନ୍ତୁ',
+    enquiryLabel:'ଭର୍ତ୍ତି ଆବେଦନ', enquiryTitle:'ଆପଣଙ୍କ ସଠିକ ନିଷ୍ପତ୍ତିରେ ଆମେ ସାହାଯ୍ୟ କରିବୁ',
+    enquiryDesc:'ଫର୍ମ ପୂରଣ କରନ୍ତୁ — ଆମ ଟିମ ପାଠ୍ୟକ୍ରମ, ଫି, ବୃତ୍ତି ଇତ୍ୟାଦି ବିଷୟରେ ଉତ୍ତର ଦେବ।',
+    enqP1:'୨୪ ଘଣ୍ଟା ମଧ୍ୟରେ କଲ ବ୍ୟାକ', enqP2:'ସ୍ପ୍ୟାମ ନାହିଁ, କେବଳ ପ୍ରକୃତ ସାହାଯ୍ୟ', enqP3:'ଓଡ଼ିଆ ଓ ଇଂଲିଶ ଉଭୟରେ',
+    formTitle:'ଭର୍ତ୍ତି ଆବେଦନ ଫର୍ମ', formSub:'* ଚିହ୍ନିତ ସ୍ଥାନ ଆବଶ୍ୟକ',
+    fieldName:'ସମ୍ପୂର୍ଣ ନାମ *', fieldPhone:'ମୋବାଇଲ ନମ୍ବର *', fieldEmail:'ଇ-ମେଲ ଠିକଣା', fieldCourse:'ପସନ୍ଦ ର ପାଠ୍ୟକ୍ରମ *',
+    fieldTopics:'ମୁଁ ଜାଣିବାକୁ ଚାହୁଁଛି', topicPlaceholder:'ବିଷୟ ଚୟନ କରନ୍ତୁ...', fieldMsg:'ଅନ୍ୟ ପ୍ରଶ୍ନ',
+    formSubmit:'ଆବେଦନ ପଠାନ୍ତୁ →', formNote:'ଆପଣଙ୍କ ଗୋପନୀୟତା ସୁରକ୍ଷିତ। ସ୍ପ୍ୟାମ ନାହିଁ।',
+    successTitle:'ଆବେଦନ ପ୍ରାପ୍ତ ହେଲା!', successMsg:'ଧନ୍ୟବାଦ! ୨୪ ଘଣ୍ଟା ମଧ୍ୟରେ ଆମ ଟିମ ଆପଣଙ୍କୁ ଫୋନ କରିବ।',
+    stickyEnquire:'ଆବେଦନ କରନ୍ତୁ'
+  }
+};
+
+var currentLang = 'en';
+
+function switchLang(lang) {
+  currentLang = lang;
+  var t = T[lang];
+  // Toggle header buttons
+  document.getElementById('langEn').classList.toggle('active', lang === 'en');
+  document.getElementById('langEn').setAttribute('aria-pressed', lang === 'en');
+  document.getElementById('langOr').classList.toggle('active', lang === 'or');
+  document.getElementById('langOr').setAttribute('aria-pressed', lang === 'or');
+  document.getElementById('mLangEn').classList.toggle('active', lang === 'en');
+  document.getElementById('mLangOr').classList.toggle('active', lang === 'or');
+  // Switch html lang
+  document.documentElement.lang = lang === 'or' ? 'or' : 'en';
+  // Update all [data-t] elements
+  var els = document.querySelectorAll('[data-t]');
+  els.forEach(function(el) {
+    var key = el.getAttribute('data-t');
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+  // Persist
+  try { localStorage.setItem('ssrk_locale', lang); } catch(e){}
+}
+
+function closeMobileMenuLang(btn) {
+  // just toggle visual; switchLang handles the rest
+}
+
+/* ══════════════════════════════════
+   CAROUSEL
+══════════════════════════════════ */
+var carousel = document.getElementById('courseCarousel');
+var cards = carousel ? carousel.querySelectorAll('.course-card') : [];
+var cardCount = cards.length;
+
+function buildDots() {
+  var dots = document.getElementById('carDots');
+  if (!dots || cardCount === 0) return;
+  dots.innerHTML = '';
+  for (var i = 0; i < cardCount; i++) {
+    var d = document.createElement('button');
+    d.className = 'car-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Go to card ' + (i + 1));
+    d.setAttribute('data-idx', i);
+    d.onclick = function() { goToCard(parseInt(this.getAttribute('data-idx'))); };
+    dots.appendChild(d);
+  }
+}
+
+function updateDots() {
+  if (!carousel) return;
+  var scrollLeft = carousel.scrollLeft;
+  var cardW = cards[0] ? cards[0].offsetWidth + 16 : 1;
+  var idx = Math.round(scrollLeft / cardW);
+  var allDots = document.querySelectorAll('.car-dot');
+  allDots.forEach(function(d, i) { d.classList.toggle('active', i === idx); });
+}
+
+function goToCard(idx) {
+  if (!carousel || !cards[idx]) return;
+  var cardW = cards[0].offsetWidth + 16;
+  carousel.scrollTo({ left: cardW * idx, behavior: 'smooth' });
+}
+
+function carouselMove(dir) {
+  if (!carousel) return;
+  var cardW = cards[0] ? cards[0].offsetWidth + 16 : 300;
+  carousel.scrollBy({ left: dir * cardW, behavior: 'smooth' });
+}
+
+if (carousel) {
+  carousel.addEventListener('scroll', updateDots, { passive: true });
+  buildDots();
+}
+
+/* ══════════════════════════════════
+   ENQUIRE ABOUT (from course card)
+══════════════════════════════════ */
+function enquireAbout(courseName) {
+  var sel = document.getElementById('fcourse');
+  if (sel) {
+    for (var i = 0; i < sel.options.length; i++) {
+      if (sel.options[i].text.indexOf(courseName) !== -1) {
+        sel.value = sel.options[i].value;
+        break;
+      }
+    }
+  }
+  var target = document.getElementById('enquiry');
+  if (target) {
+    var top = target.getBoundingClientRect().top + window.scrollY - 80;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  }
+  setTimeout(function() {
+    var fn = document.getElementById('fname');
+    if (fn) fn.focus();
+  }, 600);
+}
+
+/* ══════════════════════════════════
+   MULTI-SELECT (TOPICS)
+══════════════════════════════════ */
+var topicLabels = {
+  admission_process: 'Admission Process',
+  scholarships: 'Scholarships',
+  eligibility: 'Eligibility',
+  fees: 'Fee Structure',
+  hostel: 'Hostel',
+  transport: 'Transport',
+  placements: 'Placements',
+  campus_visit: 'Campus Visit'
+};
+
+function toggleTopicSelect(e) {
+  e.stopPropagation();
+  var btn = document.getElementById('topicBtn');
+  var menu = document.getElementById('topicMenu');
+  var isOpen = menu.classList.contains('open');
+  btn.classList.toggle('open', !isOpen);
+  menu.classList.toggle('open', !isOpen);
+}
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.multi-select-wrapper')) {
+    var btn = document.getElementById('topicBtn');
+    var menu = document.getElementById('topicMenu');
+    if (btn) btn.classList.remove('open');
+    if (menu) menu.classList.remove('open');
+  }
+});
+
+function removeTopic(val) {
+  var cb = document.querySelector('.multi-select-item input[value="' + val + '"]');
+  if (cb) { cb.checked = false; cb.closest('.multi-select-item').classList.remove('checked'); }
+  renderTopicPills();
+}
+
+function handleTopicChange(e) {
+  var item = e.target.closest('.multi-select-item');
+  if (item) item.classList.toggle('checked', e.target.checked);
+  renderTopicPills();
+}
+
+function renderTopicPills() {
+  var checked = document.querySelectorAll('#topicMenu input:checked');
+  var selected = Array.from(checked).map(function(c) { return c.value; });
+  var ph = document.getElementById('topicPlaceholder');
+  var container = document.getElementById('topicPills');
+  ph.textContent = selected.length === 0 ? (T[currentLang].topicPlaceholder || 'Select topics...') : selected.length + (selected.length === 1 ? ' topic selected' : ' topics selected');
+  container.innerHTML = '';
+  selected.forEach(function(val) {
+    var pill = document.createElement('div');
+    pill.className = 'pill';
+    var lbl = document.createElement('span');
+    lbl.textContent = topicLabels[val] || val;
+    var btn = document.createElement('button');
+    btn.innerHTML = '&#x2715;';
+    btn.setAttribute('aria-label', 'Remove ' + (topicLabels[val] || val));
+    btn.onclick = function() { removeTopic(val); };
+    pill.appendChild(lbl); pill.appendChild(btn);
+    container.appendChild(pill);
+  });
+}
+
+/* ══════════════════════════════════
+   FORM VALIDATION & SUBMIT
+══════════════════════════════════ */
+function validateForm() {
+  var valid = true;
+  // Name
+  var name = document.getElementById('fname').value.trim();
+  setErr('fg-name', 'err-name', name.length < 2);
+  if (name.length < 2) valid = false;
+  // Phone
+  var phone = document.getElementById('fphone').value.trim();
+  setErr('fg-phone', 'err-phone', !/^\d{10}$/.test(phone));
+  if (!/^\d{10}$/.test(phone)) valid = false;
+  // Email (optional, but validate format if entered)
+  var email = document.getElementById('femail').value.trim();
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    setErr('fg-email', 'err-email', true);
+    valid = false;
+  } else {
+    setErr('fg-email', 'err-email', false);
+  }
+  return valid;
+}
+
+function setErr(groupId, errId, show) {
+  var grp = document.getElementById(groupId);
+  var err = document.getElementById(errId);
+  if (grp) grp.classList.toggle('error', show);
+  if (err) err.style.display = show ? 'block' : 'none';
+}
+
+function checkDuplicate() {
+  try {
+    var last = localStorage.getItem('ssrk_enq_ts');
+    if (last && (Date.now() - parseInt(last)) < 24 * 60 * 60 * 1000) return true;
+  } catch(e) {}
+  return false;
+}
+
+document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  // Check duplicate
+  if (checkDuplicate()) {
+    document.getElementById('dupMsg').classList.add('show');
+    return;
+  }
+  if (!validateForm()) {
+    // Focus first invalid field
+    var first = document.querySelector('.form-group.error input, .form-group.error select');
+    if (first) first.focus();
+    return;
+  }
+  // Disable button
+  var btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+  // Simulate API call
+  setTimeout(function() {
+    try { localStorage.setItem('ssrk_enq_ts', Date.now().toString()); } catch(e) {}
+    // Generate ref
+    var ref = 'SSRKDC-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
+    document.getElementById('refId').textContent = ref;
+    // Show success
+    document.getElementById('enquiryFormWrap').style.display = 'none';
+    document.getElementById('successPanel').classList.add('show');
+    // Scroll into view
+    var sp = document.getElementById('successPanel');
+    var top = sp.getBoundingClientRect().top + window.scrollY - 100;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  }, 900);
+});
+
+// Clear error on input
+['fname','fphone','femail','fcourse'].forEach(function(id) {
+  var el = document.getElementById(id);
+  if (el) el.addEventListener('input', function() {
+    var grp = this.closest('.form-group');
+    if (grp) grp.classList.remove('error');
+  });
+});
+
+/* ══════════════════════════════════
+   STICKY CTA — hide when form visible
+══════════════════════════════════ */
+function checkSticky() {
+  var enq = document.getElementById('enquiry');
+  var sticky = document.getElementById('stickyCta');
+  if (!enq || !sticky) return;
+  var rect = enq.getBoundingClientRect();
+  sticky.style.transform = (rect.top < window.innerHeight && rect.bottom > 0) ? 'translateY(100%)' : 'translateY(0)';
+}
+window.addEventListener('scroll', checkSticky, { passive: true });
+
+/* ══════════════════════════════════
+   SCROLL FADE-UP ANIMATIONS
+══════════════════════════════════ */
+var fadeEls = document.querySelectorAll('.fade-up');
+var io = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) { entry.target.classList.add('visible'); io.unobserve(entry.target); }
+  });
+}, { threshold: 0, rootMargin: "0px 0px 50px 0px" });
+document.querySelectorAll('.fade-up').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight){el.classList.add('visible')}});
+fadeEls.forEach(function(el) { io.observe(el); });
+
+/* ══════════════════════════════════
+   INIT
+══════════════════════════════════ */
+(function init() {
+  // Restore locale
+  try {
+    var saved = localStorage.getItem('ssrk_locale');
+    if (saved === 'or') switchLang('or');
+  } catch(e) {}
+})();
+</script>
+</body>
+</html>
