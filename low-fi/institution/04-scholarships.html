@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WF — 04 Scholarships (low-fi)</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #333;
+      background: #fafafa;
+      padding-bottom: 72px;
+    }
+    .wf-banner {
+      background: #333;
+      color: #fff;
+      padding: 10px 16px;
+      font-size: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .wf-banner strong { font-weight: 700; }
+    .wf-banner a { color: #ccc; }
+    .wf-tag {
+      display: inline-block;
+      background: #555;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+    /* Chrome */
+    .site-header {
+      background: #fff;
+      border-bottom: 2px dashed #bbb;
+      padding: 12px 0;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-placeholder {
+      width: 40px;
+      height: 40px;
+      border: 2px solid #999;
+      background: #e8e8e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: #666;
+    }
+    .logo-text .name { font-weight: 700; font-size: 14px; }
+    .logo-text .sub { font-size: 11px; color: #777; }
+    .main-nav { display: none; gap: 4px; flex-wrap: wrap; }
+    @media (min-width: 900px) { .main-nav { display: flex; } }
+    .nav-link {
+      padding: 6px 10px;
+      font-size: 12px;
+      color: #555;
+      text-decoration: none;
+      border: 1px solid transparent;
+      border-radius: 4px;
+    }
+    .nav-link.active {
+      border-color: #999;
+      background: #eee;
+      font-weight: 600;
+      color: #222;
+    }
+    .header-actions { display: flex; align-items: center; gap: 8px; }
+    .lang-toggle {
+      display: flex;
+      border: 1px solid #999;
+      border-radius: 4px;
+      overflow: hidden;
+      font-size: 11px;
+    }
+    .lang-toggle button {
+      padding: 5px 8px;
+      border: none;
+      background: #fff;
+      cursor: pointer;
+      color: #666;
+    }
+    .lang-toggle button.active { background: #ddd; font-weight: 700; color: #222; }
+    .btn {
+      padding: 8px 14px;
+      border: 2px solid #666;
+      background: #e0e0e0;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 4px;
+      color: #222;
+    }
+    .btn:hover { background: #d0d0d0; }
+    .btn-primary { background: #ccc; border-color: #555; }
+    .hamburger {
+      width: 36px;
+      height: 32px;
+      border: 2px solid #999;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      cursor: pointer;
+      background: #eee;
+    }
+    @media (min-width: 900px) { .hamburger { display: none; } }
+    .hamburger span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: #555;
+    }
+
+    /* Page intro */
+    .page-intro {
+      padding: 28px 0 20px;
+      border-bottom: 1px dashed #ccc;
+    }
+    .wf-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #222;
+    }
+    .intro-desc {
+      max-width: 560px;
+      color: #666;
+      font-size: 13px;
+    }
+
+    /* Scholarship list */
+    .schol-section { padding: 28px 0; }
+    .schol-grid {
+      display: grid;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    @media (min-width: 640px) { .schol-grid { grid-template-columns: 1fr 1fr; } }
+
+    .schol-card {
+      border: 2px solid #aaa;
+      border-radius: 6px;
+      background: #fff;
+      overflow: hidden;
+    }
+    .schol-card.expanded { border-color: #666; box-shadow: 0 2px 0 #bbb; }
+    .schol-trigger {
+      width: 100%;
+      text-align: left;
+      padding: 14px 16px;
+      border: none;
+      background: #f0f0f0;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      font-family: inherit;
+      color: inherit;
+    }
+    .schol-card.expanded .schol-trigger { background: #e4e4e4; border-bottom: 1px dashed #bbb; }
+    .schol-trigger h2 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .schol-summary { font-size: 12px; color: #666; line-height: 1.5; }
+    .chevron {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #999;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: #666;
+      background: #fff;
+      transition: transform 0.2s;
+    }
+    .schol-card.expanded .chevron { transform: rotate(180deg); }
+    .schol-detail {
+      display: none;
+      padding: 14px 16px 16px;
+      font-size: 12px;
+      color: #444;
+    }
+    .schol-card.expanded .schol-detail { display: block; }
+    .detail-block { margin-bottom: 12px; }
+    .detail-block:last-child { margin-bottom: 0; }
+    .detail-block dt {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #888;
+      margin-bottom: 3px;
+    }
+    .detail-block dd { line-height: 1.55; }
+    .pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border: 1px solid #999;
+      border-radius: 10px;
+      font-size: 10px;
+      font-weight: 600;
+      background: #eee;
+      margin-top: 4px;
+    }
+    .text-link {
+      color: #444;
+      text-decoration: underline;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Enquiry CTA section */
+    .enquiry-cta {
+      margin: 8px 0 32px;
+      padding: 24px;
+      border: 2px dashed #999;
+      border-radius: 6px;
+      background: #f0f0f0;
+      text-align: center;
+    }
+    .enquiry-cta h2 { font-size: 16px; margin-bottom: 6px; }
+    .enquiry-cta p { font-size: 12px; color: #666; margin-bottom: 14px; max-width: 400px; margin-left: auto; margin-right: auto; }
+
+    /* Footer */
+    .site-footer {
+      border-top: 2px dashed #bbb;
+      padding: 24px 0;
+      background: #eee;
+      font-size: 12px;
+      color: #666;
+    }
+    .footer-grid {
+      display: grid;
+      gap: 20px;
+    }
+    @media (min-width: 640px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr; } }
+    .footer-block .title {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #888;
+      margin-bottom: 8px;
+    }
+    .footer-placeholder {
+      height: 10px;
+      background: #ccc;
+      border-radius: 2px;
+      margin-bottom: 6px;
+      max-width: 180px;
+    }
+
+    /* Sticky mobile enquire */
+    .sticky-enquire {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 10px 16px;
+      background: #fff;
+      border-top: 2px solid #999;
+      display: flex;
+      gap: 8px;
+      z-index: 100;
+    }
+    @media (min-width: 900px) { .sticky-enquire { display: none; } }
+    .sticky-enquire .btn { flex: 1; text-align: center; }
+
+    /* Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: #fff;
+      border: 2px solid #666;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 440px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      border-bottom: 1px dashed #bbb;
+      background: #f0f0f0;
+    }
+    .modal-header h2 { font-size: 15px; }
+    .modal-close {
+      width: 28px;
+      height: 28px;
+      border: 1px solid #999;
+      background: #eee;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .modal-body { padding: 16px; }
+    .form-field { margin-bottom: 12px; }
+    .form-field label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #777;
+      margin-bottom: 4px;
+    }
+    .form-field .input {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #999;
+      border-radius: 4px;
+      background: #fafafa;
+      font-size: 13px;
+      color: #555;
+    }
+    .form-field .input.readonly { background: #e8e8e8; color: #666; }
+    .topic-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+    .topic-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      padding: 6px 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #fafafa;
+      cursor: pointer;
+    }
+    .topic-item.checked { border-color: #666; background: #e8e8e8; font-weight: 600; }
+    .topic-item input { accent-color: #666; }
+    .modal-note {
+      font-size: 11px;
+      color: #888;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed #ddd;
+    }
+
+    /* Empty state panel (toggle demo) */
+    .state-toggle {
+      margin: 16px 0;
+      padding: 12px;
+      background: #fff;
+      border: 1px dashed #999;
+      border-radius: 6px;
+      font-size: 12px;
+    }
+    .state-toggle label { display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 600; }
+    .empty-state {
+      display: none;
+      padding: 48px 24px;
+      text-align: center;
+      border: 2px dashed #bbb;
+      border-radius: 6px;
+      background: #f5f5f5;
+      margin-top: 16px;
+    }
+    .empty-state.visible { display: block; }
+    .empty-state p { color: #666; font-size: 13px; max-width: 360px; margin: 0 auto; }
+    body.show-empty .schol-grid,
+    body.show-empty .enquiry-cta { display: none; }
+    body.show-empty .empty-state { display: block; }
+
+    .anno {
+      font-size: 10px;
+      color: #999;
+      font-style: italic;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wf-banner">
+    <div>
+      <strong>LOW-FI WIREFRAME</strong>
+      <span class="wf-tag">04-scholarships</span>
+      <span class="wf-tag">/scholarships</span>
+    </div>
+    <div>
+      <a href="../../docs/screens/04-scholarships.md">Screen spec</a>
+      · Grey only — no brand colors
+    </div>
+  </div>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="logo-block">
+        <div class="logo-placeholder" aria-hidden="true">LOGO</div>
+        <div class="logo-text">
+          <div class="name">[Institution Name]</div>
+          <div class="sub">[City, Odisha]</div>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="#">Courses</a>
+        <a class="nav-link" href="#">Faculty</a>
+        <a class="nav-link active" href="#" aria-current="page">Scholarships</a>
+        <a class="nav-link" href="#">Gallery</a>
+        <a class="nav-link" href="#">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" class="active" aria-pressed="true">ଓଡ଼ିଆ</button>
+          <button type="button" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="openModal()">Enquire Now</button>
+        <div class="hamburger" aria-label="Menu" role="button" tabindex="0"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="page-intro" aria-labelledby="page-title">
+        <div class="wf-label">§ Page intro — optional CMS</div>
+        <h1 id="page-title">Scholarships &amp; Financial Aid</h1>
+        <p class="intro-desc">[Short institution-level description — financial constraints should not stop deserving students. Localized Odia + English.]</p>
+      </section>
+
+      <div class="state-toggle">
+        <label>
+          <input type="checkbox" id="emptyToggle" onchange="toggleEmpty(this.checked)">
+          Preview empty state (0 published scholarships)
+        </label>
+        <p class="anno">Nav item stays visible; Home highlight hidden per BR-IW-011</p>
+      </div>
+
+      <section class="schol-section" aria-labelledby="list-heading">
+        <div class="wf-label">§ Scholarship list — CMS records</div>
+        <h2 id="list-heading" style="font-size:16px;font-weight:700;">Available schemes</h2>
+
+        <div class="empty-state" id="emptyState">
+          <div class="wf-label" style="margin-bottom:12px;">Empty state</div>
+          <p>Scholarship details will be published soon.</p>
+          <p class="anno" style="margin-top:12px;">No cards · enquiry CTA hidden in empty state</p>
+        </div>
+
+        <div class="schol-grid" id="scholGrid">
+
+          <article class="schol-card expanded" data-card>
+            <button type="button" class="schol-trigger" aria-expanded="true" onclick="toggleCard(this)">
+              <div>
+                <h2>Merit Scholarship</h2>
+                <p class="schol-summary">[Summary — awarded to students with 75%+ in Class 12. Covers portion of tuition.]</p>
+              </div>
+              <span class="chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="schol-detail">
+              <dl>
+                <div class="detail-block">
+                  <dt>Eligibility</dt>
+                  <dd>[Full eligibility criteria — marks threshold, stream, renewal rules.]</dd>
+                </div>
+                <div class="detail-block">
+                  <dt>Benefit / coverage</dt>
+                  <dd>[Display text only — e.g. up to 50% tuition waiver. Not fee calculation.]</dd>
+                </div>
+                <div class="detail-block">
+                  <dt>How to apply</dt>
+                  <dd>[Steps — admission, documents, institution scholarship cell, timelines.]</dd>
+                </div>
+                <div class="detail-block">
+                  <dt>Applicable course</dt>
+                  <dd><span class="text-link">Bachelor of Computer Applications (BCA)</span> → /courses/bca</dd>
+                </div>
+                <div class="detail-block">
+                  <dt>Deadline</dt>
+                  <dd><span class="pill">Apply within 30 days of admission</span></dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="schol-card" data-card>
+            <button type="button" class="schol-trigger" aria-expanded="false" onclick="toggleCard(this)">
+              <div>
+                <h2>ST/SC Post-Matric Scholarship</h2>
+                <p class="schol-summary">[Summary — Govt. of Odisha scheme for ST/SC students. Tuition + maintenance.]</p>
+              </div>
+              <span class="chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="schol-detail">
+              <dl>
+                <div class="detail-block">
+                  <dt>Eligibility</dt>
+                  <dd>[Category certificate, admission at institution, income limits if any.]</dd>
+                </div>
+                <div class="detail-block">
+                  <dt>Benefit / coverage</dt>
+                  <dd>[Tuition fees, maintenance allowance, hostel charges — display text.]</dd>
+                </div>
+                <div class="detail-block">
+                  <dt>How to apply</dt>
+                  <dd>[NSP portal + institution verification steps.]</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="schol-card" data-card>
+            <button type="button" class="schol-trigger" aria-expanded="false" onclick="toggleCard(this)">
+              <div>
+                <h2>OBC Post-Matric Scholarship</h2>
+                <p class="schol-summary">[Summary — income-based govt. scheme via NSP portal.]</p>
+              </div>
+              <span class="chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="schol-detail">
+              <dl>
+                <div class="detail-block">
+                  <dt>Eligibility</dt>
+                  <dd>[OBC category, family income below threshold, Odisha domicile.]</dd>
+                </div>
+                <div class="detail-block">
+                  <dt>Benefit / coverage</dt>
+                  <dd>[Fee reimbursement per govt. norms — display text.]</dd>
+                </div>
+                <div class="detail-block">
+                  <dt>How to apply</dt>
+                  <dd>[scholarships.gov.in with college code; staff assistance available.]</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="schol-card" data-card>
+            <button type="button" class="schol-trigger" aria-expanded="false" onclick="toggleCard(this)">
+              <div>
+                <h2>Girl Child Fee Concession</h2>
+                <p class="schol-summary">[Summary — state inclusion initiative for rural girl students.]</p>
+              </div>
+              <span class="chevron" aria-hidden="true">▼</span>
+            </button>
+            <div class="schol-detail">
+              <dl>
+                <div class="detail-block">
+                  <dt>Eligibility</dt>
+                  <dd>[Girl students from rural/semi-urban backgrounds.]</dd>
+                </div>
+                <div class="detail-block">
+                  <dt>Benefit / coverage</dt>
+                  <dd>[Partial fee waiver — display text.]</dd>
+                </div>
+                <div class="detail-block">
+                  <dt>How to apply</dt>
+                  <dd>[Contact scholarship cell after admission.]</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="enquiry-cta" aria-labelledby="cta-heading">
+        <div class="wf-label">§ Enquiry CTA — opens modal</div>
+        <h2 id="cta-heading">Need help with scholarships?</h2>
+        <p>Our admissions team can guide you on eligibility and application steps.</p>
+        <button type="button" class="btn btn-primary" onclick="openModal()">Enquire About Scholarships</button>
+        <p class="anno">WF-11: user selects topic “Scholarships” in modal</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-block">
+        <div class="title">Institution</div>
+        <div class="footer-placeholder"></div>
+        <div class="footer-placeholder" style="max-width:240px"></div>
+      </div>
+      <div class="footer-block">
+        <div class="title">Quick links</div>
+        <div class="footer-placeholder" style="max-width:100px"></div>
+        <div class="footer-placeholder" style="max-width:80px"></div>
+        <div class="footer-placeholder" style="max-width:90px"></div>
+      </div>
+      <div class="footer-block">
+        <div class="title">Contact</div>
+        <div class="footer-placeholder" style="max-width:140px"></div>
+        <div class="footer-placeholder" style="max-width:120px"></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-enquire" aria-label="Mobile enquire bar">
+    <button type="button" class="btn" style="flex:0.4">Call</button>
+    <button type="button" class="btn btn-primary" onclick="openModal()">Enquire Now</button>
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" onclick="closeOnBackdrop(event)">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h2 id="modal-title">Admission Enquiry</h2>
+        <button type="button" class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="wf-label" style="margin-bottom:12px">Enquiry modal — institution_modal</div>
+        <div class="form-field">
+          <label>Student name *</label>
+          <div class="input">[text input]</div>
+        </div>
+        <div class="form-field">
+          <label>Phone *</label>
+          <div class="input">[tel input]</div>
+        </div>
+        <div class="form-field">
+          <label>Email</label>
+          <div class="input">[optional]</div>
+        </div>
+        <div class="form-field">
+          <label>Institution</label>
+          <div class="input readonly">SSRK Degree College (pre-filled)</div>
+        </div>
+        <div class="form-field">
+          <label>Course interested *</label>
+          <div class="input">[dropdown — institution courses]</div>
+        </div>
+        <div class="form-field">
+          <label>Enquiry topics (multi-select)</label>
+          <div class="topic-grid">
+            <label class="topic-item"><input type="checkbox"> Course details</label>
+            <label class="topic-item"><input type="checkbox"> Admission</label>
+            <label class="topic-item"><input type="checkbox"> Eligibility</label>
+            <label class="topic-item"><input type="checkbox"> Fee structure</label>
+            <label class="topic-item checked"><input type="checkbox" checked> Scholarships</label>
+            <label class="topic-item"><input type="checkbox"> Hostel</label>
+            <label class="topic-item"><input type="checkbox"> Placements</label>
+            <label class="topic-item"><input type="checkbox"> Other</label>
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Message</label>
+          <div class="input" style="min-height:60px">[optional textarea]</div>
+        </div>
+        <button type="button" class="btn btn-primary" style="width:100%">Submit Enquiry</button>
+        <p class="modal-note">Open question: pre-select “Scholarships” topic when opened from this page? Shown checked here as wireframe suggestion.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleCard(trigger) {
+      var card = trigger.closest('.schol-card');
+      var open = card.classList.toggle('expanded');
+      trigger.setAttribute('aria-expanded', open);
+    }
+
+    function openModal() {
+      document.getElementById('modalOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function closeOnBackdrop(e) {
+      if (e.target === e.currentTarget) closeModal();
+    }
+
+    function toggleEmpty(on) {
+      document.body.classList.toggle('show-empty', on);
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+</body>
+</html>
